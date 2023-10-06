@@ -1,0 +1,26 @@
+$breakpoints: (
+  "mobile": 0rem,
+  "tablet": 48rem,
+  "desktop": 80rem,
+);
+
+// Mobile Breakpoint
+@mixin mobile {
+  @media (min-width: map-get($breakpoints, "mobile")) {
+    @content;
+  }
+}
+
+// Tablet Breakpoint
+@mixin tablet {
+  @media (min-width: map-get($breakpoints, "tablet")) {
+    @content;
+  }
+}
+
+// Desktop Breakpoint
+@mixin desktop {
+  @media (min-width: map-get($breakpoints, "desktop")) {
+    @content;
+  }
+}
