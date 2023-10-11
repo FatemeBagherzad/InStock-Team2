@@ -1,12 +1,28 @@
-@use "./fonts" as *;
+@use './fonts' as *;
+@use './variables' as *;
+@use './mixins' as *;
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "titillium", sans-serif;
+  font-family: 'titillium', sans-serif;
 }
 
 a {
   text-decoration: none;
+}
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  max-width: 75rem;
+  margin: auto;
+  @include tablet {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  @include desktop {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
 }
