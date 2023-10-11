@@ -7,7 +7,11 @@ const PageHeader = ({ pageTitle, btnTxt, type }) => {
     <>
       <header className="PageHeader container">
         <h1 className="PageHeader__left">{pageTitle}</h1>
-        <div className="PageHeader__right">
+        <div
+          className={`PageHeader__right  ${
+            pageTitle.includes('Add') ? 'PageHeader__right--display' : ''
+          }`}
+        >
           <InputAllTextType type={type} />
           <Button btnTxt={btnTxt} />
         </div>
