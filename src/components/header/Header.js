@@ -1,7 +1,6 @@
 import "../header/Header.scss";
 import Logo from "./Logo";
-import WarehouseButton from "./WarehouseButton";
-import InventoryButton from "./InventoryButton";
+import Button from "../Button/Button";
 
 function Header() {
   return (
@@ -10,8 +9,8 @@ function Header() {
         <Logo />
       </div>
       <div className="header__nav-box2">
-        <WarehouseButton name="WarehouseBtn" />
-        <InventoryButton name="InventoryBtn" />
+        <Button className="headerBtn" btnTxt="Warehouses" />
+        <Button className="headerBtn" btnTxt="Inventory" />
       </div>
     </div>
   );

@@ -4,10 +4,8 @@ import { Link } from "react-router-dom";
 function Logo() {
   return (
     <div className="Header">
-      <header className="Header__logo">
-        <Link to="/">
-          <img  alt="logo" src={logo} />
-        </Link>
+      <header className="header__logo">
+        <img alt="logo" src={logo} />
       </header>
     </div>
   );
