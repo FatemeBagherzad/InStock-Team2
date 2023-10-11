@@ -1,11 +1,12 @@
 import "./App.css";
+import Header from "./components/header/Header"; 
+
 
 function App() {
-  console.log("hello world");
   return (
-    <>
-      <h1>Hello World!!</h1>
-    </>
+    <div className="App">
+      <Header />
+    </div>
   );
 }
 
