@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import InventoryItemMore from '../../components/InventoryItemMore/InventoryItemMore';
+import InventoryItemMore from '../../components/InvetoryItemDetail/InvetoryItemDetail';
 import InventoryList from '../../components/InventoryList/InventoryList';
 import PageHeader from '../../components/PageHeader/PageHeader';
 import axios from 'axios';
@@ -25,7 +25,7 @@ const InventoryMainPage = () => {
       <PageHeader
         pageTitle="Invetories"
         type="search"
-        btnTxt="+Add A New Inventories"
+        btnTxt="+Add A New Inventory"
       />
       <InventoryList allInvetories={allInvetories} />
     </>

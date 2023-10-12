@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import InventoryItemMore from '../../components/InventoryItemMore/InventoryItemMore';
+import InvetoryItemDetail from '../../components/InvetoryItemDetail/InvetoryItemDetail';
 import PageHeader from '../../components/PageHeader/PageHeader';
-import './InvetoryItemMorePage.scss';
+import './InvetoryItemDetailPage.scss';
 
 const InvetoryItemMorePage = () => {
   const [inventory, setInvetory] = useState();
@@ -19,11 +19,11 @@ const InvetoryItemMorePage = () => {
   }, [inventoryid]);
 
   return (
-    <div className="InvetoryItemMorePage">
+    <div className="invetoryItemMorePage">
       {inventory && (
         <PageHeader pageTitle={`${inventory[0]?.item_name}`} btnTxt="EDIT" />
       )}
-      {inventory && <InventoryItemMore inventory={inventory} />}
+      {inventory && <InvetoryItemDetail inventory={inventory} />}
     </div>
   );
 };

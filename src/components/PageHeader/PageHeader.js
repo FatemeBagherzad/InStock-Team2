@@ -1,8 +1,12 @@
+import { Link, useNavigate } from 'react-router-dom';
+
 import Button from '../Button/Button';
 import InputAllTextType from '../InputAllTextType/InputAllTextType';
 import './PageHeader.scss';
 
-const PageHeader = ({ pageTitle, btnTxt, type }) => {
+const PageHeader = ({ pageTitle, btnTxt, type, onClick }) => {
+  const navigate = useNavigate();
+
   return (
     <>
       <header className="PageHeader container">
@@ -13,7 +17,7 @@ const PageHeader = ({ pageTitle, btnTxt, type }) => {
           }`}
         >
           <InputAllTextType type={type} />
-          <Button btnTxt={btnTxt} />
+          <Button btnTxt={btnTxt} onClick={() => navigate(`./new`)} />
         </div>
       </header>
     </>
