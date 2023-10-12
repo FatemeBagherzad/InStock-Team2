@@ -2,18 +2,18 @@ import InventoryItemMob from '../InventoryItemMob/InventoryItemMob';
 import InventoryItemTabDes from '../InventoryItemTabDes/InventoryItemTabDes';
 import InventoryListHeader from '../InventoryListHeader/InventoryListHeader';
 
-const InventoryList = ({ allData }) => {
+const InventoryList = ({ allInvetories }) => {
   return (
     <>
       <InventoryListHeader />
       <section>
-        {allData.map((data) => (
-          <InventoryItemMob data={data} key={data.id} />
+        {allInvetories.map((inventory) => (
+          <InventoryItemMob inventory={inventory} key={inventory.id} />
         ))}
       </section>
       <section>
-        {allData.map((data) => (
-          <InventoryItemTabDes data={data} key={data.id} />
+        {allInvetories.map((inventory) => (
+          <InventoryItemTabDes inventory={inventory} key={inventory.id} />
         ))}
       </section>
     </>

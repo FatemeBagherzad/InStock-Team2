@@ -40,44 +40,39 @@ a {
   }
 }
 
-.button {
-  background-color: #2e66e5;
-  color: #ffffff;
-  border-color: transparent;
-  cursor: pointer;
-  height: 2.25rem;
-  border-radius: 1.25rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-transform: capitalize;
-  width: 100%;
+.InventoryListHeaderDisplay {
+  display: none;
 }
 @media (min-width: 48rem) {
-  .button {
-    width: -moz-fit-content;
-    width: fit-content;
-    height: 2.375rem;
-    padding: 0 1rem;
+  .InventoryListHeaderDisplay {
+    display: block;
+    border-bottom: 1px solid #bdc5d5;
+    background-color: #f7f8f9;
+    padding: 1rem 0;
+    padding: 0.75rem 1rem;
   }
 }
-.button:hover {
-  background-color: #232940;
+
+.InventoryListHeader {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr 1fr 0.5fr 1fr 0.4fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  text-decoration: none;
+  list-style: none;
+  font-size: 0.7rem;
+  color: #5c667e;
 }
-.button--cancel {
-  background-color: #ffffff;
-  color: #13182c;
-  border-color: #5c667e;
+@media (min-width: 80rem) {
+  .InventoryListHeader {
+    grid-template-columns: 0.8fr 1fr 1fr 0.5fr 1fr 0.3fr;
+  }
 }
-.button--cancel:hover {
-  border-color: #2e66e5;
-  color: #2e66e5;
-  background-color: #ffffff;
+.InventoryListHeader__titleAndIcn {
+  display: flex;
+  align-items: center;
 }
-.button--delete {
-  background-color: #c94515;
-  color: #ffffff;
-  border-color: transparent;
-}
-.button--delete:hover {
-  background-color: #232940;
+.InventoryListHeader__titleAndIcn--icon {
+  width: 1.5rem;
+  cursor: pointer;
 }

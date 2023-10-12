@@ -1,34 +1,41 @@
-import { useEffect } from 'react';
-import './App.css';
-import InventoryItemMob from './components/InventoryItemMob/InventoryItemMob';
-import InventoryItemMore from './components/InventoryItemMore/InventoryItemMore';
-import InventoryItemTabDes from './components/InventoryItemTabDes/InventoryItemTabDes';
-import InventoryList from './components/InventoryList/InventoryList';
-import PageHeader from './components/PageHeader/PageHeader';
-import axios from 'axios';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import './App.scss';
+import InventoryMainPage from './pages/InventoryMainPage/InventoryMainPage';
+import InvetoryItemMorePage from './pages/InvetoryItemMorePage/InvetoryItemMorePage';
+import InventoryEditItemPage from './pages/InventoryEditItemPage/InventoryEditItemPage';
+import InventoryAddNewPage from './pages/InventoryAddNewPage/InventoryAddNewPage';
 
 function App() {
-
-  console.log('Hello World!');
- 
-  useEffect(() => {
-    axios.get('http://localhost:8888/warehouses').then((response) => {
-      console.log(response.data);
-    });
-  }, []);
-
-
-
   return (
-    <>
-      <InventoryItemMore allData={allData} />
-      <PageHeader
-        pageTitle="Invetories"
-        type="search"
-        btnTxt="+Add A New Inventories"
-      />
-      <InventoryList allData={allData} />
-    </>
+    <main>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Navigate to="/warehouses" />} />
+          {/* <Route path="/warehouses" element={<WarehousesPage />} />
+          <Route
+            path="/warehouses/:warehouseid"
+            element={<WarehouseDetailsPage />}
+          />
+          <Route
+            path="/warehouses/:warehouseid/edit"
+            element={<EditWarehousePage />}
+          />
+          <Route path="/warehouses/new" element={<NewWarehousePage />} /> */}
+
+          <Route path="/inventory" element={<InventoryMainPage />} />
+          <Route
+            path="/inventory/:inventoryid"
+            element={<InvetoryItemMorePage />}
+          />
+          {/* <Route
+            path="/inventory/:inventoryid/edit"
+            element={<InventoryEditItemPage />}
+          />
+          <Route path="/inventory/new" element={<InventoryAddNewPage />} /> */}
+        </Routes>
+      </BrowserRouter>
+      ;
+    </main>
   );
 }
 

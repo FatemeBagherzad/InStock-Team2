@@ -1,34 +1,53 @@
-import PageHeader from '../PageHeader/PageHeader';
+import './InventoryItemMore.scss';
 
-const InventoryItemMore = () => {
+const InventoryItemMore = ({ inventory }) => {
   return (
     <>
-      <PageHeader pageTitle="item" btnTxt="EDIT" />;
-      <div>
-        <div className="">
-          <p className="">ITEM DESCRIPTION</p>
-          <p className="">a</p>
-        </div>
+      <div className="container InventoryItemMore">
+        <section className="InventoryItemMore__section-left">
+          <div className="InventoryItemMore__section--group">
+            <p className="InventoryItemMore__section--group-label">
+              ITEM DESCRIPTION
+            </p>
+            <p className="InventoryItemMore__section--group-info">
+              {inventory[0].description}
+            </p>
+          </div>
 
-        <div className="">
-          <p className="">CATEGORY</p>
-          <p className="">a</p>
-        </div>
+          <div className="InventoryItemMore__section--group">
+            <p className="InventoryItemMore__section--group-label">CATEGORY</p>
+            <p className="InventoryItemMore__section--group-info">
+              {inventory[0].category}
+            </p>
+          </div>
+        </section>
 
-        <div className="">
-          <p className="">STATUS</p>
-          <p className="">a</p>
-        </div>
+        <section className="InventoryItemMore__section-right">
+          <div className="InventoryItemMore__section-right-left">
+            <div className="InventoryItemMore__section--group">
+              <p className="InventoryItemMore__section--group-label">STATUS</p>
+              <p className="InventoryItemMore__section--group-info">
+                {inventory[0].status}
+              </p>
+            </div>
 
-        <div className="">
-          <p className="">WAREHOUSES</p>
-          <p className="">a</p>
-        </div>
+            <div className="InventoryItemMore__section--group">
+              <p className="InventoryItemMore__section--group-label">
+                WAREHOUSES
+              </p>
+              <p className="InventoryItemMore__section--group-info">
+                {inventory[0].warehouse_id}
+              </p>
+            </div>
+          </div>
 
-        <div className="">
-          <p className="">CATEGORY</p>
-          <p className="">a</p>
-        </div>
+          <div className="InventoryItemMore__section--group">
+            <p className="InventoryItemMore__section--group-label">QUANTITY</p>
+            <p className="InventoryItemMore__section--group-info">
+              {inventory[0].quantity}
+            </p>
+          </div>
+        </section>
       </div>
     </>
   );
