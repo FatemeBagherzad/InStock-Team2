@@ -4,7 +4,6 @@ import InventoryMainPage from './pages/InventoryMainPage/InventoryMainPage';
 import InvetoryItemDetailPage from './pages/InvetoryItemDetailPage/InvetoryItemDetailPage';
 import InventoryEditItemPage from './pages/InventoryEditItemPage/InventoryEditItemPage';
 import InventoryAddNewPage from './pages/InventoryAddNewPage/InventoryAddNewPage';
-
 function App() {
   return (
     <main>
@@ -21,7 +20,6 @@ function App() {
             element={<EditWarehousePage />}
           />
           <Route path="/warehouses/new" element={<NewWarehousePage />} /> */}
-
           <Route path="/inventory" element={<InventoryMainPage />} />
           <Route
             path="/inventory/:inventoryid"
@@ -38,5 +36,4 @@ function App() {
     </main>
   );
 }
-
 export default App;

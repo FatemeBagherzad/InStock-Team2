@@ -1,0 +1,27 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.warehouse-page {
+  &__background {
+    height: 90vh;
+    background-color: $background-color-Light-Grey;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-4.5rem);
+    background-color: $white;
+    box-shadow: 0px 2px 5px 0px $box-shadow;
+    margin: 1rem;
+
+    @include tablet {
+      transform: translateY(-6rem);
+      margin: 1.5rem 2rem;
+    }
+
+    @include desktop {
+      margin: 1rem 7rem;
+    }
+  }
+}
