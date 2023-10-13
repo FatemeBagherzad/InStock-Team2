@@ -19,13 +19,10 @@ const InventoryNewItemForm = () => {
   }, []);
 
   function handleChange(event) {
-    console.log('hi from handleChange');
-    console.log(event.target.value);
-
     if (event.target.value === 'In Stock') {
       setQuantityShow(true);
     }
-    if (event.target.value === 'Out Of Stock') {
+    if (event.target.value === 'Out of Stock') {
       setQuantityShow(false);
     }
   }
