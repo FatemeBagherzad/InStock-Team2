@@ -1,0 +1,88 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/global' as *;
+
+
+.warehouseList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 1rem;
+  border-radius: .1875rem;
+  position: absolute;
+
+  }
+  
+  .warehouseList__title-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+  }
+  
+
+  .warehouseList__search-subcontainer {
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      padding: 1rem;
+      margin: 0%;
+
+    }
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem;
+  }
+  
+  .warehouseList__search-bar {
+  height: 2.1875rem;
+    width: 100%;   
+    border-radius: 1.25rem;
+    border: 1px solid $secondary-color-Cloud;
+    padding: 0 1rem;
+    margin: 0 1rem;
+    @include tablet {
+      width: 50%;
+    }
+
+  }
+  
+  .warehouseList__add-button {
+    background-color: $primary-color-Instock-Indigo;
+    border-radius: 1.25rem;
+    color: $primary-color-White;
+    border: none;
+    margin: 0 1rem;
+    width: 100%;
+    height: 2.1875rem;
+  }
+  
+  .warehouseList__tablet-title-container {
+    // Styles for the tablet title container
+  }
+  
+  .warehouseList__tablet-text-container {
+    // Styles for the text container within the tablet view
+  }
+  
+  .warehouseList__tablet-sub-container {
+    // Styles for each sub-container in the tablet view
+  }
+  
+  .warehouseList__tablet-title {
+    // Styles for the tablet titles
+  }
+  
+  .warehouseList__tablet-title-image {
+    // Styles for the images next to tablet titles
+  }
+  
+  .warehouseList__tablet-misc-container {
+    // Styles for the miscellaneous container in the tablet view
+  }
+  
