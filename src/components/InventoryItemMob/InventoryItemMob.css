@@ -40,69 +40,77 @@ a {
   }
 }
 
-.inventoryItemTabDesDisplay {
-  display: none;
+.InventoryItemMobDisplay {
+  border-top: 1px solid #bdc5d5;
+  padding: 1rem 0;
 }
 @media (min-width: 48rem) {
-  .inventoryItemTabDesDisplay {
-    display: block;
-    border-bottom: 1px solid #bdc5d5;
-    padding: 1rem 0;
+  .InventoryItemMobDisplay {
+    display: none;
   }
 }
 
-.inventoryItemTabDes {
-  display: grid;
-  grid-template-columns: 0.8fr 1fr 1fr 0.5fr 1fr 0.4fr;
-  grid-template-rows: 1fr;
-  align-items: center;
-  text-decoration: none;
-  list-style: none;
-  color: #5c667e;
+.inventoryItemMobTxt {
+  display: flex;
+  justify-content: space-between;
 }
-@media (min-width: 80rem) {
-  .inventoryItemTabDes {
-    grid-template-columns: 0.8fr 1fr 1fr 0.5fr 1fr 0.3fr;
-  }
+.inventoryItemMobTxt__left {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
-.inventoryItemTabDes__li--arrowIcn {
+.inventoryItemMobTxt__right {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.inventoryItemMobTxt__arrowIcn {
   transition: transform 0.3s ease;
   width: 1.2rem;
 }
-.inventoryItemTabDes__li--arrowIcn:hover {
+.inventoryItemMobTxt__arrowIcn:hover {
   cursor: pointer;
   transform: translateX(4px);
 }
-.inventoryItemTabDes__li--withIcn {
+.inventoryItemMobTxt__titleAndItem--label {
+  color: #5c667e;
+  font-size: 1rem;
+}
+.inventoryItemMobTxt__titleAndItem--item {
+  font-size: 1rem;
+}
+.inventoryItemMobTxt__titleAndItem--item-withArrow {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
-.inventoryItemTabDes__li--status {
+.inventoryItemMobTxt__titleAndItem--itemStatus {
   height: 1.5rem;
   width: 8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.815rem;
   font-weight: 600;
+  font-size: 0.815rem;
   border-radius: 50rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-transform: uppercase;
 }
-.inventoryItemTabDes__li--status-inStock {
+.inventoryItemMobTxt__titleAndItem--itemStatus-inStock {
   background-color: rgb(184, 218, 208);
   color: #158463;
 }
-.inventoryItemTabDes__li--status-outOfStock {
+.inventoryItemMobTxt__titleAndItem--itemStatus-outOfStock {
   background-color: rgb(251, 242, 238);
   color: #c94515;
 }
-.inventoryItemTabDes__li--delAnEdIcn {
+
+.inventoryItemMobIcons {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  margin-top: 1rem;
 }
-.inventoryItemTabDes__li--delAnEdIcn-icon {
+.inventoryItemMobIcons-icon {
   width: 1.5rem;
   cursor: pointer;
 }
