@@ -2,16 +2,17 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import './App.scss';
 import InventoryMainPage from './pages/InventoryMainPage/InventoryMainPage';
 import InvetoryItemDetailPage from './pages/InvetoryItemDetailPage/InvetoryItemDetailPage';
-import InventoryEditItemPage from './pages/InventoryEditItemPage/InventoryEditItemPage';
 import InventoryAddNewPage from './pages/InventoryAddNewPage/InventoryAddNewPage';
+import WarehousePage from './pages/WarehousePage/WarehousePage';
+
 function App() {
   return (
     <main>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Navigate to="/warehouses" />} />
-          {/* <Route path="/warehouses" element={<WarehousesPage />} />
-          <Route
+          <Route path="/warehouses" element={<WarehousePage />} />
+          {/* <Route
             path="/warehouses/:warehouseid"
             element={<WarehouseDetailsPage />}
           />

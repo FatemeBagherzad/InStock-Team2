@@ -1,8 +1,6 @@
-
 @use './fonts' as *;
 @use './variables' as *;
 @use './mixins' as *;
-
 
 * {
   margin: 0;
@@ -17,7 +15,6 @@ a:focus,
 a:active {
   text-decoration: none;
 }
-
 
 h1 {
   font-size: 28px;
@@ -84,6 +81,8 @@ button {
   @include tablet {
     font-size: 0.75rem;
     line-height: 1.125rem;
+  }
+}
 
 .container {
   padding-left: 1.5rem;
@@ -97,6 +96,5 @@ button {
   @include desktop {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
-
   }
 }
