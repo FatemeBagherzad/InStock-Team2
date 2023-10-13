@@ -9,6 +9,8 @@
   gap: 0.5rem;
   padding-top: 2rem;
   padding-bottom: 1.5rem;
+  border-bottom: 1px solid $secondary-color-Cloud;
+
   @include tablet {
     flex-direction: row;
     justify-content: space-between;

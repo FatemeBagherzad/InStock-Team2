@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import './InputAllTextType.scss';
 
-const InputAllTextType = ({ type, value, label, items }) => {
+const InputAllTextType = ({ type, value, label, allWarehouses }) => {
   const ref = useRef(null);
   let input;
 
@@ -61,18 +61,13 @@ const InputAllTextType = ({ type, value, label, items }) => {
     );
   } else if (type === 'dropDown') {
     input = (
-      <select
-        name={label}
-        className="inputs inputs__dropdown"
-        value=""
-        onChange=""
-      >
+      <select name={label} className="inputs inputs__dropdown" value="">
         <option value="" hidden>
           Please select
         </option>
-        {items.map((item, index) => (
-          <option key={index} value={item}>
-            {item}
+        {allWarehouses.map((warehouse, index) => (
+          <option key={index} value={warehouse.warehouse_name}>
+            {warehouse.warehouse_name}
           </option>
         ))}
       </select>

@@ -1,9 +1,11 @@
+import { Link, useNavigate } from 'react-router-dom';
 import './InventoryItemMob.scss';
 import arrowIcon from '../../assets/Icons/chevron_right-24px.svg';
 import deleteIcon from '../../assets/Icons/delete_outline-24px.svg';
 import editIcon from '../../assets/Icons/edit-24px.svg';
 
-const InventoryItemMob = ({ data }) => {
+const InventoryItemMob = ({ inventory }) => {
+  const navigate = useNavigate();
   return (
     <div className="container ">
       <div className="InventoryItemMobDisplay">
@@ -13,8 +15,11 @@ const InventoryItemMob = ({ data }) => {
               <p className="inventoryItemMobTxt__titleAndItem--label">
                 INVENTORY ITEM
               </p>
-              <p className="inventoryItemMobTxt__titleAndItem--item inventoryItemMobTxt__titleAndItem--item-withArrow">
-                {data.item_name}{' '}
+              <p
+                className="inventoryItemMobTxt__titleAndItem--item inventoryItemMobTxt__titleAndItem--item-withArrow"
+                onClick={() => navigate(`/inventory/${inventory.id}`)}
+              >
+                {inventory.item_name}{' '}
                 <img
                   className="inventoryItemMobTxt__arrowIcn"
                   src={arrowIcon}
@@ -27,7 +32,7 @@ const InventoryItemMob = ({ data }) => {
                 CATEGORY
               </p>
               <p className="inventoryItemMobTxt__titleAndItem--item">
-                {data.category}
+                {inventory.category}
               </p>
             </div>
           </div>
@@ -36,18 +41,18 @@ const InventoryItemMob = ({ data }) => {
               <p className="inventoryItemMobTxt__titleAndItem--label">STATUS</p>
               <p
                 className={`inventoryItemMobTxt__titleAndItem--itemStatus  ${
-                  data.quantity > 0
+                  inventory.quantity > 0
                     ? 'inventoryItemMobTxt__titleAndItem--itemStatus-inStock'
                     : 'inventoryItemMobTxt__titleAndItem--itemStatus-outOfStock'
                 }    `}
               >
-                {data.status}
+                {inventory.status}
               </p>
             </div>
             <div className="inventoryItemMobTxt__titleAndItem">
               <p className="inventoryItemMobTxt__titleAndItem--label">QTY</p>
               <p className="inventoryItemMobTxt__titleAndItem--item ">
-                {data.quantity}
+                {inventory.quantity}
               </p>
             </div>
             <div className="inventoryItemMobTxt__titleAndItem">
