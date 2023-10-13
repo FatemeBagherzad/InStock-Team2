@@ -1,0 +1,45 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/global' as *;
+
+.button {
+  background-color: $primary-color-Instock-Indigo;
+  color: $primary-color-White;
+  border-color: transparent;
+  cursor: pointer;
+  height: 2.25rem;
+  border-radius: 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  width: 100%;
+  @include tablet {
+    width: fit-content;
+    height: 2.375rem;
+    // min-width: 0;
+    padding: 0 1rem;
+  }
+  &:hover {
+    background-color: $background-color-Graphite;
+  }
+
+  &--cancel {
+    background-color: $primary-color-White;
+    color: $primary-color-Instock-Black;
+    border-color: $secondary-color-Slate;
+    &:hover {
+      border-color: $primary-color-Instock-Indigo;
+      color: $primary-color-Instock-Indigo;
+      background-color: $primary-color-White;
+    }
+  }
+  &--delete {
+    background-color: $supporting-color-Red;
+    color: $primary-color-White;
+    border-color: transparent;
+    &:hover {
+      background-color: $background-color-Graphite;
+    }
+  }
+}
