@@ -30,9 +30,7 @@ const InventoryNewItemForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setErr({});
-    console.log(allWarehouses);
-    console.log(event.target.warehouse.value);
-
+    console.log(event.target.value);
     if (event.target.warehouse.value === 'Please select') {
       alert('Pleate choose a warehouse from the menu!!');
       return;
@@ -43,54 +41,56 @@ const InventoryNewItemForm = () => {
     );
 
     const newInventoryObj = {
-      inventory_name: event.target.name.value,
-      description: event.target.description.value,
-      status: event.target.status.value,
-      quantity: event.target.quantity?.value || '0',
-      category: event.target.category.value,
       warehouse_id: warehousechosen.id,
+      item_name: event.target.name.value,
+      description: event.target.description.value,
+      category: event.target.category.value,
+      status: event.target.status.value,
+      quantity: Number(event.target.quantity?.value) || 0,
     };
 
     //handle form errors
-    let formErorr = {};
 
     if (!newInventoryObj.warehouse_id) {
-      formErorr['warehouse'] = 'one warehouse must be chosen!';
+      err['warehouse'] = 'one warehouse must be chosen!';
+      return;
     }
-    if (
-      (newInventoryObj.status = 'Out of Stock') &&
-      parseInt(newInventoryObj.quantity) > 0
-    ) {
-      formErorr['quantity'] = 'Status and quantity must match!';
-      alert('Status and quantity must match!');
+    if ((newInventoryObj.status = 'Out of Stock')) {
+      newInventoryObj.quantity = 0;
     }
     if (
       (newInventoryObj.status = 'In Stock') &&
-      parseInt(newInventoryObj.quantity) <= 0
+      parseInt(newInventoryObj.quantity) < 0
     ) {
-      formErorr['quantity'] = 'Status and quantity must match!';
-      alert('Status and quantity must match!');
-    }
-    if (
-      isNaN(newInventoryObj.quantity) ||
-      parseInt(newInventoryObj.quantity) < 0 ||
-      !newInventoryObj.quantity
-    ) {
-      formErorr['quantity'] = 'Inventory quantity must be >0!';
-      alert('Inventory quantity must be a positive number or 0 !');
-    }
-    if (
-      !newInventoryObj.inventory_name ||
-      !newInventoryObj.description ||
-      !newInventoryObj.category
-    )
-      formErorr['nameORdescriptionORcategory'] = 'All field should be filled!';
-    if (Object.keys(formErorr).length !== 0) {
+      err['quantity'] = 'Status and quantity must match!';
       alert(
-        `Please check all the fields again:\n1-one warehouse must be chosen!\n2-Status and quantity must match!\n3-Inventory quantity must be >0!\n4-Inventory name and description and category must be filled!`
+        'This Inventory is in stock. the Quantity must be bigger that zero!'
       );
       return;
     }
+    if (
+      !newInventoryObj.item_name ||
+      !newInventoryObj.description ||
+      !newInventoryObj.category
+    ) {
+      err['nameORdescriptionORcategory'] = 'All field should be filled!';
+      return;
+    }
+    if (Object.keys(err).length !== 0) {
+      alert(
+        `Please check all the fields again:\n1-One warehouse must be chosen!\n2-Status and quantity must match!\n3-Inventory quantity must be >0!\n4-Inventory name and description and category must be filled!`
+      );
+      return;
+    }
+    console.log(newInventoryObj);
+
+    axios
+      .post('http://localhost:8888/inventory', newInventoryObj)
+      .then((response) => {
+        event.target.reset();
+        alert('New Inventory added successfully!');
+        navigate('/inventory');
+      });
   };
 
   return (
