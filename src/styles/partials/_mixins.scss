@@ -20,3 +20,10 @@
     @content;
   }
 }
+
+@mixin textStyle($color, $font-size, $line-height, $font-weight) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  color: $color;
+}
