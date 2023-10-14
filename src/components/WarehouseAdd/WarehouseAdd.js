@@ -135,7 +135,7 @@ class WarehouseAdd extends Component {
                         className="error__icon"
                       />
                       <p className="error__text">This field is required</p>
-                    </div>
+                    </div>)
                   }
 
                   <label className="warehouse-add__form-label">
@@ -156,7 +156,7 @@ class WarehouseAdd extends Component {
                         className="error__icon"
                       />
                       <p className="error__text">This field is required</p>
-                    </div>
+                    </div>)
                   }
 
                   <label className="warehouse-add__form-label">
@@ -177,7 +177,7 @@ class WarehouseAdd extends Component {
                         className="error__icon"
                       />
                       <p className="error__text">This field is required</p>
-                    </div>
+                    </div>)
                   }
 
                   <label className="warehouse-add__form-label">
@@ -198,7 +198,7 @@ class WarehouseAdd extends Component {
                         className="error__icon"
                       />
                       <p className="error__text">This field is required</p>
-                    </div>
+                    </div>)
                   }
                 </div>
               </div>
@@ -224,7 +224,7 @@ class WarehouseAdd extends Component {
                         className="error__icon"
                       />
                       <p className="error__text">This field is required</p>
-                    </div>
+                    </div>)
                   }
 
                   <label className="warehouse-add__form-label">
@@ -245,7 +245,7 @@ class WarehouseAdd extends Component {
                         className="error__icon"
                       />
                       <p className="error__text">This field is required</p>
-                      </div>
+                      </div>)
                     }
   
                     <label className="warehouse-add__form-label">
@@ -265,7 +265,7 @@ class WarehouseAdd extends Component {
                           className="error__icon"
                         />
                         <p className="error__text">Please enter a valid phone number</p>
-                      </div>
+                      </div>)
                     }
   
                     <label className="warehouse-add__form-label">
@@ -286,7 +286,7 @@ class WarehouseAdd extends Component {
                             className="error__icon"
                           />
                           <p className="error__text">Please enter a valid email address</p>
-                        </div>
+                        </div>)
                       }
                     </div>
                   </div>

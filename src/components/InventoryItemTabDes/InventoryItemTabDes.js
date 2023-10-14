@@ -1,8 +1,8 @@
-import { Link, useNavigate } from 'react-router-dom';
-import './InventoryItemTabDes.scss';
-import arrowIcon from '../../assets/Icons/chevron_right-24px.svg';
-import deleteIcon from '../../assets/Icons/delete_outline-24px.svg';
-import editIcon from '../../assets/Icons/edit-24px.svg';
+import { Link, useNavigate } from "react-router-dom";
+import "./InventoryItemTabDes.scss";
+import arrowIcon from "../../assets/Icons/chevron_right-24px.svg";
+import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
+import editIcon from "../../assets/Icons/edit-24px.svg";
 
 const InventoryItemTabDes = ({ inventory }) => {
   const navigate = useNavigate();
@@ -13,9 +13,8 @@ const InventoryItemTabDes = ({ inventory }) => {
         <ul className="inventoryItemTabDes">
           <li
             className="inventoryItemTabDes__li inventoryItemTabDes__li--withIcn"
-            onClick={() => navigate(`/inventory/${inventory.id}`)}
-          >
-            {inventory.item_name}{' '}
+            onClick={() => navigate(`/inventory/${inventory.id}`)}>
+            {inventory.item_name}{" "}
             <img
               className="inventoryItemTabDes__li--arrowIcn "
               src={arrowIcon}
@@ -27,10 +26,9 @@ const InventoryItemTabDes = ({ inventory }) => {
             <div
               className={`inventoryItemTabDes__li--status  ${
                 inventory.quantity > 0
-                  ? 'inventoryItemTabDes__li--status-inStock'
-                  : 'inventoryItemTabDes__li--status-outOfStock'
-              }`}
-            >
+                  ? "inventoryItemTabDes__li--status-inStock"
+                  : "inventoryItemTabDes__li--status-outOfStock"
+              }`}>
               {inventory.status}
             </div>
           </li>

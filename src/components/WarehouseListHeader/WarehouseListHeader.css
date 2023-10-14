@@ -138,10 +138,39 @@ button {
   }
 }
 
-.inventoryAddNewPage {
-  max-width: 80rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 10px #bdc5d5;
-  margin: 5rem auto;
-  padding-bottom: 2rem;
+.WarehouseListHeaderDisplay {
+  display: none;
+}
+@media (min-width: 768px) {
+  .WarehouseListHeaderDisplay {
+    display: block;
+    border-bottom: 1px solid #bdc5d5;
+    background-color: #f7f8f9;
+    padding: 1rem 0;
+    padding: 0.75rem 1rem;
+  }
+}
+
+.WarehouseListHeader {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr 1fr 0.5fr 1fr 0.4fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  text-decoration: none;
+  list-style: none;
+  font-size: 0.7rem;
+  color: #5c667e;
+}
+@media (min-width: 1280px) {
+  .WarehouseListHeader {
+    grid-template-columns: 0.8fr 1fr 1fr 0.5fr 1fr 0.3fr;
+  }
+}
+.WarehouseListHeader__titleAndIcn {
+  display: flex;
+  align-items: center;
+}
+.WarehouseListHeader__titleAndIcn--icon {
+  width: 1.5rem;
+  cursor: pointer;
 }
