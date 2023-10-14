@@ -43,7 +43,7 @@
   &--cancel {
     background-color: $primary-color-White;
     color: $primary-color-Instock-Black;
-    border-color: $secondary-color-Slate;
+    border: 1px SOLID $background-color-Graphite;
     &:hover {
       border-color: $primary-color-Instock-Indigo;
       color: $primary-color-Instock-Indigo;

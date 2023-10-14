@@ -4,7 +4,7 @@ import arrowIcon from '../../assets/Icons/chevron_right-24px.svg';
 import deleteIcon from '../../assets/Icons/delete_outline-24px.svg';
 import editIcon from '../../assets/Icons/edit-24px.svg';
 
-const InventoryItemMob = ({ inventory }) => {
+const InventoryItemMob = ({ inventory, handleClick }) => {
   const navigate = useNavigate();
   return (
     <div className=" ">
@@ -66,16 +66,23 @@ const InventoryItemMob = ({ inventory }) => {
           </div>
         </div>
         <div className="inventoryItemMobIcons">
-          <img
-            className="inventoryItemMob__icon"
-            src={deleteIcon}
-            alt="delete icon"
-          />
-          <img
-            className="inventoryItemMob__icon"
-            src={editIcon}
-            alt="edit icon"
-          />
+          <Link to={''}>
+            <img
+              className="inventoryItemMob__icon"
+              src={deleteIcon}
+              alt="delete icon"
+              onClick={() =>
+                handleClick(true, inventory.id, inventory.item_name)
+              }
+            />
+          </Link>
+          <Link to={`/inventory/${inventory.id}/edit`}>
+            <img
+              className="inventoryItemMob__icon"
+              src={editIcon}
+              alt="edit icon"
+            />
+          </Link>
         </div>
       </div>
     </div>

@@ -5,16 +5,13 @@ import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 import axios from 'axios';
 import './InventoryMainPage.scss';
+import InventoryDeletePage from '../InventoryDeletePage/InventoryDeletePage';
 
 const InventoryMainPage = () => {
   const [allInvetories, setAllInvetories] = useState([]);
-  const [allWarehouses, setAllWarehouses] = useState([]);
-
-  useEffect(() => {
-    axios.get('http://localhost:8888/warehouses').then((response) => {
-      setAllWarehouses(response.data);
-    });
-  }, []);
+  const [show, setShow] = useState(false);
+  const [id, setId] = useState('');
+  const [inventoryName, setInventoryName] = useState('');
 
   useEffect(() => {
     axios.get('http://localhost:8888/inventory').then((response) => {
@@ -22,8 +19,28 @@ const InventoryMainPage = () => {
     });
   }, []);
 
+  const handleClick = (status, inventoryId, inventoryName) => {
+    console.log(inventoryId);
+    setShow(status);
+    setId(inventoryId);
+    setInventoryName(inventoryName);
+  };
+
+  const close = () => {
+    axios
+      .get('http://localhost:8888/inventory')
+      .then((response) => {
+        setAllInvetories(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    //get the data again
+    setShow(false);
+  };
+
   return (
-    <body>
+    <main>
       <Header />
       <div className="mainInventoryPageBody container">
         <PageHeader
@@ -31,10 +48,19 @@ const InventoryMainPage = () => {
           type="search"
           btnTxt="+Add A New Inventory"
         />
-        <InventoryList allInvetories={allInvetories} />
+        <InventoryList
+          allInvetories={allInvetories}
+          handleClick={handleClick}
+        />
       </div>
       <Footer />
-    </body>
+      <InventoryDeletePage
+        show={show}
+        inventoryName={inventoryName}
+        inventoryId={id}
+        onClose={close}
+      />
+    </main>
   );
 };
 
