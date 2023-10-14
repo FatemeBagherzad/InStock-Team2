@@ -3,15 +3,15 @@ import './App.scss';
 import InventoryMainPage from './pages/InventoryMainPage/InventoryMainPage';
 import InvetoryItemDetailPage from './pages/InvetoryItemDetailPage/InvetoryItemDetailPage';
 import InventoryAddNewPage from './pages/InventoryAddNewPage/InventoryAddNewPage';
-import WarehousePage from './pages/WarehousePage/WarehousePage';
+// import WarehousePage from './pages/WarehousePage/WarehousePage';
 
 function App() {
   return (
     <main>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to="/warehouses" />} />
-          <Route path="/warehouses" element={<WarehousePage />} />
+          {/* <Route path="/" element={<Navigate to="/warehouses" />} />
+          <Route path="/warehouses" element={<WarehousePage />} /> */}
           {/* <Route
             path="/warehouses/:warehouseid"
             element={<WarehouseDetailsPage />}
