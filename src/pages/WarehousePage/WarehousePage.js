@@ -3,7 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import WarehouseList from "../../components/WarehouseList/WarehouseList";
-import WarehouseItemMore from "../../components/WarehouseItemDetail/WarehouseItemDetail";
+// import WarehouseItemMore from "../../components/InvetoryItemDetail/InvetoryItemDetail";
 
 const WarehousePage = () => {
   const [allWarehouses, setAllWarehouses] = useState([]);
@@ -15,12 +15,14 @@ const WarehousePage = () => {
   const [allInvetories, setAllInvetories] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:8888/warehouses/` + warehouseid)
-      .then((response) => {
-        setWarehouse(response.data);
-        console.log(response.data);
-      });
+    if (warehouseid) {
+      axios
+        .get(`http://localhost:8888/warehouses/` + warehouseid)
+        .then((response) => {
+          setWarehouse(response.data);
+          console.log(response.data);
+        });
+    }
   }, [warehouseid]);
 
   useEffect(() => {
