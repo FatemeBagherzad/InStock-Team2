@@ -7,7 +7,7 @@ import editIcon from '../../assets/Icons/edit-24px.svg';
 const InventoryItemMob = ({ inventory }) => {
   const navigate = useNavigate();
   return (
-    <div className="container ">
+    <div className=" ">
       <div className="InventoryItemMobDisplay">
         <div className="inventoryItemMobTxt">
           <div className="inventoryItemMobTxt__left">

@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
-import InventoryItemMore from '../../components/InvetoryItemDetail/InvetoryItemDetail';
 import InventoryList from '../../components/InventoryList/InventoryList';
 import PageHeader from '../../components/PageHeader/PageHeader';
+import Header from '../../components/header/Header';
+import Footer from '../../components/footer/Footer';
 import axios from 'axios';
+import './InventoryMainPage.scss';
 
 const InventoryMainPage = () => {
   const [allInvetories, setAllInvetories] = useState([]);
@@ -21,14 +23,18 @@ const InventoryMainPage = () => {
   }, []);
 
   return (
-    <>
-      <PageHeader
-        pageTitle="Invetories"
-        type="search"
-        btnTxt="+Add A New Inventory"
-      />
-      <InventoryList allInvetories={allInvetories} />
-    </>
+    <body>
+      <Header />
+      <div className="mainInventoryPageBody container">
+        <PageHeader
+          pageTitle="Invetories"
+          type="search"
+          btnTxt="+Add A New Inventory"
+        />
+        <InventoryList allInvetories={allInvetories} />
+      </div>
+      <Footer />
+    </body>
   );
 };
 

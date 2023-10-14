@@ -138,10 +138,28 @@ button {
   }
 }
 
-.inventoryAddNewPage {
-  max-width: 80rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 10px #bdc5d5;
-  margin: 5rem auto;
-  padding-bottom: 2rem;
+.footer {
+  max-width: 100%;
+  background-color: #232940;
+  color: #bdc5d5;
+  margin: 0;
+}
+
+.footer p {
+  margin-left: 25%;
+  padding-bottom: 10px;
+}
+@media (min-width: 768px) {
+  .footer p {
+    margin-left: 35%;
+  }
+}
+@media (min-width: 1280px) {
+  .footer p {
+    margin-left: 40%;
+  }
+}
+
+.footer__logo {
+  padding-bottom: 20px;
 }

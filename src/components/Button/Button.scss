@@ -6,11 +6,11 @@
 .button {
   background-color: $primary-color-Instock-Indigo;
   color: $primary-color-White;
-  border-color: transparent;
+  border: none;
   cursor: pointer;
   height: 2.25rem;
   border-radius: 1.25rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
   text-transform: capitalize;
   width: 100%;
@@ -24,6 +24,22 @@
     background-color: $background-color-Graphite;
   }
 
+  &--headerBtn {
+    border: none;
+    color: $secondary-color-Cloud;
+    background-color: transparent;
+    text-align: center;
+    &:hover {
+      text-decoration: underline;
+    }
+    &:active,
+    &:focus,
+    &:visited {
+      color: $primary-color-White;
+      background-color: $primary-color-Instock-Black;
+    }
+  }
+
   &--cancel {
     background-color: $primary-color-White;
     color: $primary-color-Instock-Black;
@@ -34,6 +50,7 @@
       background-color: $primary-color-White;
     }
   }
+
   &--delete {
     background-color: $supporting-color-Red;
     color: $primary-color-White;

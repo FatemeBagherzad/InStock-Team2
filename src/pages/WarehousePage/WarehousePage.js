@@ -1,11 +1,13 @@
 import React from 'react';
 import WarehouseList from '../../components/WarehouseList/WarehouseList'; //WarehouseList from Andy's should come here
+import Header from '../../components/header/Header';
 import './WarehousePage.scss';
 
 class WarehousePage extends React.Component {
   render() {
     return (
       <div className="warehouse-page">
+        <Header />
         <div className="warehouse-page__container">
           <WarehouseList
             searchTerm={this.props.searchTerm}

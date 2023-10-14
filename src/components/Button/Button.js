@@ -7,6 +7,8 @@ const Button = ({ btnTxt, onClick }) => {
     classbtn = 'cancel';
   } else if (btnTxt === 'delete') {
     classbtn = 'delete';
+  } else if (btnTxt === 'Warehouses' || btnTxt === 'Inventory') {
+    classbtn = 'headerBtn';
   } else {
     classbtn = '';
   }
