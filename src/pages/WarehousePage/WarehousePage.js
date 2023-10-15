@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import PageHeader from '../../components/PageHeader/PageHeader';
 import WarehouseList from '../../components/WarehouseList/WarehouseList';
+import './WarehousePage.scss';
 
 const WarehousePage = () => {
   const [allWarehouses, setAllWarehouses] = useState([]);
@@ -11,7 +12,8 @@ const WarehousePage = () => {
 
   useEffect(() => {
     // Fetch warehouses
-    axios.get('http://localhost:8888/warehouses')
+    axios
+      .get('http://localhost:8888/warehouses')
       .then((response) => {
         console.log(response.data);
         setAllWarehouses(response.data);
@@ -24,9 +26,9 @@ const WarehousePage = () => {
       });
 
     // Fetch inventories
-    axios.get('http://localhost:8888/inventory')
+    axios
+      .get('http://localhost:8888/inventory')
       .then((response) => {
-        
         setAllInventories(response.data);
       })
       .catch((error) => {
@@ -46,14 +48,14 @@ const WarehousePage = () => {
   }
 
   return (
-    <>
+    <div className="warehousePage container">
       <PageHeader
         pageTitle="Warehouses"
         type="search"
         btnTxt="+ Add A New Warehouse"
       />
       <WarehouseList allWarehouses={allWarehouses} />
-    </>
+    </div>
   );
 };
 

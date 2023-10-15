@@ -4,11 +4,7 @@ import arrowIcon from '../../assets/Icons/chevron_right-24px.svg';
 import deleteIcon from '../../assets/Icons/delete_outline-24px.svg';
 import editIcon from '../../assets/Icons/edit-24px.svg';
 
-const InventoryItemMob = ({
-  inventory,
-  handleDeleteClick,
-  handleEditClick,
-}) => {
+const InventoryItemMob = ({ inventory, handleDeleteClick }) => {
   const navigate = useNavigate();
 
   // // Function to handle the edit icon click

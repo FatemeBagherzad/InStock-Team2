@@ -153,10 +153,10 @@ const InventoryNewItemForm = () => {
       <div className="InventoryNewItemForm__btns">
         <Button
           type="cancel"
-          btnTxt="CANCEL"
+          btnTxt="Cancel"
           onClick={() => navigate('/inventory')}
         />
-        <Button type="submit" btnTxt="+ ADD INVENTORY" />
+        <Button type="submit" btnTxt="+ Add item" />
       </div>
     </form>
   );

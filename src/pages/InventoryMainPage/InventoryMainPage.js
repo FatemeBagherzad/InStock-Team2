@@ -1,12 +1,9 @@
 import { useEffect, useState } from 'react';
 import InventoryList from '../../components/InventoryList/InventoryList';
 import PageHeader from '../../components/PageHeader/PageHeader';
-import Header from '../../components/header/Header';
-import Footer from '../../components/footer/Footer';
 import axios from 'axios';
 import './InventoryMainPage.scss';
 import InventoryDeletePage from '../InventoryDeletePage/InventoryDeletePage';
-import InventoryEditItemPage from '../InventoryEditItemPage/InventoryEditItemPage';
 
 const InventoryMainPage = () => {
   const [allInvetories, setAllInvetories] = useState([]);
@@ -27,11 +24,6 @@ const InventoryMainPage = () => {
     setInventoryName(inventoryName);
   };
 
-  const handleEditClick = (status, inventoryId, inventoryName, inventory) => {
-    // setShow(status);
-    // setId(inventoryId);
-    // setInventoryName(inventoryName);
-  };
   const close = () => {
     axios
       .get('http://localhost:8888/inventory')
@@ -56,7 +48,6 @@ const InventoryMainPage = () => {
         <InventoryList
           allInvetories={allInvetories}
           handleDeleteClick={handleDeleteClick}
-          handleEditClick={handleEditClick}
         />
       </div>
       <InventoryDeletePage
@@ -65,7 +56,6 @@ const InventoryMainPage = () => {
         inventoryId={id}
         onClose={close}
       />
-      <InventoryEditItemPage />
     </main>
   );
 };

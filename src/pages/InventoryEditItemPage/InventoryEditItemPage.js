@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import './InventoryEditItemPage.scss';
 
 import PageHeader from '../../components/PageHeader/PageHeader';
 import InventoryEditItem from '../../components/InventoryEditItem/InventoryEditItem';
