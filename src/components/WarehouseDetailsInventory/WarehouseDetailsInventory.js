@@ -7,20 +7,21 @@ import "./WarehouseDetailsInventory.scss";
 
 function WarehouseDetailsInventory() {
   const [warehouseInventory, setWarehouseInventory] = useState([]);
-  const { warehouseid } = useParams();
+  const { inventoryid } = useParams();
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8888/warehouses/${warehouseid}/inventories`)
+      .get(`http://localhost:8888/warehouses/${inventoryid}/inventory`)
       .then((response) => {
         if (response.status === 200) {
           setWarehouseInventory(response.data);
+          console.log("Inventory Data:", response.data);
         }
       })
       .catch((error) => {
         console.error(error);
       });
-  }, [warehouseid]);
+  }, [inventoryid]);
 
   return (
     <div className="inventory__category-selector--wider">
