@@ -32,9 +32,12 @@ class WarehouseAdd extends Component {
 
   handlePhoneInput = (event) => {
     const phoneNumber = event.target.value;
-    const phoneNumberRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+    const phoneNumberRegex =
+      /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
 
-    this.setState({ phoneNumberError: !phoneNumber || !phoneNumberRegex.test(phoneNumber) });
+    this.setState({
+      phoneNumberError: !phoneNumber || !phoneNumberRegex.test(phoneNumber),
+    });
   };
 
   handleEmailInput = (event) => {
@@ -116,7 +119,9 @@ class WarehouseAdd extends Component {
             <div className="warehouse-add__form-wrapper">
               <div className="warehouse-add__form-left">
                 <div className="warehouse-add__form-container">
-                  <h3 className="warehouse-add__form-title">Warehouse Details</h3>
+                  <h3 className="warehouse-add__form-title">
+                    Warehouse Details
+                  </h3>
                   <label className="warehouse-add__form-label">
                     Warehouse Name
                     <input
@@ -136,7 +141,7 @@ class WarehouseAdd extends Component {
                       />
                       <p className="error__text">This field is required</p>
                     </div>
-                  }
+                  )}
 
                   <label className="warehouse-add__form-label">
                     Street Address
@@ -157,7 +162,7 @@ class WarehouseAdd extends Component {
                       />
                       <p className="error__text">This field is required</p>
                     </div>
-                  }
+                  )}
 
                   <label className="warehouse-add__form-label">
                     City
@@ -178,7 +183,7 @@ class WarehouseAdd extends Component {
                       />
                       <p className="error__text">This field is required</p>
                     </div>
-                  }
+                  )}
 
                   <label className="warehouse-add__form-label">
                     Country
@@ -199,7 +204,7 @@ class WarehouseAdd extends Component {
                       />
                       <p className="error__text">This field is required</p>
                     </div>
-                  }
+                  )}
                 </div>
               </div>
 
@@ -225,7 +230,7 @@ class WarehouseAdd extends Component {
                       />
                       <p className="error__text">This field is required</p>
                     </div>
-                  }
+                  )}
 
                   <label className="warehouse-add__form-label">
                     Position
@@ -245,69 +250,73 @@ class WarehouseAdd extends Component {
                         className="error__icon"
                       />
                       <p className="error__text">This field is required</p>
-                      </div>
-                    }
-  
-                    <label className="warehouse-add__form-label">
-                      Phone Number
-                      <input
-                        name="phone"
-                        placeholder="Phone Number"
-                        className="warehouse-add__form-input"
-                        onChange={this.handlePhoneInput}
-                      />
-                    </label>
-                    {phoneNumberError && (
-                      <div className="error">
-                        <img
-                          src={errorIcon}
-                          alt="Error Icon"
-                          className="error__icon"
-                        />
-                        <p className="error__text">Please enter a valid phone number</p>
-                      </div>
-                    }
-  
-                    <label className="warehouse-add__form-label">
-                      Email
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="Email"
-                        className="warehouse-add__form-input"
-                        onChange={this.handleEmailInput}
-                      />
-                    </label>
-                    {emailError && (
-                        <div className="error">
-                          <img
-                            src={errorIcon}
-                            alt="Error Icon"
-                            className="error__icon"
-                          />
-                          <p className="error__text">Please enter a valid email address</p>
-                        </div>
-                      }
                     </div>
-                  </div>
+                  )}
+
+                  <label className="warehouse-add__form-label">
+                    Phone Number
+                    <input
+                      name="phone"
+                      placeholder="Phone Number"
+                      className="warehouse-add__form-input"
+                      onChange={this.handlePhoneInput}
+                    />
+                  </label>
+                  {phoneNumberError && (
+                    <div className="error">
+                      <img
+                        src={errorIcon}
+                        alt="Error Icon"
+                        className="error__icon"
+                      />
+                      <p className="error__text">
+                        Please enter a valid phone number
+                      </p>
+                    </div>
+                  )}
+
+                  <label className="warehouse-add__form-label">
+                    Email
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email"
+                      className="warehouse-add__form-input"
+                      onChange={this.handleEmailInput}
+                    />
+                  </label>
+                  {emailError && (
+                    <div className="error">
+                      <img
+                        src={errorIcon}
+                        alt="Error Icon"
+                        className="error__icon"
+                      />
+                      <p className="error__text">
+                        Please enter a valid email address
+                      </p>
+                    </div>
+                  )}
                 </div>
-    
-                <div className="buttons">
-                  <div className="buttons__container">
-                    <button onClick={this.redirectToHome} className="button">
-                      Cancel
-                    </button>
-    
-                    <button className="button button--special" type="submit">
-                      + Add Warehouse
-                    </button>
-                  </div>
-                </div>
-              </form>
+              </div>
             </div>
-          </section>
-        );
-      }
-    }
-    
-    export default WarehouseAdd;
+
+            <div className="buttons">
+              <div className="buttons__container">
+                <button onClick={this.redirectToHome} className="button">
+                  Cancel
+                </button>
+
+                <button className="button button--special" type="submit">
+                  + Add Warehouse
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    );
+  }
+}
+
+export default WarehouseAdd;

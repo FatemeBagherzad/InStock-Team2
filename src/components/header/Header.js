@@ -1,6 +1,7 @@
 import "../header/Header.scss";
 import Logo from "./Logo";
 import Button from "../Button/Button";
+import React from "react";
 
 function Header() {
   return (

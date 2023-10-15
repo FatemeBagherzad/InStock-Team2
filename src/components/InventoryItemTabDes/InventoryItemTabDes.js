@@ -1,11 +1,16 @@
-import { Link, useNavigate } from 'react-router-dom';
-import './InventoryItemTabDes.scss';
-import arrowIcon from '../../assets/Icons/chevron_right-24px.svg';
-import deleteIcon from '../../assets/Icons/delete_outline-24px.svg';
-import editIcon from '../../assets/Icons/edit-24px.svg';
+import { Link, useNavigate } from "react-router-dom";
+import "./InventoryItemTabDes.scss";
+import arrowIcon from "../../assets/Icons/chevron_right-24px.svg";
+import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
+import editIcon from "../../assets/Icons/edit-24px.svg";
 
 const InventoryItemTabDes = ({ inventory }) => {
   const navigate = useNavigate();
+
+  // Function to handle the edit icon click
+  const handleEditClick = () => {
+    navigate(`/inventory/edit/${inventory.id}`);
+  };
 
   return (
     <>
@@ -15,7 +20,7 @@ const InventoryItemTabDes = ({ inventory }) => {
             className="inventoryItemTabDes__li inventoryItemTabDes__li--withIcn"
             onClick={() => navigate(`/inventory/${inventory.id}`)}
           >
-            {inventory.item_name}{' '}
+            {inventory.item_name}{" "}
             <img
               className="inventoryItemTabDes__li--arrowIcn "
               src={arrowIcon}
@@ -27,8 +32,8 @@ const InventoryItemTabDes = ({ inventory }) => {
             <div
               className={`inventoryItemTabDes__li--status  ${
                 inventory.quantity > 0
-                  ? 'inventoryItemTabDes__li--status-inStock'
-                  : 'inventoryItemTabDes__li--status-outOfStock'
+                  ? "inventoryItemTabDes__li--status-inStock"
+                  : "inventoryItemTabDes__li--status-outOfStock"
               }`}
             >
               {inventory.status}
@@ -47,6 +52,7 @@ const InventoryItemTabDes = ({ inventory }) => {
                 className="inventoryItemTabDes__li--delAnEdIcn-icon"
                 src={editIcon}
                 alt="edit icon"
+                onClick={handleEditClick}
               />
             </div>
           </li>
