@@ -5,7 +5,8 @@ import InvetoryItemDetailPage from "./pages/InvetoryItemDetailPage/InvetoryItemD
 import InventoryAddNewPage from "./pages/InventoryAddNewPage/InventoryAddNewPage";
 import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import WarehouseAddNewPage from "./pages/WarehouseAddNewPage/WarehouseAddNewPage";
-// import WarehouseEditPage from "./pages/WarehouseEditPage/WarehouseEditPage";
+import WarehouseEditPage from "./pages/WarehouseEdit/WarehouseEdit";
+import WarehouseDetailsPage from "./pages/WarehouseDetailPage/WarehouseDetailPage";
 
 function App() {
   return (
@@ -14,14 +15,14 @@ function App() {
         <Routes>
           <Route path="/warehouses" element={<WarehousePage />} />
           <Route path="/" element={<WarehousePage />} />
-          {/* <Route
+          <Route
             path="/warehouses/:warehouseid"
             element={<WarehouseDetailsPage />}
-          />*/}
-          {/* <Route
+          />
+          <Route
             path="/warehouses/:warehouseid/edit"
             element={<WarehouseEditPage />}
-          /> */}
+          />
           <Route path="/warehouses/new" element={<WarehouseAddNewPage />} />
           <Route path="/inventory" element={<InventoryMainPage />} />
           <Route

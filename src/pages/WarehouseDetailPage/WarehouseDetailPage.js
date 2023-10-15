@@ -3,7 +3,7 @@ import WarehouseDetailsHeader from "../../components/WarehouseDetailsHeader/Ware
 
 import "./WarehouseDetailPage.scss";
 
-function WarehouseDetails() {
+function WarehouseDetailPage() {
   return (
     <>
       <main className="details-page">
@@ -14,4 +14,4 @@ function WarehouseDetails() {
   );
 }
 
-export default WarehouseDetails;
+export default WarehouseDetailPage;

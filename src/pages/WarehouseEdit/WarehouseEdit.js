@@ -3,9 +3,9 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import backArrow from "../../assets/Icons/arrow_back-24px.svg";
-// import EditWarehouseForm from "../../components/WarehouseNewForm/WarehouseNewForm";  //This should be Edited out for Editwarehouse
+import EditWarehouseForm from "../../components/WarehouseNewForm/WarehouseNewForm"; //This should be Edited out for Editwarehouse
 
-import "./EditWarehouse.scss";
+import "./WarehouseEdit.scss";
 
 function EditWarehouse() {
   const { warehouseId } = useParams();

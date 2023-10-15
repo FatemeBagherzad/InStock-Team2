@@ -7,30 +7,33 @@ import "./WarehouseDetailsHeader.scss";
 
 function WarehouseDetailsHeader() {
   const [warehouseDetails, setWarehouseDetails] = useState(null);
-  const { warehouseId } = useParams();
+  const { warehouseid } = useParams();
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(-1); // Take user back to previous page
+    navigate(-1); // Take user back to the previous page
   };
 
-  // Make a GET request to obtain the details for a specific warehouse based on its ID
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/warehouses/${warehouseId}`)
+      .get(`http://localhost:8888/warehouses/${warehouseid}`)
       .then((response) => {
         if (response.status === 200) {
           setWarehouseDetails(response.data);
           console.log(response.data);
+        } else {
+          // Handle other response statuses here
+          console.error("Unexpected API response:", response);
         }
       })
       .catch((error) => {
         console.error("API error:", error);
       });
-  }, [warehouseId]);
+  }, [warehouseid]);
+
   if (!warehouseDetails) {
-    return <h1>This warehouse does not exist</h1>;
+    return <h1>This warehouse does not exist or an error occurred</h1>;
   }
 
   return (
@@ -57,7 +60,9 @@ function WarehouseDetailsHeader() {
       <main className="warehouse-details">
         <div className="warehouse-details__address-container">
           <h2 className="warehouse-details__heading">WAREHOUSE ADDRESS:</h2>
-          <p className="warehouse-details__info warehouse-details__address">{`${warehouseDetails.address}, ${warehouseDetails.city}, ${warehouseDetails.country}`}</p>
+          <p className="warehouse-details__info warehouse-details__address">
+            {`${warehouseDetails.address}, ${warehouseDetails.city}, ${warehouseDetails.country}`}
+          </p>
         </div>
         <div className="warehouse-details__contact-container">
           <div className="warehouse-details__contact-name-container">
