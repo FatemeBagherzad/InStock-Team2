@@ -18,7 +18,8 @@ const InventoryItemTabDes = ({ inventory, handleClick }) => {
         <ul className="inventoryItemTabDes">
           <li
             className="inventoryItemTabDes__li inventoryItemTabDes__li--withIcn"
-            onClick={() => navigate(`/inventory/${inventory.id}`)}>
+            onClick={() => navigate(`/inventory/${inventory.id}`)}
+          >
             {inventory.item_name}{" "}
             <img
               className="inventoryItemTabDes__li--arrowIcn "
@@ -33,7 +34,8 @@ const InventoryItemTabDes = ({ inventory, handleClick }) => {
                 inventory.quantity > 0
                   ? "inventoryItemTabDes__li--status-inStock"
                   : "inventoryItemTabDes__li--status-outOfStock"
-              }`}>
+              }`}
+            >
               {inventory.status}
             </div>
           </li>
@@ -41,7 +43,7 @@ const InventoryItemTabDes = ({ inventory, handleClick }) => {
           <li className="inventoryItemTabDes__li">Washington</li>
           <li className="inventoryItemTabDes__li">
             <div className="inventoryItemTabDes__li--delAnEdIcn">
-              <Link to={''}>
+              <Link to={""}>
                 <img
                   className="inventoryItemTabDes__li--delAnEdIcn-icon"
                   src={deleteIcon}
@@ -51,11 +53,12 @@ const InventoryItemTabDes = ({ inventory, handleClick }) => {
                   }
                 />
               </Link>
-              <Link to={`/inventory/${inventory.id}/edit`}>
+              <Link to={`/inventory/edit/${inventory.id}`}>
                 <img
                   className="inventoryItemTabDes__li--delAnEdIcn-icon"
                   src={editIcon}
                   alt="edit icon"
+                  onClick={handleEditClick}
                 />
               </Link>
             </div>

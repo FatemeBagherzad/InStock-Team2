@@ -72,7 +72,7 @@ const InventoryItemMob = ({ inventory, handleClick }) => {
           </div>
         </div>
         <div className="inventoryItemMobIcons">
-          <Link to={''}>
+          <Link to={""}>
             <img
               className="inventoryItemMob__icon"
               src={deleteIcon}
@@ -82,11 +82,12 @@ const InventoryItemMob = ({ inventory, handleClick }) => {
               }
             />
           </Link>
-          <Link to={`/inventory/${inventory.id}/edit`}>
+          <Link to={`/inventory/edit/${inventory.id}`}>
             <img
               className="inventoryItemMob__icon"
               src={editIcon}
               alt="edit icon"
+              onClick={handleEditClick}
             />
           </Link>
         </div>

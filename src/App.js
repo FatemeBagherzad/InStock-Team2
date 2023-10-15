@@ -5,15 +5,19 @@ import InvetoryItemDetailPage from "./pages/InvetoryItemDetailPage/InvetoryItemD
 import InventoryAddNewPage from "./pages/InventoryAddNewPage/InventoryAddNewPage";
 import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import WarehouseAddNewPage from "./pages/WarehouseAddNewPage/WarehouseAddNewPage";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+import InventoryEditItemPage from "./pages/InventoryEditItemPage/InventoryEditItemPage";
 // import WarehouseEditPage from "./pages/WarehouseEditPage/WarehouseEditPage";
-
 
 function App() {
   return (
     <main>
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/warehouses" element={<WarehousePage />} />
+          <Route path="/" element={<WarehousePage />} />
           {/* <Route path="/warehouses" element={<WarehousesPage />} />
           <Route
             path="/warehouses/:warehouseid"
@@ -29,14 +33,14 @@ function App() {
             path="/inventory/:inventoryid"
             element={<InvetoryItemDetailPage />}
           />
-          {/* <Route
-            path="/inventory/:inventoryid/edit"
+          <Route
+            path="/inventory/edit/:inventoryid"
             element={<InventoryEditItemPage />}
-          /> */}
+          />
           <Route path="/inventory/new" element={<InventoryAddNewPage />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      ;
     </main>
   );
 }

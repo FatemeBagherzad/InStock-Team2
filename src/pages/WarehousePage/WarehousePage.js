@@ -53,6 +53,7 @@ const WarehousePage = () => {
         btnTxt="+ Add A New Warehouse"
       />
       <WarehouseList allWarehouses={allWarehouses} />
+
     </>
   );
 };

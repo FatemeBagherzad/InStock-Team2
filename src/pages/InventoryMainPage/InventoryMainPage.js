@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import InventoryList from '../../components/InventoryList/InventoryList';
 import PageHeader from '../../components/PageHeader/PageHeader';
-import Header from '../../components/header/Header';
-import Footer from '../../components/footer/Footer';
+
 import axios from 'axios';
 import './InventoryMainPage.scss';
 import InventoryDeletePage from '../InventoryDeletePage/InventoryDeletePage';
@@ -41,7 +40,7 @@ const InventoryMainPage = () => {
 
   return (
     <main>
-      <Header />
+  
       <div className="mainInventoryPageBody container">
         <PageHeader
           pageTitle="Inventories"
@@ -53,7 +52,7 @@ const InventoryMainPage = () => {
           handleClick={handleClick}
         />
       </div>
-      <Footer />
+
       <InventoryDeletePage
         show={show}
         inventoryName={inventoryName}
