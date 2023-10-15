@@ -147,6 +147,9 @@ button {
     border-bottom: 1px solid #bdc5d5;
     padding: 1rem 0;
   }
+  .inventoryItemTabDesDisplay:hover {
+    background-color: #f7f8f9;
+  }
 }
 
 .inventoryItemTabDes {

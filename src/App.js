@@ -2,7 +2,6 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import './App.scss';
 import InventoryMainPage from './pages/InventoryMainPage/InventoryMainPage';
 import InvetoryItemDetailPage from './pages/InvetoryItemDetailPage/InvetoryItemDetailPage';
-import InventoryEditItemPage from './pages/InventoryEditItemPage/InventoryEditItemPage';
 import InventoryAddNewPage from './pages/InventoryAddNewPage/InventoryAddNewPage';
 import WarehousePage from './pages/WarehousePage/WarehousePage';
 import WarehouseAddNewPage from './pages/WarehouseAddNewPage/WarehouseAddNewPage';
@@ -29,6 +28,7 @@ function App() {
             path="/inventory/:inventoryid"
             element={<InvetoryItemDetailPage />}
           />
+
           {/* <Route
             path="/inventory/:inventoryid/edit"
             element={<InventoryEditItemPage />}

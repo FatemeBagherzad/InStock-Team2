@@ -6,6 +6,9 @@
 .InventoryItemMobDisplay {
   border-top: 1px solid $secondary-color-Cloud;
   padding: 1rem 0;
+  &:hover {
+    background-color: $background-color-Light-Grey;
+  }
   @include tablet {
     display: none;
   }
