@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import './InputAllTextType.scss';
 
-const InputAllTextType = ({ type, value, label, allWarehouses }) => {
+const InputAllTextType = ({ type, value, label, name, allWarehouses }) => {
   const ref = useRef(null);
   let input;
 
@@ -9,7 +9,7 @@ const InputAllTextType = ({ type, value, label, allWarehouses }) => {
     input = (
       <input
         type={type}
-        name={label}
+        name={name}
         placeholder="Search..."
         ref={ref}
         className="inputs inputs__search"
@@ -19,7 +19,7 @@ const InputAllTextType = ({ type, value, label, allWarehouses }) => {
     input = (
       <input
         type={type}
-        name={label}
+        name={name}
         placeholder={label}
         defaultValue={value}
         ref={ref}
@@ -30,7 +30,7 @@ const InputAllTextType = ({ type, value, label, allWarehouses }) => {
     input = (
       <input
         type={type}
-        name={label}
+        name={name}
         placeholder={label}
         defaultValue={value}
         ref={ref}
@@ -41,7 +41,7 @@ const InputAllTextType = ({ type, value, label, allWarehouses }) => {
     input = (
       <textarea
         type={type}
-        name={label}
+        name={name}
         placeholder={label}
         defaultValue={value}
         ref={ref}
@@ -52,7 +52,7 @@ const InputAllTextType = ({ type, value, label, allWarehouses }) => {
     input = (
       <input
         type={type}
-        name={label}
+        name={name}
         placeholder={label}
         defaultValue={value}
         ref={ref}
@@ -61,14 +61,10 @@ const InputAllTextType = ({ type, value, label, allWarehouses }) => {
     );
   } else if (type === 'dropDown') {
     input = (
-      <select name={label} className="inputs inputs__dropdown" value="">
-        <option value="" hidden>
-          Please select
-        </option>
+      <select name={name} className="inputs inputs__dropdown">
+        <option hidden>Please select</option>
         {allWarehouses.map((warehouse, index) => (
-          <option key={index} value={warehouse.warehouse_name}>
-            {warehouse.warehouse_name}
-          </option>
+          <option key={index}>{warehouse.warehouse_name}</option>
         ))}
       </select>
     );

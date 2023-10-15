@@ -10,12 +10,14 @@ const InvetoryItemMorePage = () => {
   const { inventoryid } = useParams();
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:8888/inventory/` + inventoryid)
-      .then((response) => {
-        setInvetory(response.data);
-      })
-      .catch((err) => console.log(err));
+    if (inventoryid) {
+      axios
+        .get(`http://localhost:8888/inventory/` + inventoryid)
+        .then((response) => {
+          setInvetory(response.data);
+        })
+        .catch((err) => console.log(err));
+    }
   }, [inventoryid]);
 
   return (

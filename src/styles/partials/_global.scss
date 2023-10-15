@@ -1,14 +1,12 @@
-
 @use './fonts' as *;
 @use './variables' as *;
 @use './mixins' as *;
-
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'titillium', sans-serif;
+  font-family: "titillium", sans-serif;
 }
 
 a,
@@ -17,7 +15,6 @@ a:focus,
 a:active {
   text-decoration: none;
 }
-
 
 h1 {
   font-size: 28px;
@@ -98,7 +95,5 @@ button {
   @include desktop {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
-
   }
 }
-  
