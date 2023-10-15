@@ -26,7 +26,8 @@ const WarehouseTabDesc = ({ warehouse }) => {
           <li className="WarehouseTabDes__li">{warehouse.address}</li>
           <li className="WarehouseTabDes__li">{warehouse.contact_name}</li>
           <li className="WarehouseTabDes__li">
-            {warehouse.contact_phone} {warehouse.contact_email}
+            {warehouse.contact_phone}
+            <br /> {warehouse.contact_email}
           </li>
           <div className="WarehouseTabDes__li--delAnEdIcn">
             <img

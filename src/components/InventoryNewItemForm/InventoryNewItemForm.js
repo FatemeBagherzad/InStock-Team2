@@ -52,7 +52,7 @@ const InventoryNewItemForm = () => {
     //handle form errors
 
     if (!newInventoryObj.warehouse_id) {
-      err['warehouse'] = 'one warehouse must be chosen!';
+      err['inventory'] = 'one warehouse must be chosen!';
       return;
     }
     if ((newInventoryObj.status = 'Out of Stock')) {

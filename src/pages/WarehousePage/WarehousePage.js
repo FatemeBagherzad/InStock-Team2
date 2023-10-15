@@ -15,7 +15,6 @@ const WarehousePage = () => {
     axios
       .get('http://localhost:8888/warehouses')
       .then((response) => {
-        console.log(response.data);
         setAllWarehouses(response.data);
       })
       .catch((error) => {

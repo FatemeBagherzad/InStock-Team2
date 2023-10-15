@@ -10,9 +10,11 @@
   box-shadow: 0 0 10px 2px $background-color-Graphite;
   margin-right: 1rem !important;
   margin-left: 1rem !important;
+  margin-bottom: 10rem !important;
   @include tablet {
     margin-top: -90px !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    margin-bottom: 10rem !important;
   }
 }
