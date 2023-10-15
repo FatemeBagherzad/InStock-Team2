@@ -1,19 +1,20 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-import InputAllTextType from '../InputAllTextType/InputAllTextType';
-import axios from 'axios';
-import Button from '../Button/Button';
-import './InventoryNewItemForm.scss';
+import InputAllTextType from "../InputAllTextType/InputAllTextType";
+import axios from "axios";
+import Button from "../Button/Button";
+import "./InventoryNewItemForm.scss";
 
 const InventoryNewItemForm = () => {
   const [allWarehouses, setAllWarehouses] = useState();
   const [quantityShow, setQuantityShow] = useState(true);
+  const [statusChecked, setStatusChecked] = useState("In Stock");
   const [err, setErr] = useState({});
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:8888/warehouses').then((response) => {
+    axios.get("http://localhost:8888/warehouses").then((response) => {
       setAllWarehouses(response.data);
     });
   }, []);
@@ -107,7 +108,7 @@ const InventoryNewItemForm = () => {
           <InputAllTextType type="smallTxt" label="Category" name="category" />
         </section>
         <section className="InventoryNewItemForm__form-right">
-          <h2>Invetory Status and Availability</h2>
+          <h2>Item Availability</h2>
           <div className="InventoryNewItemForm__form-radioBtns">
             <div className="InventoryNewItemForm__form-radioBtns-group">
               <input
@@ -154,7 +155,7 @@ const InventoryNewItemForm = () => {
         <Button
           type="cancel"
           btnTxt="CANCEL"
-          onClick={() => navigate('/inventory')}
+          onClick={() => navigate("/inventory")}
         />
         <Button type="submit" btnTxt="+ ADD INVENTORY" />
       </div>

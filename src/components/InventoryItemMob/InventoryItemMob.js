@@ -1,11 +1,17 @@
-import { Link, useNavigate } from 'react-router-dom';
-import './InventoryItemMob.scss';
-import arrowIcon from '../../assets/Icons/chevron_right-24px.svg';
-import deleteIcon from '../../assets/Icons/delete_outline-24px.svg';
-import editIcon from '../../assets/Icons/edit-24px.svg';
+import { Link, useNavigate } from "react-router-dom";
+import "./InventoryItemMob.scss";
+import arrowIcon from "../../assets/Icons/chevron_right-24px.svg";
+import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
+import editIcon from "../../assets/Icons/edit-24px.svg";
 
 const InventoryItemMob = ({ inventory, handleClick }) => {
   const navigate = useNavigate();
+
+  // Function to handle the edit icon click
+  const handleEditClick = () => {
+    navigate(`/inventory/edit/${inventory.id}`);
+  };
+
   return (
     <div className=" ">
       <div className="InventoryItemMobDisplay">
@@ -19,7 +25,7 @@ const InventoryItemMob = ({ inventory, handleClick }) => {
                 className="inventoryItemMobTxt__titleAndItem--item inventoryItemMobTxt__titleAndItem--item-withArrow"
                 onClick={() => navigate(`/inventory/${inventory.id}`)}
               >
-                {inventory.item_name}{' '}
+                {inventory.item_name}{" "}
                 <img
                   className="inventoryItemMobTxt__arrowIcn"
                   src={arrowIcon}
@@ -42,8 +48,8 @@ const InventoryItemMob = ({ inventory, handleClick }) => {
               <p
                 className={`inventoryItemMobTxt__titleAndItem--itemStatus  ${
                   inventory.quantity > 0
-                    ? 'inventoryItemMobTxt__titleAndItem--itemStatus-inStock'
-                    : 'inventoryItemMobTxt__titleAndItem--itemStatus-outOfStock'
+                    ? "inventoryItemMobTxt__titleAndItem--itemStatus-inStock"
+                    : "inventoryItemMobTxt__titleAndItem--itemStatus-outOfStock"
                 }    `}
               >
                 {inventory.status}

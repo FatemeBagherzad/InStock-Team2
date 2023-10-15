@@ -14,7 +14,7 @@ const InventoryMainPage = () => {
   const [inventoryName, setInventoryName] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:8888/inventory').then((response) => {
+    axios.get("http://localhost:8888/inventory").then((response) => {
       setAllInvetories(response.data);
     });
   }, []);
@@ -63,5 +63,4 @@ const InventoryMainPage = () => {
     </main>
   );
 };
-
 export default InventoryMainPage;
