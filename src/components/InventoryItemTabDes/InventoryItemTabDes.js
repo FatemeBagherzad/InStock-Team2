@@ -7,6 +7,11 @@ import editIcon from "../../assets/Icons/edit-24px.svg";
 const InventoryItemTabDes = ({ inventory, handleClick }) => {
   const navigate = useNavigate();
 
+  // Function to handle the edit icon click
+  const handleEditClick = () => {
+    navigate(`/inventory/edit/${inventory.id}`);
+  };
+
   return (
     <>
       <div className="container inventoryItemTabDesDisplay ">
