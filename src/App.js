@@ -8,6 +8,7 @@ import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import WarehouseAddNewPage from "./pages/WarehouseAddNewPage/WarehouseAddNewPage";
 import WarehouseDetailPage from "./pages/WarehouseDetailPage/WarehouseDetailPage";
 // import WarehouseEdit from "./pages/WarehouseEdit/WarehouseEdit";
+// import EditWarehouse from "./pages/EditWarehouse/EditWarehouse";
 
 function App() {
   return (
