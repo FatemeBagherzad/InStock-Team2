@@ -68,7 +68,6 @@ const WarehouseMob = ({ warehouse, handleDeleteClick }) => {
               className="WarehouseMobIcons__icon"
               src={editIcon}
               alt="edit icon"
-              onClick={() => navigate(`/warehouses/${warehouse.id}`)}
             />{' '}
           </Link>
         </div>

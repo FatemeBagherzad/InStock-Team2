@@ -49,7 +49,6 @@ const WarehouseTabDesc = ({ warehouse, handleDeleteClick }) => {
                 className="WarehouseTabDes__li--delAnEdIcn"
                 src={editIcon}
                 alt="edit Icon"
-                onClick={() => navigate(`/warehouses/${warehouse.id}`)}
               />
             </Link>
           </div>

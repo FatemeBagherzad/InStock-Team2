@@ -10,7 +10,7 @@ const InventoryEditItemPage = () => {
   document.title = 'In Stock/Edit Item';
   const [inventory, setInvetory] = useState();
   const { inventoryid } = useParams();
-
+  console.log(inventoryid);
   useEffect(() => {
     if (inventoryid) {
       axios
