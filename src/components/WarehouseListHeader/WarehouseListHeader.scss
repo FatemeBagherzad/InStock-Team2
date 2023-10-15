@@ -31,5 +31,9 @@
       width: 1.5rem;
       cursor: pointer;
     }
+    &-action {
+      display: flex;
+      justify-self: center;
+    }
   }
 }

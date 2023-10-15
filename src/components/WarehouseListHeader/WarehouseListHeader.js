@@ -38,7 +38,7 @@ const WarehouseListHeader = () => {
               alt="sort icon"
             />
           </li>
-          <li className="WarehouseListHeader__titleAndIcn">ACTION </li>
+          <li className="WarehouseListHeader__titleAndIcn WarehouseListHeader__titleAndIcn-action">ACTION </li>
         </ul>
       </div>
     </>

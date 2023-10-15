@@ -4,9 +4,14 @@
 @use '../../styles/partials/global' as *;
 
 .WarehouseAddNewPage {
+  margin-top: -40px !important;
+  background-color: $primary-color-White;
   max-width: 80rem;
   border-radius: 0.5rem;
-  box-shadow: 0 0 10px $secondary-color-Cloud;
+  box-shadow: 0 0 10px $background-color-Graphite;
   margin: 5rem auto;
   padding-bottom: 2rem;
+  @include tablet {
+    margin-top: -90px !important;
+  }
 }
