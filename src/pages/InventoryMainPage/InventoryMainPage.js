@@ -44,7 +44,7 @@ const InventoryMainPage = () => {
       <Header />
       <div className="mainInventoryPageBody container">
         <PageHeader
-          pageTitle="Invetories"
+          pageTitle="Inventories"
           type="search"
           btnTxt="+Add A New Inventory"
         />
