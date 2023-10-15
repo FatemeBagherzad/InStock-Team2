@@ -4,7 +4,7 @@ import arrowIcon from '../../assets/Icons/chevron_right-24px.svg';
 import deleteIcon from '../../assets/Icons/delete_outline-24px.svg';
 import editIcon from '../../assets/Icons/edit-24px.svg';
 
-const WarehouseMob = ({ warehouse }) => {
+const WarehouseMob = ({ warehouse, handleDeleteClick }) => {
   const navigate = useNavigate();
   return (
     <div className="container">
@@ -57,6 +57,9 @@ const WarehouseMob = ({ warehouse }) => {
             className="WarehouseMobIcons__icon"
             src={deleteIcon}
             alt="delete icon"
+            onClick={() =>
+              handleDeleteClick(true, warehouse.id, warehouse.warehouse_name)
+            }
           />
           <img
             className="WarehouseMobIcons__icon"

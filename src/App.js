@@ -8,6 +8,7 @@ import WarehouseAddNewPage from './pages/WarehouseAddNewPage/WarehouseAddNewPage
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import InventoryEditItemPage from './pages/InventoryEditItemPage/InventoryEditItemPage';
+import WarehouseDeletePage from './pages/WarehouseDeletePage/WarehouseDeletePage';
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
             path="/warehouses/:warehouseid/edit"
             element={<WarehouseEditPage />}
           /> */}
+          <Route
+            path="/warehouses/:warehouseid"
+            element={<WarehouseDeletePage />}
+          />
           <Route path="/warehouses/new" element={<WarehouseAddNewPage />} />
           <Route path="/inventory" element={<InventoryMainPage />} />
           <Route

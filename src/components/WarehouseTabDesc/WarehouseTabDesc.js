@@ -4,7 +4,7 @@ import editIcon from '../../assets/Icons/edit-24px.svg';
 import { Link, useNavigate } from 'react-router-dom';
 import './WarehouseTabDesc.scss';
 
-const WarehouseTabDesc = ({ warehouse }) => {
+const WarehouseTabDesc = ({ warehouse, handleDeleteClick }) => {
   const navigate = useNavigate();
 
   return (
@@ -34,6 +34,9 @@ const WarehouseTabDesc = ({ warehouse }) => {
               className="WarehouseTabDes__li--delAnEdIcn"
               src={deleteIcon}
               alt="delete Icon"
+              onClick={() =>
+                handleDeleteClick(true, warehouse.id, warehouse.warehouse_name)
+              }
             />
             <img
               className="WarehouseTabDes__li--delAnEdIcn"
