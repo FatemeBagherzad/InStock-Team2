@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import "../header/Header.scss";
 import Logo from "./Logo";
 import Button from "../Button/Button";

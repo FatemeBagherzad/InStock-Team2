@@ -72,18 +72,6 @@ const InventoryItemMob = ({ inventory, handleClick }) => {
           </div>
         </div>
         <div className="inventoryItemMobIcons">
-<<<<<<< HEAD
-          <img
-            className="inventoryItemMob__icon"
-            src={deleteIcon}
-            alt="delete icon"
-          />
-          <img
-            className="inventoryItemMob__icon"
-            src={editIcon}
-            onClick={handleEditClick}
-          />
-=======
           <Link to={''}>
             <img
               className="inventoryItemMob__icon"
@@ -101,7 +89,6 @@ const InventoryItemMob = ({ inventory, handleClick }) => {
               alt="edit icon"
             />
           </Link>
->>>>>>> master
         </div>
       </div>
     </div>
