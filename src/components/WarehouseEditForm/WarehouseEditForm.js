@@ -9,9 +9,6 @@ import './WarehouseEditForm.scss';
 const WarehouseEditForm = ({ warehouse, warehouseid }) => {
   const navigate = useNavigate();
   const [allWarehouses, setAllWarehouses] = useState();
-  const [statusChecked, setStatusChecked] = useState('In Stock');
-  const [quantityShow, setQuantityShow] = useState(true);
-  const [err, setErr] = useState({});
 
   useEffect(() => {
     axios.get('http://localhost:8888/warehouses').then((response) => {
@@ -21,74 +18,33 @@ const WarehouseEditForm = ({ warehouse, warehouseid }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // setErr({});
-    // if (event.target.warehouse.value === 'Please select') {
-    //   alert('Pleate choose a warehouse from the list!!');
-    //   return;
-    // }
-    // //find warehouse id of warehouse that is chosen in form
-    // const warehousechosen = allWarehouses.find(
-    //   (warehouse) => warehouse.warehouse_name === event.target.warehouse.value
-    // );
 
-    // const editInventoryObj = {
-    //   id: inventoryid,
-    //   warehouse_id: warehousechosen.id,
-    //   item_name: event.target.name.value,
-    //   description: event.target.description.value,
-    //   category: event.target.category.value,
-    //   status: event.target.status.value,
-    //   quantity: Number(event.target.quantity?.value) || 0,
-    // };
+    const editWarehouseObj = {
+      warehouse_name: event.target.name.value,
+      address: event.target.address.value,
+      city: event.target.city.value,
+      country: event.target.country.value,
+      contact_name: event.target.contactName.value,
+      contact_position: event.target.position.value,
+      contact_phone: event.target.phNumber.value,
+      contact_email: event.target.email.value,
+    };
 
-    // //handle form errors
+    console.log(editWarehouseObj);
+    axios
+      .put(`http://localhost:8888/warehouses/${warehouseid}`, editWarehouseObj)
+      .then((res) => {
+        console.log(res.data);
 
-    // if (!editInventoryObj.warehouse_id) {
-    //   err['warehouse'] = 'one warehouse must be chosen!';
-    //   return;
-    // }
-    // if ((editInventoryObj.status = 'Out of Stock')) {
-    //   editInventoryObj.quantity = 0;
-    // }
-    // if (
-    //   (editInventoryObj.status = 'In Stock') &&
-    //   parseInt(editInventoryObj.quantity) < 0
-    // ) {
-    //   err['quantity'] = 'Status and quantity must match!';
-    //   alert(
-    //     'This Inventory is in stock. the Quantity must be bigger that zero!'
-    //   );
-    //   return;
-    // }
-    // if (
-    //   !editInventoryObj.item_name ||
-    //   !editInventoryObj.description ||
-    //   !editInventoryObj.category
-    // ) {
-    //   err['nameORdescriptionORcategory'] = 'All field should be filled!';
-    //   return;
-    // }
-    // if (Object.keys(err).length !== 0) {
-    //   alert(
-    //     `Please check all the fields again:\n1-One warehouse must be chosen!\n2-Status and quantity must match!\n3-Inventory quantity must be >0!\n4-Inventory name and description and category must be filled!`
-    //   );
-    //   return;
-    // }
-    // console.log(editInventoryObj);
-    // setErr({});
-    // axios
-    //   .put(`http://localhost:8888/inventory/${inventoryid}`, editInventoryObj)
-    //   .then((res) => {
-    //     console.log(res);
-    //     event.target.reset();
-    //     alert(' inventory item modified successfully :)');
-    //     navigate('/inventory');
-    //   })
-    //   .catch((err) => {
-    //     err.response
-    //       ? console.error(err.response.data)
-    //       : alert('cant connect to server');
-    //   });
+        event.target.reset();
+        alert(' warehouse item modified successfully :)');
+        navigate('/warehouses');
+      })
+      .catch((err) => {
+        err.response
+          ? console.error(err.response.data)
+          : alert('cant connect to server');
+      });
   };
 
   return (
@@ -97,17 +53,57 @@ const WarehouseEditForm = ({ warehouse, warehouseid }) => {
         <div className="WarehouseEditForm__formTxt">
           <section className="WarehouseEditForm__formTxt-left">
             <h2>Warehouse Details</h2>
-            <InputAllTextType type="smallTxt" label="Warehouse Name" />
-            <InputAllTextType type="smallTxt" label="Street Address" />
-            <InputAllTextType type="smallTxt" label="City" />
-            <InputAllTextType type="smallTxt" label="Country" />
+            <InputAllTextType
+              type="smallTxt"
+              label="Warehouse Name"
+              name="name"
+              value={warehouse[0].warehouse_name}
+            />
+            <InputAllTextType
+              type="smallTxt"
+              label="Street Address"
+              name="address"
+              value={warehouse[0].address}
+            />
+            <InputAllTextType
+              type="smallTxt"
+              label="City"
+              name="city"
+              value={warehouse[0].city}
+            />
+            <InputAllTextType
+              type="smallTxt"
+              label="Country"
+              name="country"
+              value={warehouse[0].country}
+            />
           </section>
           <section className="WarehouseEditForm__formTxt-right">
             <h2>Contact Details</h2>
-            <InputAllTextType type="smallTxt" label="Contact Name" />
-            <InputAllTextType type="smallTxt" label="Position" />
-            <InputAllTextType type="smallTxt" label="Phone number" />
-            <InputAllTextType type="smallTxt" label="Email" />
+            <InputAllTextType
+              type="smallTxt"
+              label="Contact Name"
+              name="contactName"
+              value={warehouse[0].contact_name}
+            />
+            <InputAllTextType
+              type="smallTxt"
+              label="Position"
+              name="position"
+              value={warehouse[0].contact_position}
+            />
+            <InputAllTextType
+              type="smallTxt"
+              label="Phone number"
+              name="phNumber"
+              value={warehouse[0].contact_phone}
+            />
+            <InputAllTextType
+              type="smallTxt"
+              label="Email"
+              name="email"
+              value={warehouse[0].contact_email}
+            />
           </section>
         </div>
         <div className="WarehouseEditForm__btns">

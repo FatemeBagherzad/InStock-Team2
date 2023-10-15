@@ -10,7 +10,6 @@ const WarehouseEditPage = () => {
   const [warehouse, setWarehouse] = useState();
   const { warehouseid } = useParams();
 
-  console.log(warehouseid);
   useEffect(() => {
     if (warehouseid) {
       axios
