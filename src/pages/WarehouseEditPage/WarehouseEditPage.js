@@ -1,5 +1,6 @@
 import PageHeader from '../../components/PageHeader/PageHeader';
 import WarehouseEditForm from '../../components/WarehouseEditForm/WarehouseEditForm';
+import './WarehouseEditPage.scss';
 
 const WarehouseEditPage = () => {
   document.title = 'In Stock/Warehouse Edit Page';

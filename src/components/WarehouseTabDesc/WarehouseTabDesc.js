@@ -30,19 +30,28 @@ const WarehouseTabDesc = ({ warehouse, handleDeleteClick }) => {
             <br /> {warehouse.contact_email}
           </li>
           <div className="WarehouseTabDes__li--delAnEdIcn">
-            <img
-              className="WarehouseTabDes__li--delAnEdIcn"
-              src={deleteIcon}
-              alt="delete Icon"
-              onClick={() =>
-                handleDeleteClick(true, warehouse.id, warehouse.warehouse_name)
-              }
-            />
-            <img
-              className="WarehouseTabDes__li--delAnEdIcn"
-              src={editIcon}
-              alt="edit Icon"
-            />
+            <Link to={''}>
+              <img
+                className="WarehouseTabDes__li--delAnEdIcn"
+                src={deleteIcon}
+                alt="delete Icon"
+                onClick={() =>
+                  handleDeleteClick(
+                    true,
+                    warehouse.id,
+                    warehouse.warehouse_name
+                  )
+                }
+              />{' '}
+            </Link>
+            <Link to={`/warehouses/${warehouse.id}/edit`}>
+              <img
+                className="WarehouseTabDes__li--delAnEdIcn"
+                src={editIcon}
+                alt="edit Icon"
+                onClick={() => navigate(`/warehouses/${warehouse.id}`)}
+              />
+            </Link>
           </div>
         </ul>
       </div>

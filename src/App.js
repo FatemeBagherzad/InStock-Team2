@@ -9,6 +9,7 @@ import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import InventoryEditItemPage from './pages/InventoryEditItemPage/InventoryEditItemPage';
 import WarehouseDeletePage from './pages/WarehouseDeletePage/WarehouseDeletePage';
+import WarehouseEditPage from './pages/WarehouseEditPage/WarehouseEditPage';
 
 function App() {
   return (
@@ -22,10 +23,10 @@ function App() {
             path="/warehouses/:warehouseid"
             element={<WarehouseDetailsPage />}
           />*/}
-          {/* <Route
+          <Route
             path="/warehouses/:warehouseid/edit"
             element={<WarehouseEditPage />}
-          /> */}
+          />
           <Route
             path="/warehouses/:warehouseid"
             element={<WarehouseDeletePage />}

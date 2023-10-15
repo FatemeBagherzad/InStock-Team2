@@ -53,19 +53,24 @@ const WarehouseMob = ({ warehouse, handleDeleteClick }) => {
           </div>
         </div>
         <div className="WarehouseMobIcons">
-          <img
-            className="WarehouseMobIcons__icon"
-            src={deleteIcon}
-            alt="delete icon"
-            onClick={() =>
-              handleDeleteClick(true, warehouse.id, warehouse.warehouse_name)
-            }
-          />
-          <img
-            className="WarehouseMobIcons__icon"
-            src={editIcon}
-            alt="edit icon"
-          />
+          <Link to={''}>
+            <img
+              className="WarehouseMobIcons__icon"
+              src={deleteIcon}
+              alt="delete icon"
+              onClick={() =>
+                handleDeleteClick(true, warehouse.id, warehouse.warehouse_name)
+              }
+            />{' '}
+          </Link>
+          <Link to={`/warehouses/${warehouse.id}/edit`}>
+            <img
+              className="WarehouseMobIcons__icon"
+              src={editIcon}
+              alt="edit icon"
+              onClick={() => navigate(`/warehouses/${warehouse.id}`)}
+            />{' '}
+          </Link>
         </div>
       </div>
     </div>

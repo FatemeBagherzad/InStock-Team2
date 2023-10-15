@@ -6,7 +6,7 @@
 .WarehouseEditForm {
   display: flex;
   flex-direction: column;
-  &__form {
+  &__formTxt {
     display: grid;
     grid-template-columns: 1fr;
     @include tablet {
