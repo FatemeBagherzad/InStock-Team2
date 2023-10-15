@@ -50,8 +50,10 @@ const WarehouseMob = ({warehouse}) => {
                         {warehouse.contact_phone} {warehouse.contact_email}</p>
                 </div>
                 <div className="WarehouseMobIcons">
-                    <img className="WarehouseMobIcons__icon" src={deleteIcon} alt="delete icon" />
-                    <img className="WarehouseMobIcons__icon" src={editIcon} alt="edit icon" />
+                    <img className="WarehouseMobIcons__icon" src={deleteIcon} alt="delete icon"/>
+                    <img className="WarehouseMobIcons__icon" src={editIcon} alt="edit icon" 
+                    onClick={ () => navigate (`/warehouses/${warehouse.id}/edit`)} />
+                    
                 </div>
             </div>
         </div>

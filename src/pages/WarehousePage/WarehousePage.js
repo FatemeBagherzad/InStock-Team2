@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import PageHeader from '../../components/PageHeader/PageHeader';
 import WarehouseList from '../../components/WarehouseList/WarehouseList';
+import WarehouseEditPage from '../WarehouseEditPage/WarehouseEditPage';
 
 const WarehousePage = () => {
   const [allWarehouses, setAllWarehouses] = useState([]);
@@ -23,7 +24,9 @@ const WarehousePage = () => {
         setLoading(false);
       });
 
-    // Fetch inventories
+  }, []);
+
+  useEffect(() => {
     axios.get('http://localhost:8888/inventory')
       .then((response) => {
         
@@ -36,7 +39,6 @@ const WarehousePage = () => {
         setLoading(false);
       });
   }, []);
-
   if (loading) {
     return <p>Loading...</p>; // Show a loading message while data is being fetched
   }

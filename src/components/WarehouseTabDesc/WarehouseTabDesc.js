@@ -11,7 +11,7 @@ const WarehouseTabDesc = ({warehouse}) => {
         <>
         <div className="container WarehouseTabDesDisplay">
             <ul className="WarehouseTabDes">
-                <li className="WarehouseTabDes__li WarehouseTabDes__li--withIcn" onClick={() => navigate(`/warehouses/${warehouse.id}`)}>
+                <li className="WarehouseTabDes__li WarehouseTabDes__li--withIcn" onClick={() => navigate(`/warehouses/:warehouseid/edit/${warehouse.id}`)}>
                     {warehouse.warehouse_name}{''}
                     <img className="WarehouseTabDes__li--arrowIcn" src={arrowIcon} alt="Right arrow icon" />
                 </li>
@@ -21,7 +21,9 @@ const WarehouseTabDesc = ({warehouse}) => {
                 <li className="WarehouseTabDes__li">{warehouse.contact_phone} {warehouse.contact_email}</li>
                 <div className="WarehouseTabDes__li--delAnEdIcn">
                     <img className="WarehouseTabDes__li--delAnEdIcn"src={deleteIcon} alt="delete Icon"/>
-                    <img className="WarehouseTabDes__li--delAnEdIcn"src={editIcon} alt="edit Icon"/>
+                    <Link to={`/warehouses/${warehouse.id}/edit`}>
+                    <img className="WarehouseMobIcons__icon" src={editIcon} alt="edit icon" />
+                    </Link>
                 </div>
             </ul>
         </div>
