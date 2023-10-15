@@ -3,10 +3,12 @@ import './Button.scss';
 
 const Button = ({ btnTxt, onClick }) => {
   let classbtn;
-  if (btnTxt === 'cancel') {
+  if (btnTxt === 'Cancel') {
     classbtn = 'cancel';
-  } else if (btnTxt === 'delete') {
+  } else if (btnTxt === 'Delete') {
     classbtn = 'delete';
+  } else if (btnTxt === 'Warehouses' || btnTxt === 'Inventory') {
+    classbtn = 'headerBtn';
   } else {
     classbtn = '';
   }

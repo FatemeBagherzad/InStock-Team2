@@ -141,11 +141,11 @@ button {
 .button {
   background-color: #2e66e5;
   color: #ffffff;
-  border-color: transparent;
+  border: none;
   cursor: pointer;
   height: 2.25rem;
   border-radius: 1.25rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
   text-transform: capitalize;
   width: 100%;
@@ -161,10 +161,23 @@ button {
 .button:hover {
   background-color: #232940;
 }
+.button--headerBtn {
+  border: none;
+  color: #bdc5d5;
+  background-color: transparent;
+  text-align: center;
+}
+.button--headerBtn:hover {
+  text-decoration: underline;
+}
+.button--headerBtn:active, .button--headerBtn:focus, .button--headerBtn:visited {
+  color: #ffffff;
+  background-color: #13182c;
+}
 .button--cancel {
   background-color: #ffffff;
   color: #13182c;
-  border-color: #5c667e;
+  border-color: #232940;
 }
 .button--cancel:hover {
   border-color: #2e66e5;
