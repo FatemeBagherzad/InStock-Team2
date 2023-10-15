@@ -1,4 +1,4 @@
-import './InvetoryItemDetail.scss';
+import "./InvetoryItemDetail.scss";
 
 const InvetoryItemDetail = ({ inventory }) => {
   return (

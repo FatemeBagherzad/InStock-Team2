@@ -20,8 +20,10 @@ function WarehouseDetailsHeader() {
       .get(`http://localhost:8888/warehouses/${warehouseid}`)
       .then((response) => {
         if (response.status === 200) {
-          setWarehouseDetails(response.data);
-          console.log(response.data);
+          // Access the first element of the array in the response data
+          const warehouseData = response.data[0];
+          setWarehouseDetails(warehouseData);
+          console.log("Warehouse Data:", warehouseData);
         } else {
           // Handle other response statuses here
           console.error("Unexpected API response:", response);

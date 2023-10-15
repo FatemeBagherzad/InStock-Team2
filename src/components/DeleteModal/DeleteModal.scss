@@ -1,146 +1,118 @@
-@use "../../styles/partials/fonts" as *;
 @use "../../styles/partials/global" as *;
-@use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 
-.delete-modal {
+.modal {
   position: fixed;
-  z-index: 1;
-  padding-top: 100px;
-  inset: 0;
-  width: 100%;
-  height: 100vh;
-  overflow-y: hidden;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(19, 24, 44, 0.7);
 
   @include tablet {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.8);
+    padding: 0 3rem;
   }
 
-  &-dialog {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    background-color: #fefefe;
+  &__content {
     margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 100%;
-    height: calc(100% + 7rem);
-    transform: translateY(-15%);
-
-    position: absolute;
+    height: 100%;
+    padding: 1.5rem 1rem;
+    background-color: $primary-color-White;
+    position: relative;
 
     @include tablet {
-      transform: translateY(25.5%);
-      height: unset;
-      width: 80%;
-      max-width: 50rem;
-    }
-
-    @include desktop {
-      transform: translateY(32.5%);
+      width: 42rem;
+      height: 16.375rem;
+      padding: 2.5rem 4rem;
+      margin-top: 11.5625rem;
+      @include flex(space-between, column);
     }
   }
 
-  &-content {
-    height: 70%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  &__header {
+    margin: 2.25rem 0 1rem 0;
+
+    @include tablet {
+      margin-top: 0;
+    }
+
+    &-title {
+      @include textStyle($primary-color-Instock-Black, 1.75rem, 2.25rem, 600);
+
+      @include tablet {
+        @include textStyle($primary-color-Instock-Black, 2rem, 2.5rem, 600);
+      }
+    }
   }
 
-  &-header {
-    border: none;
+  &__body {
+    &-p {
+      @include textStyle(
+        $primary-color-Instock-Black,
+        0.9375rem,
+        1.625rem,
+        400
+      );
+
+      @include tablet {
+        @include textStyle($primary-color-Instock-Black, 1rem, 1.75rem, 400);
+      }
+    }
   }
 
-  &-title {
-    font-weight: 700;
-    padding-bottom: 1rem;
-  }
-}
+  &__footer {
+    position: fixed;
+    bottom: 0;
+    left: 1rem;
+    right: 1rem;
+    padding-bottom: 1.5rem;
 
-.delete-modal-footer {
-  border: none;
-  display: flex;
-  justify-content: space-around;
-  gap: 1rem;
-
-  @include tablet {
-    padding: 2rem;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-  }
-}
-
-.delete-modal-btn {
-  width: 80%;
-  border-radius: 50px;
-  padding: 0 16px;
-  height: 36px;
-
-  @include tablet {
-    width: unset;
+    @include tablet {
+      position: static;
+      padding-bottom: 0;
+    }
   }
 
-  &-primary {
+  &__cancel {
+    @include textStyle($secondary-color-Slate, 0.8125rem, 1.25rem, 600);
+    height: 2.25rem;
+    width: 47.52%;
+    border: 1px solid $secondary-color-Cloud;
+    border-radius: 1.25rem;
+    background-color: $primary-color-White;
+    cursor: pointer;
+    padding: 0 1rem;
+
+    @include tablet {
+      height: 2.375rem;
+      width: 4.5rem;
+      margin-right: 1rem;
+    }
+  }
+
+  &__delete {
+    @include textStyle($primary-color-White, 0.8125rem, 1.25rem, 600);
+    height: 2.25rem;
+    width: 47.52%;
+    border-radius: 1.25rem;
     background-color: $supporting-color-Red;
     border: none;
-    color: white;
-    font-weight: 600;
     cursor: pointer;
-
-    &:hover {
-      background-color: $primary-color-Instock-Black;
-    }
+    padding: 0 1rem;
 
     @include tablet {
-      padding: 0 2rem;
+      height: 2.375rem;
+      width: 4.5rem;
     }
   }
 
-  &-secondary {
-    border-radius: 20px;
-    border: 1px solid #bdc5d5;
-    background-color: #fff;
-    color: $slate;
-    font-weight: 600;
-    cursor: pointer;
-
-    &:hover {
-      border: 1px solid $primary-color-Instock-Indigo;
-      color: $primary-color-Instock-Indigo;
-    }
-
-    @include tablet {
-      padding: 0 2rem;
-    }
-  }
-
-  &-close {
-    padding-bottom: 1rem;
+  &__close {
     background-color: transparent;
     border: none;
-    color: $primary-color-Instock-Black;
-    font-size: 2.5rem;
     position: absolute;
-    top: 6%;
-    right: 1%;
-
-    &:hover,
-    &:focus {
-      color: #000;
-      text-decoration: none;
-      cursor: pointer;
-    }
+    right: 1.25rem;
+    top: 1.25rem;
+    cursor: pointer;
   }
 }

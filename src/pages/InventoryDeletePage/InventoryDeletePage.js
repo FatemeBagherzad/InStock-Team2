@@ -1,19 +1,19 @@
-import Button from '../../components/Button/Button';
-import closeIcon from '../../assets/Icons/close-24px.svg';
-import './InventoryDeletePage.scss';
-import axios from 'axios';
+import Button from "../../components/Button/Button";
+import closeIcon from "../../assets/Icons/close-24px.svg";
+import "./InventoryDeletePage.scss";
+import axios from "axios";
 
-const InventoryDeletePage = ({ onClose, show, inventoryName, inventoryId }) => {
+const InventoryDeletePage = ({ onClose, show, inventoryName, inventoryid }) => {
   if (!show) {
     return null;
   }
-  console.log(inventoryId);
+  console.log(inventoryid);
   const handleSubmit = () => {
     axios
-      .delete(`http://localhost:8888/inventory/${inventoryId}`, {
+      .delete(`http://localhost:8888/inventory/${inventoryid}`, {
         headers: {},
         data: {
-          idToDelete: inventoryId,
+          idToDelete: inventoryid,
         },
       })
       .then((res) => {
@@ -41,7 +41,7 @@ const InventoryDeletePage = ({ onClose, show, inventoryName, inventoryId }) => {
         <div className="inventoryDelete__bottomIcons">
           <Button btnTxt="Cancel" onClick={onClose} />
           <Button btnTxt="Delete" onClick={handleSubmit} />
-        </div>{' '}
+        </div>{" "}
       </div>
     </div>
   );

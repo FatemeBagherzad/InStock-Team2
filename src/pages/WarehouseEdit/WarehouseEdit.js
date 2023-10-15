@@ -8,7 +8,7 @@ import EditWarehouseForm from "../../components/WarehouseNewForm/WarehouseNewFor
 import "./WarehouseEdit.scss";
 
 function EditWarehouse() {
-  const { warehouseId } = useParams();
+  const { warehouseid } = useParams();
   const navigate = useNavigate();
   const [warehouseDetails, setWarehouseDetails] = useState(null);
   const [error, setError] = useState(null);
@@ -17,7 +17,7 @@ function EditWarehouse() {
     const fetchWarehouseDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8080/warehouses/${warehouseId}`
+          `http://localhost:8888/warehouses/${warehouseid}`
         );
         if (response.status === 200) {
           setWarehouseDetails(response.data);
@@ -28,7 +28,7 @@ function EditWarehouse() {
     };
 
     fetchWarehouseDetails();
-  }, [warehouseId]);
+  }, [warehouseid]);
 
   if (error) {
     return <h2 className="error-message">{error}</h2>;

@@ -2,7 +2,7 @@ import React from "react";
 import Chevron from "../../assets/Icons/chevron_right-24px.svg";
 import Delete from "../../assets/Icons/delete_outline-24px.svg";
 import Edit from "../../assets/Icons/edit-24px.svg";
-import "./WarehouseCard.scss";
+// import "./WarehouseCard.scss";
 
 function WarehouseCard(props) {
   return (

@@ -1,6 +1,6 @@
 import WarehouseDetailsHeader from "../../components/WarehouseDetailsHeader/WarehouseDetailsHeader";
 // import InvetoryItemDetail from "../../components/InvetoryItemDetail/InvetoryItemDetail";
-
+import WarehouseDetailsInventory from "../../components/WarehouseDetailsInventory/WarehouseDetailsInventory";
 import "./WarehouseDetailPage.scss";
 
 function WarehouseDetailPage() {
@@ -8,7 +8,7 @@ function WarehouseDetailPage() {
     <>
       <main className="details-page">
         <WarehouseDetailsHeader />
-        {/* <InvetoryItemDetail /> */}
+        <WarehouseDetailsInventory />
       </main>
     </>
   );
