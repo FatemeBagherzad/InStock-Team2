@@ -2,7 +2,11 @@ import InventoryItemMob from '../InventoryItemMob/InventoryItemMob';
 import InventoryItemTabDes from '../InventoryItemTabDes/InventoryItemTabDes';
 import InventoryListHeader from '../InventoryListHeader/InventoryListHeader';
 
-const InventoryList = ({ allInvetories, handleClick }) => {
+const InventoryList = ({
+  allInvetories,
+  handleDeleteClick,
+  handleEditClick,
+}) => {
   return (
     <>
       <InventoryListHeader />
@@ -11,7 +15,8 @@ const InventoryList = ({ allInvetories, handleClick }) => {
           <InventoryItemMob
             inventory={inventory}
             key={inventory.id}
-            handleClick={handleClick}
+            handleDeleteClick={handleDeleteClick}
+            handleEditClick={handleEditClick}
           />
         ))}
       </section>
@@ -20,7 +25,8 @@ const InventoryList = ({ allInvetories, handleClick }) => {
           <InventoryItemTabDes
             inventory={inventory}
             key={inventory.id}
-            handleClick={handleClick}
+            handleDeleteClick={handleDeleteClick}
+            handleEditClick={handleEditClick}
           />
         ))}
       </section>

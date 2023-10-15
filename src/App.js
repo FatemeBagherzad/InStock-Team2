@@ -7,6 +7,7 @@ import WarehousePage from './pages/WarehousePage/WarehousePage';
 import WarehouseAddNewPage from './pages/WarehouseAddNewPage/WarehouseAddNewPage';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
+import InventoryEditItemPage from './pages/InventoryEditItemPage/InventoryEditItemPage';
 
 function App() {
   return (
@@ -30,10 +31,10 @@ function App() {
             path="/inventory/:inventoryid"
             element={<InvetoryItemDetailPage />}
           />
-          {/* <Route
-            path="/inventory/:inventoryid/edit"
+          <Route
+            path="/inventory/edit/:inventoryid"
             element={<InventoryEditItemPage />}
-          /> */}
+          />
           <Route path="/inventory/new" element={<InventoryAddNewPage />} />
         </Routes>
         <Footer />
