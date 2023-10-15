@@ -41,7 +41,6 @@ const InventoryMainPage = () => {
 
   return (
     <main>
-      <Header />
       <div className="mainInventoryPageBody container">
         <PageHeader
           pageTitle="Inventories"
@@ -53,7 +52,6 @@ const InventoryMainPage = () => {
           handleClick={handleClick}
         />
       </div>
-      <Footer />
       <InventoryDeletePage
         show={show}
         inventoryName={inventoryName}
