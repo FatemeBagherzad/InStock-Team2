@@ -4,7 +4,7 @@ import arrowIcon from "../../assets/Icons/chevron_right-24px.svg";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 
-const InventoryItemMob = ({ inventory }) => {
+const InventoryItemMob = ({ inventory, handleClick }) => {
   const navigate = useNavigate();
 
   // Function to handle the edit icon click
@@ -13,7 +13,7 @@ const InventoryItemMob = ({ inventory }) => {
   };
 
   return (
-    <div className="container ">
+    <div className=" ">
       <div className="InventoryItemMobDisplay">
         <div className="inventoryItemMobTxt">
           <div className="inventoryItemMobTxt__left">
@@ -72,6 +72,7 @@ const InventoryItemMob = ({ inventory }) => {
           </div>
         </div>
         <div className="inventoryItemMobIcons">
+<<<<<<< HEAD
           <img
             className="inventoryItemMob__icon"
             src={deleteIcon}
@@ -82,6 +83,25 @@ const InventoryItemMob = ({ inventory }) => {
             src={editIcon}
             onClick={handleEditClick}
           />
+=======
+          <Link to={''}>
+            <img
+              className="inventoryItemMob__icon"
+              src={deleteIcon}
+              alt="delete icon"
+              onClick={() =>
+                handleClick(true, inventory.id, inventory.item_name)
+              }
+            />
+          </Link>
+          <Link to={`/inventory/${inventory.id}/edit`}>
+            <img
+              className="inventoryItemMob__icon"
+              src={editIcon}
+              alt="edit icon"
+            />
+          </Link>
+>>>>>>> master
         </div>
       </div>
     </div>

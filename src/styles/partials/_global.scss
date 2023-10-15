@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 @use "./fonts" as *;
 @use "./variables" as *;
 @use "./mixins" as *;
+=======
+@use './fonts' as *;
+@use './variables' as *;
+@use './mixins' as *;
+>>>>>>> master
 
 * {
   margin: 0;

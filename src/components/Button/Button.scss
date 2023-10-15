@@ -1,7 +1,15 @@
+<<<<<<< HEAD
 @use "../../styles/partials/fonts" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/global" as *;
+=======
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/global' as *;
+
+>>>>>>> master
 .button {
   background-color: $primary-color-Instock-Indigo;
   color: $primary-color-White;
@@ -22,6 +30,10 @@
   &:hover {
     background-color: $background-color-Graphite;
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
   &--headerBtn {
     border: none;
     color: $secondary-color-Cloud;
@@ -37,6 +49,10 @@
       background-color: $primary-color-Instock-Black;
     }
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
   &--cancel {
     background-color: $primary-color-White;
     color: $primary-color-Instock-Black;
@@ -47,6 +63,7 @@
       background-color: $primary-color-White;
     }
   }
+
   &--delete {
     background-color: $supporting-color-Red;
     color: $primary-color-White;
