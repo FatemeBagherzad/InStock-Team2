@@ -143,6 +143,10 @@ button {
   background-color: #232940;
   color: #bdc5d5;
   margin-top: 2rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 99;
 }
 
 .footer p {
