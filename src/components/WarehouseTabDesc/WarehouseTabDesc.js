@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import arrowIcon from "../../assets/Icons/arrow_back-24px.svg";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
@@ -5,6 +6,15 @@ import { Link, useNavigate } from "react-router-dom";
 import "./WarehouseTabDesc.scss";
 
 const WarehouseTabDesc = ({ warehouse }) => {
+=======
+import arrowIcon from '../../assets/Icons/chevron_right-24px.svg';
+import deleteIcon from '../../assets/Icons/delete_outline-24px.svg';
+import editIcon from '../../assets/Icons/edit-24px.svg';
+import { Link, useNavigate } from 'react-router-dom';
+import './WarehouseTabDesc.scss';
+
+const WarehouseTabDesc = ({ warehouse, handleDeleteClick }) => {
+>>>>>>> master
   const navigate = useNavigate();
 
   return (
@@ -13,10 +23,17 @@ const WarehouseTabDesc = ({ warehouse }) => {
         <ul className="WarehouseTabDes">
           <li
             className="WarehouseTabDes__li WarehouseTabDes__li--withIcn"
+<<<<<<< HEAD
             onClick={() => navigate(`/warehouses/${warehouse.id}`)}
           >
             {warehouse.warehouse_name}
             {""}
+=======
+            onClick={() => navigate(`/warehouses/${warehouse.id}/detail`)}
+          >
+            {warehouse.warehouse_name}
+            {''}
+>>>>>>> master
             <img
               className="WarehouseTabDes__li--arrowIcn"
               src={arrowIcon}
@@ -26,6 +43,7 @@ const WarehouseTabDesc = ({ warehouse }) => {
           <li className="WarehouseTabDes__li">{warehouse.address}</li>
           <li className="WarehouseTabDes__li">{warehouse.contact_name}</li>
           <li className="WarehouseTabDes__li">
+<<<<<<< HEAD
             {warehouse.contact_phone} {warehouse.contact_email}
           </li>
           <div className="WarehouseTabDes__li--delAnEdIcn">
@@ -39,6 +57,33 @@ const WarehouseTabDesc = ({ warehouse }) => {
               src={editIcon}
               alt="edit Icon"
             />
+=======
+            {warehouse.contact_phone}
+            <br /> {warehouse.contact_email}
+          </li>
+          <div className="WarehouseTabDes__li--delAnEdIcn">
+            <Link to={''}>
+              <img
+                className="WarehouseTabDes__li--delAnEdIcn"
+                src={deleteIcon}
+                alt="delete Icon"
+                onClick={() =>
+                  handleDeleteClick(
+                    true,
+                    warehouse.id,
+                    warehouse.warehouse_name
+                  )
+                }
+              />{' '}
+            </Link>
+            <Link to={`/warehouses/${warehouse.id}/edit`}>
+              <img
+                className="WarehouseTabDes__li--delAnEdIcn"
+                src={editIcon}
+                alt="edit Icon"
+              />
+            </Link>
+>>>>>>> master
           </div>
         </ul>
       </div>

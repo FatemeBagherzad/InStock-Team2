@@ -5,23 +5,32 @@ import InvetoryItemDetailPage from "./pages/InvetoryItemDetailPage/InvetoryItemD
 import InventoryAddNewPage from "./pages/InventoryAddNewPage/InventoryAddNewPage";
 import WarehousePage from "./pages/WarehousePage/WarehousePage";
 import WarehouseAddNewPage from "./pages/WarehouseAddNewPage/WarehouseAddNewPage";
-import WarehouseEditPage from "./pages/WarehouseEdit/WarehouseEdit";
-import WarehouseDetailsPage from "./pages/WarehouseDetailPage/WarehouseDetailPage";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+import InventoryEditItemPage from "./pages/InventoryEditItemPage/InventoryEditItemPage";
+import WarehouseDeletePage from "./pages/WarehouseDeletePage/WarehouseDeletePage";
+import WarehouseEditPage from "./pages/WarehouseEditPage/WarehouseEditPage";
+import WarehouseDetailPage from "./pages/WarehouseDetailPage/WarehouseDetailPage";
 
 function App() {
   return (
     <main>
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/warehouses" element={<WarehousePage />} />
           <Route path="/" element={<WarehousePage />} />
           <Route
-            path="/warehouses/:warehouseid"
-            element={<WarehouseDetailsPage />}
+            path="/warehouses/:warehouseid/detail"
+            element={<WarehouseDetailPage />}
           />
           <Route
             path="/warehouses/:warehouseid/edit"
             element={<WarehouseEditPage />}
+          />
+          <Route
+            path="/warehouses/:warehouseid"
+            element={<WarehouseDeletePage />}
           />
           <Route path="/warehouses/new" element={<WarehouseAddNewPage />} />
           <Route path="/inventory" element={<InventoryMainPage />} />
@@ -29,14 +38,14 @@ function App() {
             path="/inventory/:inventoryid"
             element={<InvetoryItemDetailPage />}
           />
-          {/* <Route
-            path="/inventory/:inventoryid/edit"
+          <Route
+            path="/inventory/edit/:inventoryid"
             element={<InventoryEditItemPage />}
-          /> */}
+          />
           <Route path="/inventory/new" element={<InventoryAddNewPage />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      ;
     </main>
   );
 }

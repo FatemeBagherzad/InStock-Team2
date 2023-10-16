@@ -138,18 +138,10 @@ button {
   }
 }
 
-.mainInventoryPageBody {
-  margin-top: -40px !important;
-  background-color: #ffffff;
+.WarehouseAddNewPage {
+  max-width: 80rem;
   border-radius: 0.5rem;
-  box-shadow: 0 0 10px 2px #232940;
-  margin-right: 1rem !important;
-  margin-left: 1rem !important;
-}
-@media (min-width: 768px) {
-  .mainInventoryPageBody {
-    margin-top: -90px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
+  box-shadow: 0 0 10px #bdc5d5;
+  margin: 5rem auto;
+  padding-bottom: 2rem;
 }

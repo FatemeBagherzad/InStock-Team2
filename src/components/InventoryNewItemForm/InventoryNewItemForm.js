@@ -1,20 +1,19 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import InputAllTextType from "../InputAllTextType/InputAllTextType";
-import axios from "axios";
-import Button from "../Button/Button";
-import "./InventoryNewItemForm.scss";
+import InputAllTextType from '../InputAllTextType/InputAllTextType';
+import axios from 'axios';
+import Button from '../Button/Button';
+import './InventoryNewItemForm.scss';
 
 const InventoryNewItemForm = () => {
   const [allWarehouses, setAllWarehouses] = useState();
   const [quantityShow, setQuantityShow] = useState(true);
-  const [statusChecked, setStatusChecked] = useState("In Stock");
   const [err, setErr] = useState({});
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:8888/warehouses").then((response) => {
+    axios.get('http://localhost:8888/warehouses').then((response) => {
       setAllWarehouses(response.data);
     });
   }, []);
@@ -33,7 +32,7 @@ const InventoryNewItemForm = () => {
     setErr({});
     console.log(event.target.value);
     if (event.target.warehouse.value === 'Please select') {
-      alert('Pleate choose a warehouse from the menu!!');
+      alert('Pleate choose a warehouse from the list!!');
       return;
     }
     //find warehouse id of warehouse that is chosen in form
@@ -53,7 +52,7 @@ const InventoryNewItemForm = () => {
     //handle form errors
 
     if (!newInventoryObj.warehouse_id) {
-      err['warehouse'] = 'one warehouse must be chosen!';
+      err['inventory'] = 'one warehouse must be chosen!';
       return;
     }
     if ((newInventoryObj.status = 'Out of Stock')) {
@@ -154,10 +153,10 @@ const InventoryNewItemForm = () => {
       <div className="InventoryNewItemForm__btns">
         <Button
           type="cancel"
-          btnTxt="CANCEL"
-          onClick={() => navigate("/inventory")}
+          btnTxt="Cancel"
+          onClick={() => navigate('/inventory')}
         />
-        <Button type="submit" btnTxt="+ ADD INVENTORY" />
+        <Button type="submit" btnTxt="+ Add item" />
       </div>
     </form>
   );
