@@ -3,15 +3,28 @@ import './InventoryItemMob.scss';
 import arrowIcon from '../../assets/Icons/chevron_right-24px.svg';
 import deleteIcon from '../../assets/Icons/delete_outline-24px.svg';
 import editIcon from '../../assets/Icons/edit-24px.svg';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const InventoryItemMob = ({ inventory, handleDeleteClick }) => {
+  const [warehouse, setWarehouse] = useState(null);
   const navigate = useNavigate();
+  const warehouseid = inventory.warehouse_id;
 
-  // // Function to handle the edit icon click
-  // const handleEditClick = () => {
-  //   navigate(`/inventory/edit/${inventory.id}`);
-  // };
+  useEffect(() => {
+    if (warehouseid) {
+      axios
+        .get(`http://localhost:8888/warehouses/` + warehouseid)
+        .then((response) => {
+          setWarehouse(response.data);
+        })
+        .catch((err) => console.log(err));
+    }
+  }, [warehouseid]);
 
+  if (warehouse === null) {
+    return <div>Loading...</div>;
+  }
   return (
     <div className=" ">
       <div className="InventoryItemMobDisplay">
@@ -66,7 +79,7 @@ const InventoryItemMob = ({ inventory, handleDeleteClick }) => {
                 WAREHOUSE
               </p>
               <p className="inventoryItemMobTxt__titleAndItem--item">
-                Washington
+                {warehouse[0].warehouse_name}
               </p>
             </div>
           </div>

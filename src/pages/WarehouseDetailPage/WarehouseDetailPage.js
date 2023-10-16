@@ -7,12 +7,11 @@ import PageHeader from '../../components/PageHeader/PageHeader';
 import axios from 'axios';
 
 function WarehouseDetailPage() {
-  const [allInvetories, setAllInvetories] = useState([]);
-  const [warehouse, setWarehouse] = useState([]);
-  const [warehouseName, setWarehouseName] = useState([]);
+  const [allInventories, setAllInventories] = useState(null);
+  const [warehouse, setWarehouse] = useState(null);
+  const [warehouseName, setWarehouseName] = useState(null);
   const [show, setShow] = useState(false);
   const [id, setId] = useState('');
-
   const { warehouseid } = useParams();
 
   useEffect(() => {
@@ -20,42 +19,46 @@ function WarehouseDetailPage() {
       axios
         .get(`http://localhost:8888/warehouses/${warehouseid}`)
         .then((res) => {
-          setWarehouse(res.data);
-          setWarehouseName(res.data.warehouse_name);
+          setWarehouse(res.data[0]);
+          console.log(res.data[0].warehouse_name);
+          setWarehouseName(res.data[0].warehouse_name);
         })
         .catch((err) => console.log(err));
     }
   }, [warehouseid]);
-  console.log(warehouse);
 
   useEffect(() => {
-    axios.get('http://localhost:8888/inventory').then((response) => {
-      setAllInvetories(response.data);
-      // if (warehouseid) {
-      //   const allInventoryWithId = allInventory.filter(
-      //     (obj) => obj.warehouse_id === warehouseid
-      //   );
-      //   console.log(allInventoryWithId);
-      // }
-    });
-  }, []);
+    axios
+      .get(
+        `http://localhost:8888/warehouses/getInventoriesByWarehouseId/${warehouseid}`
+      )
+      .then((response) => {
+        console.log(response.data);
+        setAllInventories(response.data);
+      });
+  }, [warehouseid]);
 
   const handleClick = (status, inventoryId, inventoryName) => {
     console.log(inventoryId);
     setShow(status);
     setId(inventoryId);
   };
+  console.log(allInventories);
 
   return (
     <>
-      <PageHeader pageTitle="Washington" btnTxt="Edit" />
-      <WarehouseDetailsCard />
-      <div className="container">
-        <InventoryList
-          allInvetories={allInvetories}
-          handleClick={handleClick}
-        />
-      </div>
+      {allInventories ? (
+        <>
+          <PageHeader pageTitle={warehouseName} btnTxt="Edit" />
+          <WarehouseDetailsCard />
+          <div className="container">
+            <InventoryList
+              allInvetories={allInventories}
+              handleClick={handleClick}
+            />
+          </div>
+        </>
+      ) : null}
     </>
   );
 }
