@@ -11,10 +11,16 @@ const InventoryMainPage = () => {
   const [id, setId] = useState('');
   const [inventoryName, setInventoryName] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
+
   useEffect(() => {
-    axios.get('http://localhost:8888/inventory').then((response) => {
-      setAllInvetories(response.data);
-    });
+    axios
+      .get('http://localhost:8888/inventory')
+      .then((response) => {
+        setAllInvetories(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
   const filteredItems = allInvetories.filter((item) =>

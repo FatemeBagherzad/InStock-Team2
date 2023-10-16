@@ -13,9 +13,9 @@ const WarehousePage = () => {
   const [warehouseName, setWarehouseName] = useState('');
   const [show, setShow] = useState(false);
   const [id, setId] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    // Fetch warehouses
     axios
       .get('http://localhost:8888/warehouses')
       .then((response) => {
@@ -27,21 +27,14 @@ const WarehousePage = () => {
       .finally(() => {
         setLoading(false);
       });
-
-    // Fetch inventories
-    axios
-      .get('http://localhost:8888/inventory')
-      .then((response) => {
-        setAllInventories(response.data);
-      })
-      .catch((error) => {
-        setError(error);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
   }, []);
 
+  const filteredItems = allWarehouses.filter((item) =>
+    item.warehouse_name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
   if (loading) {
     return <p>Loading...</p>; // Show a loading message while data is being fetched
   }
@@ -75,9 +68,11 @@ const WarehousePage = () => {
         pageTitle="Warehouses"
         type="search"
         btnTxt="+ Add A New Warehouse"
+        value={searchQuery}
+        onChange={handleSearchChange}
       />
       <WarehouseList
-        allWarehouses={allWarehouses}
+        allWarehouses={filteredItems}
         handleDeleteClick={handleDeleteClick}
       />
       <WarehouseDeletePage
