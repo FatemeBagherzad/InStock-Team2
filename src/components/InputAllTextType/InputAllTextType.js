@@ -1,7 +1,14 @@
 import { useRef } from 'react';
 import './InputAllTextType.scss';
 
-const InputAllTextType = ({ type, value, label, name, allWarehouses }) => {
+const InputAllTextType = ({
+  type,
+  value,
+  label,
+  name,
+  onChange,
+  allWarehouses,
+}) => {
   const ref = useRef(null);
   let input;
 
@@ -13,6 +20,8 @@ const InputAllTextType = ({ type, value, label, name, allWarehouses }) => {
         placeholder="Search..."
         ref={ref}
         className="inputs inputs__search"
+        value={value}
+        onChange={onChange}
       />
     );
   } else if (type === 'tel') {
