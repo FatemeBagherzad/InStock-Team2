@@ -10,13 +10,19 @@ const InventoryMainPage = () => {
   const [show, setShow] = useState(false);
   const [id, setId] = useState('');
   const [inventoryName, setInventoryName] = useState('');
-
+  const [searchQuery, setSearchQuery] = useState('');
   useEffect(() => {
     axios.get('http://localhost:8888/inventory').then((response) => {
       setAllInvetories(response.data);
     });
   }, []);
 
+  const filteredItems = allInvetories.filter((item) =>
+    item.item_name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
   const handleDeleteClick = (status, inventoryId, inventoryName) => {
     console.log(inventoryId);
     setShow(status);
@@ -44,9 +50,11 @@ const InventoryMainPage = () => {
           pageTitle="Inventories"
           type="search"
           btnTxt="+Add A New Inventory"
+          value={searchQuery}
+          onChange={handleSearchChange}
         />
         <InventoryList
-          allInvetories={allInvetories}
+          allInvetories={filteredItems}
           handleDeleteClick={handleDeleteClick}
         />
       </div>
