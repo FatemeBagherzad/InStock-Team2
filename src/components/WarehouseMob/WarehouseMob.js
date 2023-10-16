@@ -15,7 +15,7 @@ const WarehouseMob = ({ warehouse, handleDeleteClick }) => {
               <p className="WarehouseMobTxt__titleAndItem--label">WAREHOUSE</p>
               <p
                 className="WarehouseMobTxt__titleAndItem--item WarehouseMobTxt__titleAndItem--item-withArrow"
-                onClick={() => navigate(`/warehouses/${warehouse.id}`)}
+                onClick={() => navigate(`/warehouses/${warehouse.id}/detail`)}
               >
                 {warehouse.warehouse_name}{' '}
                 <img

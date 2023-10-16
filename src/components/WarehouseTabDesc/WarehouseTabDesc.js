@@ -13,7 +13,7 @@ const WarehouseTabDesc = ({ warehouse, handleDeleteClick }) => {
         <ul className="WarehouseTabDes">
           <li
             className="WarehouseTabDes__li WarehouseTabDes__li--withIcn"
-            onClick={() => navigate(`/warehouses/${warehouse.id}`)}
+            onClick={() => navigate(`/warehouses/${warehouse.id}/detail`)}
           >
             {warehouse.warehouse_name}
             {''}

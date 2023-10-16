@@ -11,6 +11,7 @@ const InventoryEditItemPage = () => {
   const [inventory, setInvetory] = useState();
   const { inventoryid } = useParams();
   console.log(inventoryid);
+
   useEffect(() => {
     if (inventoryid) {
       axios

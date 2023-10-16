@@ -10,6 +10,7 @@ import Footer from './components/footer/Footer';
 import InventoryEditItemPage from './pages/InventoryEditItemPage/InventoryEditItemPage';
 import WarehouseDeletePage from './pages/WarehouseDeletePage/WarehouseDeletePage';
 import WarehouseEditPage from './pages/WarehouseEditPage/WarehouseEditPage';
+import WarehouseDetailPage from './pages/WarehouseDetailPage/WarehouseDetailPage';
 
 function App() {
   return (
@@ -19,10 +20,10 @@ function App() {
         <Routes>
           <Route path="/warehouses" element={<WarehousePage />} />
           <Route path="/" element={<WarehousePage />} />
-          {/* <Route
-            path="/warehouses/:warehouseid"
-            element={<WarehouseDetailsPage />}
-          />*/}
+          <Route
+            path="/warehouses/:warehouseid/detail"
+            element={<WarehouseDetailPage />}
+          />
           <Route
             path="/warehouses/:warehouseid/edit"
             element={<WarehouseEditPage />}
