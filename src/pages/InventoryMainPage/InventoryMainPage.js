@@ -25,18 +25,22 @@ const InventoryMainPage = () => {
       });
   }, []);
 
+  //search section
   const filteredItems = allInvetories.filter((item) =>
     item.item_name.toLowerCase().includes(searchQuery.toLowerCase())
   );
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
+
+  //delete
   const handleDeleteClick = (status, inventoryId, inventoryName) => {
     setShow(status);
     setId(inventoryId);
     setInventoryName(inventoryName);
   };
 
+  //onClose
   const close = () => {
     axios
       .get('http://localhost:8888/inventory')

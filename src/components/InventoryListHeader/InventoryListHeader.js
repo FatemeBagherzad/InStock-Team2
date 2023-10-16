@@ -1,7 +1,7 @@
 import sortIcon from '../../assets/Icons/sort-24px.svg';
 import './InventoryListHeader.scss';
 
-const InventoryListHeader = () => {
+const InventoryListHeader = ({ handleSort }) => {
   return (
     <>
       <div className="container InventoryListHeaderDisplay ">
@@ -12,6 +12,9 @@ const InventoryListHeader = () => {
               className="InventoryListHeader__titleAndIcn--icon"
               src={sortIcon}
               alt="sort icon"
+              onClick={() => {
+                handleSort('item_name');
+              }}
             />
           </li>
           <li className="InventoryListHeader__titleAndIcn">
@@ -20,6 +23,9 @@ const InventoryListHeader = () => {
               className="InventoryListHeader__titleAndIcn--icon"
               src={sortIcon}
               alt="sort icon"
+              onClick={() => {
+                handleSort('category');
+              }}
             />
           </li>
           <li className="InventoryListHeader__titleAndIcn">
@@ -28,6 +34,9 @@ const InventoryListHeader = () => {
               className="InventoryListHeader__titleAndIcn--icon"
               src={sortIcon}
               alt="sort icon"
+              onClick={() => {
+                handleSort('status');
+              }}
             />
           </li>
           <li className="InventoryListHeader__titleAndIcn">
@@ -36,6 +45,9 @@ const InventoryListHeader = () => {
               className="InventoryListHeader__titleAndIcn--icon"
               src={sortIcon}
               alt="sort icon"
+              onClick={() => {
+                handleSort('quantity');
+              }}
             />
           </li>
           <li className="InventoryListHeader__titleAndIcn">
@@ -44,6 +56,9 @@ const InventoryListHeader = () => {
               className="InventoryListHeader__titleAndIcn--icon"
               src={sortIcon}
               alt="sort icon"
+              onClick={() => {
+                handleSort('warehouse_id');
+              }}
             />
           </li>
           <li className="InventoryListHeader__titleAndIcn">ACTION </li>
