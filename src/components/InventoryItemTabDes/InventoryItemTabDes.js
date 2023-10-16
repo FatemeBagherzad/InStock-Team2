@@ -10,7 +10,7 @@ const InventoryItemTabDes = ({ inventory, handleDeleteClick }) => {
   const [warehouse, setWarehouse] = useState(null);
   const navigate = useNavigate();
   const warehouseid = inventory.warehouse_id;
-  console.log(warehouseid);
+
   useEffect(() => {
     if (warehouseid) {
       axios
