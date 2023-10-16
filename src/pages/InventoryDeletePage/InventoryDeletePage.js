@@ -7,7 +7,6 @@ const InventoryDeletePage = ({ onClose, show, inventoryName, inventoryId }) => {
   if (!show) {
     return null;
   }
-  console.log(inventoryId);
   const handleSubmit = () => {
     axios
       .delete(`http://localhost:8888/inventory/${inventoryId}`, {

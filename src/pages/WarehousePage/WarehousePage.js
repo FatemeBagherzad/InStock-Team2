@@ -7,7 +7,6 @@ import WarehouseDeletePage from '../WarehouseDeletePage/WarehouseDeletePage';
 
 const WarehousePage = () => {
   const [allWarehouses, setAllWarehouses] = useState([]);
-  const [allInventories, setAllInventories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [warehouseName, setWarehouseName] = useState('');

@@ -9,9 +9,7 @@ import './InventoryNewItemForm.scss';
 const InventoryNewItemForm = () => {
   const [allWarehouses, setAllWarehouses] = useState();
   const [quantityShow, setQuantityShow] = useState(true);
-  const [quantityShowsUp, setQuantityShowsUp] = useState(true);
   const [statusChecked, setStatusChecked] = useState('In Stock');
-  const [err, setErr] = useState({});
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -33,7 +31,6 @@ const InventoryNewItemForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setErr({});
 
     if (event.target.warehouse.value === 'Please select') {
       alert('Pleate choose a warehouse from the list!!');

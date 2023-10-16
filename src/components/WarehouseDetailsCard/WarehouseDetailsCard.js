@@ -7,12 +7,7 @@ import './WarehouseDetailsCard.scss';
 function WarehouseDetailsHeader() {
   const [warehouseDetails, setWarehouseDetails] = useState(null);
   const { warehouseid } = useParams();
-  const { pathname } = useLocation();
   const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate(-1);
-  };
 
   useEffect(() => {
     axios

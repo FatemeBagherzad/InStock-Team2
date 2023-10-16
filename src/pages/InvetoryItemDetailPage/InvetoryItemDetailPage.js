@@ -4,7 +4,6 @@ import axios from 'axios';
 import InvetoryItemDetail from '../../components/InvetoryItemDetail/InvetoryItemDetail';
 import PageHeader from '../../components/PageHeader/PageHeader';
 import './InvetoryItemDetailPage.scss';
-import editIcn from '../../assets/Icons/edit-24px.svg';
 
 const InvetoryItemMorePage = () => {
   const [inventory, setInvetory] = useState();

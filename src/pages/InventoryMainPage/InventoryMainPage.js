@@ -30,7 +30,6 @@ const InventoryMainPage = () => {
     setSearchQuery(e.target.value);
   };
   const handleDeleteClick = (status, inventoryId, inventoryName) => {
-    console.log(inventoryId);
     setShow(status);
     setId(inventoryId);
     setInventoryName(inventoryName);
