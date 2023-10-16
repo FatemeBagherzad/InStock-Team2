@@ -1,65 +1,66 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import WarehouseDetailsCard from '../../components/WarehouseDetailsCard/WarehouseDetailsCard';
+import axios from 'axios';
 import InventoryList from '../../components/InventoryList/InventoryList';
 import './WarehouseDetailPage.scss';
 import PageHeader from '../../components/PageHeader/PageHeader';
-import axios from 'axios';
+import './WarehouseDetailPage.scss';
 
 function WarehouseDetailPage() {
-  const [allInvetories, setAllInvetories] = useState([]);
-  const [warehouse, setWarehouse] = useState([]);
-  const [warehouseName, setWarehouseName] = useState([]);
+  const [allInventories, setAllInventories] = useState(null);
+  const [warehouseName, setWarehouseName] = useState(null);
   const [show, setShow] = useState(false);
   const [id, setId] = useState('');
-
   const { warehouseid } = useParams();
-  console.log(warehouseid);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (warehouseid) {
       axios
         .get(`http://localhost:8888/warehouses/${warehouseid}`)
         .then((res) => {
-          console.log(res.data);
-          setWarehouse(res.data);
-          setWarehouseName(res.data.warehouse_name);
-          console.log(res.data.warehouse_name);
+          setWarehouseName(res.data[0].warehouse_name);
         })
         .catch((err) => console.log(err));
     }
   }, [warehouseid]);
-  console.log(warehouse);
 
   useEffect(() => {
-    axios.get('http://localhost:8888/inventory').then((response) => {
-      setAllInvetories(response.data);
-      // if (warehouseid) {
-      //   const allInventoryWithId = allInventory.filter(
-      //     (obj) => obj.warehouse_id === warehouseid
-      //   );
-      //   console.log(allInventoryWithId);
-      // }
-    });
-  }, []);
+    axios
+      .get(
+        `http://localhost:8888/warehouses/getInventoriesByWarehouseId/${warehouseid}`
+      )
+      .then((response) => {
+        setAllInventories(response.data);
+      });
+  }, [warehouseid]);
 
   const handleClick = (status, inventoryId, inventoryName) => {
-    console.log(inventoryId);
     setShow(status);
     setId(inventoryId);
   };
 
   return (
-    <>
-      {warehouseName && <PageHeader pageTitle={warehouseName} btnTxt="Edit" />}
-      <WarehouseDetailsCard />
-      <div className="container">
-        <InventoryList
-          allInvetories={allInvetories}
-          handleClick={handleClick}
-        />
-      </div>
-    </>
+    <div className="warehouseDetailPage">
+      {allInventories ? (
+        <>
+          <PageHeader
+            pageTitle={warehouseName}
+            btnTxt="Edit"
+            onClick={() => navigate(`/warehouses/${warehouseid}/edit`)}
+          />
+          <WarehouseDetailsCard />
+          <div className="container">
+            <InventoryList
+              allInvetories={allInventories}
+              handleClick={handleClick}
+            />
+          </div>
+        </>
+      ) : null}
+    </div>
   );
 }
 

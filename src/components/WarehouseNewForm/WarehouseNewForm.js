@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+
 import axios from 'axios';
 
 import InputAllTextType from '../InputAllTextType/InputAllTextType';
@@ -7,14 +7,11 @@ import Button from '../Button/Button';
 import './WarehouseNewForm.scss';
 
 const WarehouseNewForm = () => {
-  const [error, setErr] = useState({});
-
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    setErr({});
     const newWarehouseObj = {
       warehouse_name: event.target.name.value,
       address: event.target.address.value,
@@ -26,51 +23,86 @@ const WarehouseNewForm = () => {
       contact_email: event.target.email.value,
     };
 
-    // if (!newWarehouseObj[warehouse_name] && !newWarehouseObj[address]) {
-    //   console.log('The warehouse name is required!!');
-    //   return;
-    // }
-    // if (!newWarehouseObj.address) {
-    //   error['address'] = 'The warehouse address is required!!';
-    //   return;
-    // }
-    // if (!newWarehouseObj.city) {
-    //   error['city'] = 'The warehouse city is required!!';
-    //   return;
-    // }
-    // if (!newWarehouseObj.country) {
-    //   error['country'] = 'The warehouse country is required!!';
-    //   return;
-    // }
-    // if (!newWarehouseObj.contact_name) {
-    //   error['contact_name'] = 'The contact name is required!!';
-    //   return;
-    // }
-    // if (!newWarehouseObj.contact_position) {
-    //   error['contact_position'] = 'The contact position is required!!';
-    //   return;
-    // }
-    // if (!newWarehouseObj.contact_phone) {
-    //   error['contact_phone'] = 'The contact phone is required!!';
-    //   return;
-    // }
-    // if (!newWarehouseObj.contact_email) {
-    //   error['contact_email'] = 'The contact email is required!!';
-    //   return;
-    // }
-    // if (Object.keys(error).length !== 0) {
-    //   alert(`Please check all the fields again: All field must be filled!!!`);
-    //   return;
-    // }
-    console.log(newWarehouseObj);
-    setErr({});
-    axios
-      .post('http://localhost:8888/warehouses', newWarehouseObj)
-      .then((response) => {
-        event.target.reset();
-        alert('New Warehouse added successfully!');
-        navigate('/warehouses');
-      });
+    const validate = () => {
+      const errors = {};
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+      const phoneRegex =
+        /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/im;
+      if (!newWarehouseObj.warehouse_name) {
+        errors.warehouse_name = 'Warehouse Name is required';
+        event.target.name.style.border = '1px solid red';
+      } else {
+        event.target.name.style.border = '';
+      }
+      if (!newWarehouseObj.address) {
+        errors.address = 'Street Address is required';
+        event.target.address.style.border = '1px solid red';
+      } else {
+        event.target.address.style.border = '';
+      }
+      if (!newWarehouseObj.city) {
+        errors.city = 'City is required';
+        event.target.city.style.border = '1px solid red';
+      } else {
+        event.target.city.style.border = '';
+      }
+      if (!newWarehouseObj.country) {
+        errors.country = 'Country is required';
+        event.target.country.style.border = '1px solid red';
+      } else {
+        event.target.country.style.border = '';
+      }
+      if (!newWarehouseObj.contact_name) {
+        errors.contact_name = 'Contact details is required';
+        event.target.contactName.style.border = '1px solid red';
+      } else {
+        event.target.contactName.style.border = '';
+      }
+      if (!newWarehouseObj.contact_position) {
+        errors.contact_position = 'Position is required';
+        event.target.position.style.border = '1px solid red';
+      } else {
+        event.target.position.style.border = '';
+      }
+      if (!newWarehouseObj.contact_phone) {
+        errors.contact_phone = 'Phone number is required';
+        event.target.phNumber.style.border = '1px solid red';
+      } else if (!phoneRegex.test(newWarehouseObj.contact_phone)) {
+        errors.contact_phone = 'This is not a valid phone number';
+        event.target.phNumber.style.border = '1px solid red';
+      } else {
+        event.target.phNumber.style.border = '';
+      }
+      if (!newWarehouseObj.contact_email) {
+        errors.contact_email = 'Email is required';
+        event.target.email.style.border = '1px solid red';
+      } else if (!regex.test(newWarehouseObj.contact_email)) {
+        errors.contact_email = 'This is not a valid contact_email format!';
+        event.target.email.style.border = '1px solid red';
+      } else {
+        event.target.email.style.border = '';
+      }
+      console.log(errors);
+      if (Object.keys(errors).length > 0) {
+        console.log(errors);
+        alert('Please fill all fields!');
+        return errors;
+      }
+      return null;
+    };
+    const allerrors = validate();
+
+    if (allerrors) {
+      return;
+    } else {
+      axios
+        .post('http://localhost:8888/warehouses', newWarehouseObj)
+        .then((response) => {
+          event.target.reset();
+          alert('New Warehouse added successfully!');
+          navigate('/warehouses');
+        });
+    }
   };
 
   return (

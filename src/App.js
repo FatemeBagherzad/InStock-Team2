@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.scss';
 import InventoryMainPage from './pages/InventoryMainPage/InventoryMainPage';
 import InvetoryItemDetailPage from './pages/InvetoryItemDetailPage/InvetoryItemDetailPage';
@@ -17,33 +17,35 @@ function App() {
     <main>
       <BrowserRouter>
         <Header />
-        <Routes>
-          <Route path="/warehouses" element={<WarehousePage />} />
-          <Route path="/" element={<WarehousePage />} />
-          <Route
-            path="/warehouses/:warehouseid/detail"
-            element={<WarehouseDetailPage />}
-          />
-          <Route
-            path="/warehouses/:warehouseid/edit"
-            element={<WarehouseEditPage />}
-          />
-          <Route
-            path="/warehouses/:warehouseid"
-            element={<WarehouseDeletePage />}
-          />
-          <Route path="/warehouses/new" element={<WarehouseAddNewPage />} />
-          <Route path="/inventory" element={<InventoryMainPage />} />
-          <Route
-            path="/inventory/:inventoryid"
-            element={<InvetoryItemDetailPage />}
-          />
-          <Route
-            path="/inventory/edit/:inventoryid"
-            element={<InventoryEditItemPage />}
-          />
-          <Route path="/inventory/new" element={<InventoryAddNewPage />} />
-        </Routes>
+        <div className="mainPageBody">
+          <Routes>
+            <Route path="/warehouses" element={<WarehousePage />} />
+            <Route path="/" element={<WarehousePage />} />
+            <Route
+              path="/warehouses/:warehouseid/detail"
+              element={<WarehouseDetailPage />}
+            />
+            <Route
+              path="/warehouses/:warehouseid/edit"
+              element={<WarehouseEditPage />}
+            />
+            <Route
+              path="/warehouses/:warehouseid"
+              element={<WarehouseDeletePage />}
+            />
+            <Route path="/warehouses/new" element={<WarehouseAddNewPage />} />
+            <Route path="/inventory" element={<InventoryMainPage />} />
+            <Route
+              path="/inventory/:inventoryid"
+              element={<InvetoryItemDetailPage />}
+            />
+            <Route
+              path="/inventory/edit/:inventoryid"
+              element={<InventoryEditItemPage />}
+            />
+            <Route path="/inventory/new" element={<InventoryAddNewPage />} />
+          </Routes>
+        </div>
         <Footer />
       </BrowserRouter>
     </main>

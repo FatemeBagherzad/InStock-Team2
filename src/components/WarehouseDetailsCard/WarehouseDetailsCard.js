@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, useLocation, Link } from 'react-router-dom';
-import backArrow from '../../assets/Icons/arrow_back-24px.svg';
 import axios from 'axios';
 
 import './WarehouseDetailsCard.scss';
@@ -8,24 +7,16 @@ import './WarehouseDetailsCard.scss';
 function WarehouseDetailsHeader() {
   const [warehouseDetails, setWarehouseDetails] = useState(null);
   const { warehouseid } = useParams();
-  const { pathname } = useLocation();
   const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate(-1); // Take user back to the previous page
-  };
 
   useEffect(() => {
     axios
       .get(`http://localhost:8888/warehouses/${warehouseid}`)
       .then((response) => {
         if (response.status === 200) {
-          // Access the first element of the array in the response data
           const warehouseData = response.data[0];
           setWarehouseDetails(warehouseData);
-          console.log('Warehouse Data:', warehouseData);
         } else {
-          // Handle other response statuses here
           console.error('Unexpected API response:', response);
         }
       })

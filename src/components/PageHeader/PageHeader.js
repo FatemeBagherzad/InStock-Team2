@@ -4,7 +4,7 @@ import Button from '../Button/Button';
 import InputAllTextType from '../InputAllTextType/InputAllTextType';
 import './PageHeader.scss';
 
-const PageHeader = ({ pageTitle, btnTxt, type, onClick }) => {
+const PageHeader = ({ pageTitle, btnTxt, type, onClick, value, onChange }) => {
   const navigate = useNavigate();
 
   return (
@@ -16,8 +16,8 @@ const PageHeader = ({ pageTitle, btnTxt, type, onClick }) => {
             pageTitle.includes('Add') ? 'PageHeader__right--display' : ''
           }`}
         >
-          <InputAllTextType type={type} />
-          <Button btnTxt={btnTxt} onClick={() => navigate(`./new`)} />
+          <InputAllTextType type={type} value={value} onChange={onChange} />
+          <Button btnTxt={btnTxt} onClick={onClick} />
         </div>
       </header>
     </>

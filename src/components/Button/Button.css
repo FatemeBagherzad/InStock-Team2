@@ -192,3 +192,11 @@ button {
 .button--delete:hover {
   background-color: #232940;
 }
+.button--noshow {
+  display: none;
+}
+.button--edit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

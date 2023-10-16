@@ -9,7 +9,7 @@ import './InventoryNewItemForm.scss';
 const InventoryNewItemForm = () => {
   const [allWarehouses, setAllWarehouses] = useState();
   const [quantityShow, setQuantityShow] = useState(true);
-  const [err, setErr] = useState({});
+  const [statusChecked, setStatusChecked] = useState('In Stock');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -21,21 +21,21 @@ const InventoryNewItemForm = () => {
   function handleChange(event) {
     if (event.target.value === 'In Stock') {
       setQuantityShow(true);
+      setStatusChecked('In Stock');
     }
     if (event.target.value === 'Out of Stock') {
       setQuantityShow(false);
+      setStatusChecked('Out Of Stock');
     }
   }
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setErr({});
-    console.log(event.target.value);
+
     if (event.target.warehouse.value === 'Please select') {
       alert('Pleate choose a warehouse from the list!!');
       return;
     }
-    //find warehouse id of warehouse that is chosen in form
     const warehousechosen = allWarehouses.find(
       (warehouse) => warehouse.warehouse_name === event.target.warehouse.value
     );
@@ -49,48 +49,84 @@ const InventoryNewItemForm = () => {
       quantity: Number(event.target.quantity?.value) || 0,
     };
 
-    //handle form errors
+    const validate = () => {
+      const errors = {};
 
-    if (!newInventoryObj.warehouse_id) {
-      err['inventory'] = 'one warehouse must be chosen!';
+      if (!newInventoryObj.warehouse_id) {
+        errors.warehouse = 'Please choose a warehouse from the list';
+      }
+      if (
+        newInventoryObj.status === 'Out of Stock' &&
+        newInventoryObj.quantity !== 0
+      ) {
+        errors.quantity = 'Out of Stock items must have a quantity of 0';
+      }
+      if (
+        newInventoryObj.status === 'In Stock' &&
+        parseInt(newInventoryObj.quantity) <= 0
+      ) {
+        errors.quantity2 = 'This item is in stock. Quantity must be > 0 !';
+      }
+      if (
+        newInventoryObj.status === 'Out of Stock' &&
+        parseInt(newInventoryObj.quantity) > 0
+      ) {
+        errors.quantity3 = 'This item is out of stock. Quantity must be = 0 !';
+      }
+      if (!newInventoryObj.item_name) {
+        errors.item_name = 'Item name is required';
+      }
+      if (!newInventoryObj.description) {
+        errors.description = 'Description is required';
+      }
+      if (!newInventoryObj.category) {
+        errors.category = 'Category is required';
+      }
+      return errors;
+    };
+    const errors = validate();
+    if (errors.warehouse) {
+      alert('please choose a warehouse from list!');
+      event.target.warehouse.style.border = '1px solid red';
       return;
     }
-    if ((newInventoryObj.status = 'Out of Stock')) {
-      newInventoryObj.quantity = 0;
-    }
-    if (
-      (newInventoryObj.status = 'In Stock') &&
-      parseInt(newInventoryObj.quantity) < 0
-    ) {
-      err['quantity'] = 'Status and quantity must match!';
-      alert(
-        'This Inventory is in stock. the Quantity must be bigger that zero!'
-      );
+    if (errors.item_name) {
+      alert('please correct the item name!');
+      event.target.name.style.border = '1px solid red';
       return;
     }
-    if (
-      !newInventoryObj.item_name ||
-      !newInventoryObj.description ||
-      !newInventoryObj.category
-    ) {
-      err['nameORdescriptionORcategory'] = 'All field should be filled!';
+    if (errors.description) {
+      alert('please correct the description!');
+      event.target.description.style.border = '1px solid red';
       return;
     }
-    if (Object.keys(err).length !== 0) {
+    if (errors.category) {
+      alert('please correct the category!');
+      event.target.category.style.border = '1px solid red';
+      return;
+    }
+    if (errors.quantity || errors.quantity2 || errors.quantity3) {
+      alert('please check the status and insert a proper quatity for it!');
+      event.target.quantity.style.border = '1px solid red';
+      return;
+    }
+
+    if (Object.keys(errors).length !== 0) {
       alert(
         `Please check all the fields again:\n1-One warehouse must be chosen!\n2-Status and quantity must match!\n3-Inventory quantity must be >0!\n4-Inventory name and description and category must be filled!`
       );
-      return;
-    }
-    console.log(newInventoryObj);
+      return errors;
+    } else {
+      console.log(newInventoryObj);
 
-    axios
-      .post('http://localhost:8888/inventory', newInventoryObj)
-      .then((response) => {
-        event.target.reset();
-        alert('New Inventory added successfully!');
-        navigate('/inventory');
-      });
+      axios
+        .post('http://localhost:8888/inventory', newInventoryObj)
+        .then((response) => {
+          event.target.reset();
+          alert('New Inventory added successfully!');
+          navigate('/inventory');
+        });
+    }
   };
 
   return (
@@ -116,6 +152,7 @@ const InventoryNewItemForm = () => {
                 value="In Stock"
                 className=""
                 onChange={handleChange}
+                checked={statusChecked === 'In Stock'}
               />
               <p className="">In Stock</p>
             </div>
@@ -127,6 +164,7 @@ const InventoryNewItemForm = () => {
                 value="Out of Stock"
                 className=""
                 onChange={handleChange}
+                checked={statusChecked === 'Out Of Stock'}
               />
               <p className="">Out of Stock</p>
             </div>
