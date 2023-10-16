@@ -3,11 +3,10 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/global' as *;
 
-.InventoryEditForm {
+.WarehouseEditForm {
   display: flex;
   flex-direction: column;
-
-  &__form {
+  &__formTxt {
     display: grid;
     grid-template-columns: 1fr;
     @include tablet {
@@ -41,8 +40,6 @@
       }
     }
   }
-}
-.InventoryEditFormbottom {
   &__btns {
     display: flex;
     flex-direction: row;
