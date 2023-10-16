@@ -86,21 +86,27 @@ const WarehouseNewForm = () => {
         event.target.email.style.border = '';
       }
       console.log(errors);
-      if (errors) {
+      if (Object.keys(errors).length > 0) {
+        console.log(errors);
         alert('Please fill all fields!');
-        return;
+        return errors;
       }
+      return null;
     };
-    validate();
+    const allerrors = validate();
 
-    axios
-      .post('http://localhost:8888/warehouses', newWarehouseObj)
-      .then((response) => {
-        event.target.reset();
-        alert('New Warehouse added successfully!');
-        navigate('/warehouses');
-      });
-    setErr({});
+    if (allerrors) {
+      return;
+    } else {
+      axios
+        .post('http://localhost:8888/warehouses', newWarehouseObj)
+        .then((response) => {
+          event.target.reset();
+          alert('New Warehouse added successfully!');
+          navigate('/warehouses');
+        });
+      setErr({});
+    }
   };
 
   return (
