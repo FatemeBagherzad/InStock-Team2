@@ -14,17 +14,14 @@ function WarehouseDetailPage() {
   const [id, setId] = useState('');
 
   const { warehouseid } = useParams();
-  console.log(warehouseid);
 
   useEffect(() => {
     if (warehouseid) {
       axios
         .get(`http://localhost:8888/warehouses/${warehouseid}`)
         .then((res) => {
-          console.log(res.data);
           setWarehouse(res.data);
           setWarehouseName(res.data.warehouse_name);
-          console.log(res.data.warehouse_name);
         })
         .catch((err) => console.log(err));
     }
@@ -51,7 +48,7 @@ function WarehouseDetailPage() {
 
   return (
     <>
-      {warehouseName && <PageHeader pageTitle={warehouseName} btnTxt="Edit" />}
+      <PageHeader pageTitle="Washington" btnTxt="Edit" />
       <WarehouseDetailsCard />
       <div className="container">
         <InventoryList
