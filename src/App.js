@@ -6,11 +6,14 @@ import InventoryAddNewPage from './pages/InventoryAddNewPage/InventoryAddNewPage
 import WarehousePage from './pages/WarehousePage/WarehousePage';
 import WarehouseAddNewPage from './pages/WarehouseAddNewPage/WarehouseAddNewPage';
 import WarehouseEditPage from './pages/WarehouseEditPage/WarehouseEditPage';
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
 
 function App() {
   return (
     <main>
       <BrowserRouter>
+      <Header />
         <Routes>
           <Route path="/warehouses" element={<WarehousePage />} />
           {/* <Route path="/warehouses" element={<WarehousesPage />} />
@@ -35,8 +38,9 @@ function App() {
           /> */}
           <Route path="/inventory/new" element={<InventoryAddNewPage />} />
         </Routes>
+              <Footer />
       </BrowserRouter>
-      ;
+
     </main>
   );
 }

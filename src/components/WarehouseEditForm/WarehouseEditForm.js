@@ -19,6 +19,7 @@ const WarehouseEditForm = () => {
         <InputAllTextType type="smallTxt" label="Country" />
               </section>
               <section className="WarehouseNewForm__form-right">
+              <h2>Warehouse Details</h2>
           <InputAllTextType type="smallTxt" label="Contact Name" />
           <InputAllTextType type="smallTxt" label="Position" />
           <InputAllTextType type="smallTxt" label="Phone number" />

@@ -9,6 +9,8 @@ const WarehousePage = () => {
   const [allInventories, setAllInventories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [selectedWarehouse, setSelectedWarehouse] = useState(null);
 
   useEffect(() => {
     // Fetch warehouses
@@ -39,13 +41,10 @@ const WarehousePage = () => {
         setLoading(false);
       });
   }, []);
-  if (loading) {
-    return <p>Loading...</p>; // Show a loading message while data is being fetched
-  }
 
-  if (error) {
-    return <p>Error loading data: {error.message}</p>; // Show an error message if API calls fail
-  }
+
+
+
 
   return (
     <>

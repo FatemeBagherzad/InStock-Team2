@@ -14,5 +14,3 @@ const WarehouseEditPage = () => {
 export default WarehouseEditPage;
 
 
-// add prop to warehouse edit page which gathers information about warehouse 
-// pass prop to editwarehouseform 
