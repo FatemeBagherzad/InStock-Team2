@@ -9,28 +9,24 @@ const InventoryList = ({ allInvetories, handleDeleteClick }) => {
   // );
 
   const [sortField, setSortField] = useState(null);
-  const [sortOrder, setSortOrder] = useState(1); // 1 for ascending, -1 for descending
+  const [sortOrder, setSortOrder] = useState(1);
 
   const sortedData = [...allInvetories];
 
   // Function to handle sorting
   const handleSort = (field) => {
     if (field === sortField) {
-      // If the same field is clicked again, toggle the sort order
       setSortOrder(sortOrder === 1 ? -1 : 1);
     } else {
-      // If a different field is clicked, set the new field and order
       setSortField(field);
       setSortOrder(1);
     }
   };
 
-  // Sort the data based on the selected field and order
   if (sortField) {
     sortedData.sort((a, b) => {
       const aValue = a[sortField];
       const bValue = b[sortField];
-      console.log(aValue, bValue);
 
       if (aValue < bValue) return -1 * sortOrder;
       if (aValue > bValue) return 1 * sortOrder;
