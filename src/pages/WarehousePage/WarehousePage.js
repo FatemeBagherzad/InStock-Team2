@@ -76,11 +76,6 @@ const WarehousePage = () => {
         type="search"
         btnTxt="+ Add A New Warehouse"
       />
-<<<<<<< HEAD
-      <WarehouseList allWarehouses={allWarehouses} />
-
-    </>
-=======
       <WarehouseList
         allWarehouses={allWarehouses}
         handleDeleteClick={handleDeleteClick}
@@ -92,7 +87,6 @@ const WarehousePage = () => {
         onClose={close}
       />
     </div>
->>>>>>> master
   );
 };
 

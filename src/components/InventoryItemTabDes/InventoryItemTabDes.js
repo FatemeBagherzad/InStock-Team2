@@ -20,11 +20,7 @@ const InventoryItemTabDes = ({ inventory, handleDeleteClick }) => {
             className="inventoryItemTabDes__li inventoryItemTabDes__li--withIcn"
             onClick={() => navigate(`/inventory/${inventory.id}`)}
           >
-<<<<<<< HEAD
-            {inventory.item_name}{" "}
-=======
             {inventory.item_name}{' '}
->>>>>>> master
             <img
               className="inventoryItemTabDes__li--arrowIcn "
               src={arrowIcon}
@@ -36,13 +32,8 @@ const InventoryItemTabDes = ({ inventory, handleDeleteClick }) => {
             <div
               className={`inventoryItemTabDes__li--status  ${
                 inventory.quantity > 0
-<<<<<<< HEAD
-                  ? "inventoryItemTabDes__li--status-inStock"
-                  : "inventoryItemTabDes__li--status-outOfStock"
-=======
                   ? 'inventoryItemTabDes__li--status-inStock'
                   : 'inventoryItemTabDes__li--status-outOfStock'
->>>>>>> master
               }`}
             >
               {inventory.status}
@@ -67,7 +58,7 @@ const InventoryItemTabDes = ({ inventory, handleDeleteClick }) => {
                   className="inventoryItemTabDes__li--delAnEdIcn-icon"
                   src={editIcon}
                   alt="edit icon"
-                  onClick={handleEditClick}
+                  // onClick={handleEditClick}
                 />
               </Link>
             </div>

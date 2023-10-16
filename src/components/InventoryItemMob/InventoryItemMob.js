@@ -87,7 +87,7 @@ const InventoryItemMob = ({ inventory, handleDeleteClick }) => {
               className="inventoryItemMob__icon"
               src={editIcon}
               alt="edit icon"
-              onClick={handleEditClick}
+              // onClick={handleEditClick}
             />
           </Link>
         </div>
