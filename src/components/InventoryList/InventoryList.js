@@ -3,14 +3,14 @@ import InventoryItemTabDes from '../InventoryItemTabDes/InventoryItemTabDes';
 import InventoryListHeader from '../InventoryListHeader/InventoryListHeader';
 
 const InventoryList = ({ allInvetories, handleDeleteClick }) => {
-  const nonZeroInventories = allInvetories.filter(
-    (inventory) => inventory.quantity > 0
-  );
+  // const nonZeroInventories = allInvetories.filter(
+  //   (inventory) => inventory.quantity > 0
+  // );
   return (
     <>
       <InventoryListHeader />
       <section>
-        {nonZeroInventories.map((inventory) => (
+        {allInvetories.map((inventory) => (
           <InventoryItemMob
             inventory={inventory}
             key={inventory.id}
@@ -19,7 +19,7 @@ const InventoryList = ({ allInvetories, handleDeleteClick }) => {
         ))}
       </section>
       <section>
-        {nonZeroInventories.map((inventory) => (
+        {allInvetories.map((inventory) => (
           <InventoryItemTabDes
             inventory={inventory}
             key={inventory.id}
