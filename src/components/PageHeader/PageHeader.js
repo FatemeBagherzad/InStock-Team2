@@ -17,7 +17,7 @@ const PageHeader = ({ pageTitle, btnTxt, type, onClick, value, onChange }) => {
           }`}
         >
           <InputAllTextType type={type} value={value} onChange={onChange} />
-          <Button btnTxt={btnTxt} onClick={() => navigate(`./new`)} />
+          <Button btnTxt={btnTxt} onClick={onClick} />
         </div>
       </header>
     </>
