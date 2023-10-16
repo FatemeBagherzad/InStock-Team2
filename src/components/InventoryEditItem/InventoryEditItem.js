@@ -1,36 +1,36 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Button from "../Button/Button";
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Button from '../Button/Button';
 
-import InputAllTextType from "../../components/InputAllTextType/InputAllTextType";
-import axios from "axios";
-import "./InventoryEditItem.scss";
+import InputAllTextType from '../../components/InputAllTextType/InputAllTextType';
+import axios from 'axios';
+import './InventoryEditItem.scss';
 
 const EditInventoryItemPage = ({ inventoryid, inventory }) => {
   const [allWarehouses, setAllWarehouses] = useState();
-  const [statusChecked, setStatusChecked] = useState("In Stock");
+  const [statusChecked, setStatusChecked] = useState('In Stock');
   const [quantityShow, setQuantityShow] = useState(true);
   const [err, setErr] = useState({});
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get("http://localhost:8888/warehouses").then((response) => {
+    axios.get('http://localhost:8888/warehouses').then((response) => {
       setAllWarehouses(response.data);
     });
   }, []);
 
   function handleChange(event) {
     if (
-      event.target.value === "In Stock" ||
-      inventory[0].status === "In Stock" ||
+      event.target.value === 'In Stock' ||
+      inventory[0].status === 'In Stock' ||
       inventory[0].quantity > 0
     ) {
       setQuantityShow(true);
       setStatusChecked(true);
     }
     if (
-      event.target.value === "Out Of Stock" ||
-      inventory[0].status === "Out Of Stock" ||
+      event.target.value === 'Out Of Stock' ||
+      inventory[0].status === 'Out Of Stock' ||
       inventory[0].quantity < 0
     ) {
       setQuantityShow(false);
@@ -41,8 +41,8 @@ const EditInventoryItemPage = ({ inventoryid, inventory }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setErr({});
-    if (event.target.warehouse.value === "Please select") {
-      alert("Pleate choose a warehouse from the list!!");
+    if (event.target.warehouse.value === 'Please select') {
+      alert('Pleate choose a warehouse from the list!!');
       return;
     }
     //find warehouse id of warehouse that is chosen in form
@@ -63,19 +63,19 @@ const EditInventoryItemPage = ({ inventoryid, inventory }) => {
     //handle form errors
 
     if (!editInventoryObj.warehouse_id) {
-      err["warehouse"] = "one warehouse must be chosen!";
+      err['warehouse'] = 'one warehouse must be chosen!';
       return;
     }
-    if ((editInventoryObj.status = "Out of Stock")) {
+    if ((editInventoryObj.status = 'Out of Stock')) {
       editInventoryObj.quantity = 0;
     }
     if (
-      (editInventoryObj.status = "In Stock") &&
+      (editInventoryObj.status = 'In Stock') &&
       parseInt(editInventoryObj.quantity) < 0
     ) {
-      err["quantity"] = "Status and quantity must match!";
+      err['quantity'] = 'Status and quantity must match!';
       alert(
-        "This Inventory is in stock. the Quantity must be bigger that zero!"
+        'This Inventory is in stock. the Quantity must be bigger that zero!'
       );
       return;
     }
@@ -84,7 +84,7 @@ const EditInventoryItemPage = ({ inventoryid, inventory }) => {
       !editInventoryObj.description ||
       !editInventoryObj.category
     ) {
-      err["nameORdescriptionORcategory"] = "All field should be filled!";
+      err['nameORdescriptionORcategory'] = 'All field should be filled!';
       return;
     }
     if (Object.keys(err).length !== 0) {
@@ -100,13 +100,13 @@ const EditInventoryItemPage = ({ inventoryid, inventory }) => {
       .then((res) => {
         console.log(res);
         event.target.reset();
-        alert(" inventory item modified successfully :)");
-        navigate("/inventory");
+        alert(' inventory item modified successfully :)');
+        navigate('/inventory');
       })
       .catch((err) => {
         err.response
           ? console.error(err.response.data)
-          : alert("cant connect to server");
+          : alert('cant connect to server');
       });
   };
 
@@ -189,7 +189,7 @@ const EditInventoryItemPage = ({ inventoryid, inventory }) => {
         <Button
           type="cancel"
           btnTxt="Cancel"
-          onClick={() => navigate("/inventory")}
+          onClick={() => navigate('/inventory')}
         />
         <Button
           btnTxt="Save"

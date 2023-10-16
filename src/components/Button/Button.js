@@ -1,5 +1,5 @@
-import React from "react";
-import "./Button.scss";
+import React from 'react';
+import './Button.scss';
 const Button = ({ btnTxt, onClick }) => {
   let classbtn;
   if (btnTxt === 'Cancel') {
@@ -8,8 +8,10 @@ const Button = ({ btnTxt, onClick }) => {
     classbtn = 'delete';
   } else if (btnTxt === 'Warehouses' || btnTxt === 'Inventory') {
     classbtn = 'headerBtn';
+  } else if (!btnTxt) {
+    classbtn = 'noshow';
   } else {
-    classbtn = "";
+    classbtn = '';
   }
   return (
     <button className={`button button--${classbtn}`} type="" onClick={onClick}>

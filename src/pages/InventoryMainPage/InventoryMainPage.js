@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 import InventoryList from '../../components/InventoryList/InventoryList';
 import PageHeader from '../../components/PageHeader/PageHeader';
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 import axios from 'axios';
 import './InventoryMainPage.scss';
 import InventoryDeletePage from '../InventoryDeletePage/InventoryDeletePage';
@@ -13,12 +16,12 @@ const InventoryMainPage = () => {
   const [inventoryName, setInventoryName] = useState('');
 
   useEffect(() => {
-    axios.get("http://localhost:8888/inventory").then((response) => {
+    axios.get('http://localhost:8888/inventory').then((response) => {
       setAllInvetories(response.data);
     });
   }, []);
 
-  const handleClick = (status, inventoryId, inventoryName) => {
+  const handleDeleteClick = (status, inventoryId, inventoryName) => {
     console.log(inventoryId);
     setShow(status);
     setId(inventoryId);
@@ -40,7 +43,10 @@ const InventoryMainPage = () => {
 
   return (
     <main>
+<<<<<<< HEAD
   
+=======
+>>>>>>> master
       <div className="mainInventoryPageBody container">
         <PageHeader
           pageTitle="Inventories"
@@ -49,10 +55,13 @@ const InventoryMainPage = () => {
         />
         <InventoryList
           allInvetories={allInvetories}
-          handleClick={handleClick}
+          handleDeleteClick={handleDeleteClick}
         />
       </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
       <InventoryDeletePage
         show={show}
         inventoryName={inventoryName}

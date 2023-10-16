@@ -3,7 +3,7 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/global' as *;
 
-.inventoryDeleteContainer {
+.warehouseDeleteContainer {
   z-index: 999;
   position: fixed;
   top: 0;
@@ -29,7 +29,7 @@
     width: 50%;
   }
 }
-.inventoryDelete {
+.warehouseDelete {
   width: 100%;
   height: 100%;
   display: flex;
