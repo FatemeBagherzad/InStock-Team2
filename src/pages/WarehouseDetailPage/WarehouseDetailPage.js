@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import { useParams } from 'react-router-dom';
 import WarehouseDetailsCard from '../../components/WarehouseDetailsCard/WarehouseDetailsCard';
+import axios from 'axios';
 import InventoryList from '../../components/InventoryList/InventoryList';
 import './WarehouseDetailPage.scss';
 import PageHeader from '../../components/PageHeader/PageHeader';
-import axios from 'axios';
+import './WarehouseDetailPage.scss';
 
 function WarehouseDetailPage() {
   const [allInventories, setAllInventories] = useState(null);
@@ -43,7 +43,7 @@ function WarehouseDetailPage() {
   };
 
   return (
-    <>
+    <div className="warehouseDetailPage">
       {allInventories ? (
         <>
           <PageHeader
@@ -60,7 +60,7 @@ function WarehouseDetailPage() {
           </div>
         </>
       ) : null}
-    </>
+    </div>
   );
 }
 
