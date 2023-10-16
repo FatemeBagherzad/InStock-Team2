@@ -1,14 +1,13 @@
-import React from 'react';
+import Button from '../../components/Button/Button';
+import closeIcon from '../../assets/Icons/close-24px.svg';
+import './WarehouseDeletePage.scss';
 import axios from 'axios';
-import closeIcon from 'path/to/your/closeIcon'; // Import your close icon image
-import Button from 'path/to/your/Button'; // Import your Button component
 
 const WarehouseDeletePage = ({ onClose, show, warehouseName, warehouseId }) => {
   if (!show) {
     return null;
   }
-
-  const handleDelete = () => {
+  const handleSubmit = () => {
     axios
       .delete(`http://localhost:8888/warehouses/${warehouseId}`, {
         headers: {},
@@ -24,27 +23,26 @@ const WarehouseDeletePage = ({ onClose, show, warehouseName, warehouseId }) => {
   };
 
   return (
-    <div className="WarehouseDeleteContainer">
-      <div className="WarehouseDelete">
-        <div className="WarehouseDelete__closeIcn">
+    <div className="warehouseDeleteContainer">
+      <div className="warehouseDelete">
+        <div className="warehouseDelete__closeIcn">
           <img onClick={onClose} src={closeIcon} alt="close icon" />
         </div>
-        <div className="WarehouseDelete__txt">
-          <h1 className="WarehouseDelete__txt-header">
+        <div className="warehouseDelete__txt">
+          <h1 className="warehouseDelete__txt-header">
             Delete {warehouseName} warehouse?
           </h1>
-          <p className="WarehouseDelete__txt-p">
-            Please confirm that you'd like to delete the {warehouseName} from
-            the warehouse list. You won't be able to undo this action.
+          <p className="warehouseDelete__txt-p">
+            Please confirm that you’d like to delete the {warehouseName} from
+            the list of warehouses. You won’t be able to undo this action.
           </p>
         </div>
-        <div className="WarehouseDelete__bottomIcons">
+        <div className="warehouseDelete__bottomIcons">
           <Button btnTxt="Cancel" onClick={onClose} />
-          <Button btnTxt="Delete" onClick={handleDelete} />
-        </div>
+          <Button btnTxt="Delete" onClick={handleSubmit} />
+        </div>{' '}
       </div>
     </div>
   );
 };
-
 export default WarehouseDeletePage;

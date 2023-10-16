@@ -1,6 +1,5 @@
 import React from 'react';
 import './Button.scss';
-
 const Button = ({ btnTxt, onClick }) => {
   let classbtn;
   if (btnTxt === 'Cancel') {
@@ -9,6 +8,8 @@ const Button = ({ btnTxt, onClick }) => {
     classbtn = 'delete';
   } else if (btnTxt === 'Warehouses' || btnTxt === 'Inventory') {
     classbtn = 'headerBtn';
+  } else if (!btnTxt) {
+    classbtn = 'noshow';
   } else {
     classbtn = '';
   }
@@ -18,5 +19,4 @@ const Button = ({ btnTxt, onClick }) => {
     </button>
   );
 };
-
 export default Button;

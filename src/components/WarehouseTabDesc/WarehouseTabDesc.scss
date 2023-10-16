@@ -3,27 +3,24 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/global' as *;
 
-
 .WarehouseTabDesDisplay {
-    display: none;
-    @include tablet {
-      display: block;
-      border-bottom: 1px solid $secondary-color-Cloud;
-      padding: 1rem 0;
-    }
+  display: none;
+  @include tablet {
+    display: block;
+    border-bottom: 1px solid $secondary-color-Cloud;
+    padding: 1rem 0;
   }
+}
 
-  .WarehouseTabDes {
-    display: grid;
-    grid-template-columns: 0.8fr 1fr 1fr 0.5fr 1fr 0.4fr;
-    grid-template-rows: 1fr;
-    align-items: center;
-    text-decoration: none;
-    list-style: none;
-    color: $secondary-color-Slate;
-    @include desktop {
-      grid-template-columns: 0.8fr 1fr 1fr 0.5fr 1fr 0.3fr;
-    }
+.WarehouseTabDes {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr 1.5fr 0.7fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  text-decoration: none;
+  list-style: none;
+  color: $secondary-color-Slate;
+
   &__li {
     &--arrowIcn {
       transition: transform 0.3s ease;
@@ -49,4 +46,4 @@
       }
     }
   }
-  }
+}

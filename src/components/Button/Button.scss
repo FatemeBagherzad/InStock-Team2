@@ -23,7 +23,6 @@
   &:hover {
     background-color: $background-color-Graphite;
   }
-
   &--headerBtn {
     border: none;
     color: $secondary-color-Cloud;
@@ -39,7 +38,6 @@
       background-color: $primary-color-Instock-Black;
     }
   }
-
   &--cancel {
     background-color: $primary-color-White;
     color: $primary-color-Instock-Black;
@@ -58,5 +56,8 @@
     &:hover {
       background-color: $background-color-Graphite;
     }
+  }
+  &--noshow {
+    display: none;
   }
 }

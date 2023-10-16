@@ -32,7 +32,7 @@ const InventoryNewItemForm = () => {
     setErr({});
     console.log(event.target.value);
     if (event.target.warehouse.value === 'Please select') {
-      alert('Pleate choose a warehouse from the menu!!');
+      alert('Pleate choose a warehouse from the list!!');
       return;
     }
     //find warehouse id of warehouse that is chosen in form
@@ -52,7 +52,7 @@ const InventoryNewItemForm = () => {
     //handle form errors
 
     if (!newInventoryObj.warehouse_id) {
-      err['warehouse'] = 'one warehouse must be chosen!';
+      err['inventory'] = 'one warehouse must be chosen!';
       return;
     }
     if ((newInventoryObj.status = 'Out of Stock')) {
@@ -107,7 +107,7 @@ const InventoryNewItemForm = () => {
           <InputAllTextType type="smallTxt" label="Category" name="category" />
         </section>
         <section className="InventoryNewItemForm__form-right">
-          <h2>Invetory Status and Availability</h2>
+          <h2>Item Availability</h2>
           <div className="InventoryNewItemForm__form-radioBtns">
             <div className="InventoryNewItemForm__form-radioBtns-group">
               <input
@@ -153,10 +153,10 @@ const InventoryNewItemForm = () => {
       <div className="InventoryNewItemForm__btns">
         <Button
           type="cancel"
-          btnTxt="CANCEL"
+          btnTxt="Cancel"
           onClick={() => navigate('/inventory')}
         />
-        <Button type="submit" btnTxt="+ ADD INVENTORY" />
+        <Button type="submit" btnTxt="+ Add item" />
       </div>
     </form>
   );
