@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import url from "../../utils/utils";
-import backArrow from "../../assets/Icons/arrow_back-24px.svg";
-import errorIcon from "../../assets/Icons/error-24px.svg";
-import axios from "axios";
-import "./WarehouseAdd.scss";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import url from '../../utils/utils';
+import backArrow from '../../assets/Icons/arrow_back-24px.svg';
+import errorIcon from '../../assets/Icons/error-24px.svg';
+import axios from 'axios';
+import './WarehouseAdd.scss';
 
 class WarehouseAdd extends Component {
   state = {
@@ -19,13 +19,13 @@ class WarehouseAdd extends Component {
   };
 
   redirectToHome = () => {
-    this.props.history.push("/");
+    this.props.history.push('/');
   };
 
   handleInputChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    const isRequired = value.trim() === "";
+    const isRequired = value.trim() === '';
 
     this.setState({ [`${name}Error`]: isRequired });
   };
@@ -140,13 +140,8 @@ class WarehouseAdd extends Component {
                         className="error__icon"
                       />
                       <p className="error__text">This field is required</p>
-<<<<<<< HEAD
                     </div>
                   )}
-=======
-                    </div>)
-                  }
->>>>>>> master
 
                   <label className="warehouse-add__form-label">
                     Street Address
@@ -166,13 +161,8 @@ class WarehouseAdd extends Component {
                         className="error__icon"
                       />
                       <p className="error__text">This field is required</p>
-<<<<<<< HEAD
                     </div>
                   )}
-=======
-                    </div>)
-                  }
->>>>>>> master
 
                   <label className="warehouse-add__form-label">
                     City
@@ -192,13 +182,8 @@ class WarehouseAdd extends Component {
                         className="error__icon"
                       />
                       <p className="error__text">This field is required</p>
-<<<<<<< HEAD
                     </div>
                   )}
-=======
-                    </div>)
-                  }
->>>>>>> master
 
                   <label className="warehouse-add__form-label">
                     Country
@@ -218,13 +203,8 @@ class WarehouseAdd extends Component {
                         className="error__icon"
                       />
                       <p className="error__text">This field is required</p>
-<<<<<<< HEAD
                     </div>
                   )}
-=======
-                    </div>)
-                  }
->>>>>>> master
                 </div>
               </div>
 
@@ -249,13 +229,8 @@ class WarehouseAdd extends Component {
                         className="error__icon"
                       />
                       <p className="error__text">This field is required</p>
-<<<<<<< HEAD
                     </div>
                   )}
-=======
-                    </div>)
-                  }
->>>>>>> master
 
                   <label className="warehouse-add__form-label">
                     Position
@@ -275,52 +250,6 @@ class WarehouseAdd extends Component {
                         className="error__icon"
                       />
                       <p className="error__text">This field is required</p>
-<<<<<<< HEAD
-=======
-                      </div>)
-                    }
-  
-                    <label className="warehouse-add__form-label">
-                      Phone Number
-                      <input
-                        name="phone"
-                        placeholder="Phone Number"
-                        className="warehouse-add__form-input"
-                        onChange={this.handlePhoneInput}
-                      />
-                    </label>
-                    {phoneNumberError && (
-                      <div className="error">
-                        <img
-                          src={errorIcon}
-                          alt="Error Icon"
-                          className="error__icon"
-                        />
-                        <p className="error__text">Please enter a valid phone number</p>
-                      </div>)
-                    }
-  
-                    <label className="warehouse-add__form-label">
-                      Email
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="Email"
-                        className="warehouse-add__form-input"
-                        onChange={this.handleEmailInput}
-                      />
-                    </label>
-                    {emailError && (
-                        <div className="error">
-                          <img
-                            src={errorIcon}
-                            alt="Error Icon"
-                            className="error__icon"
-                          />
-                          <p className="error__text">Please enter a valid email address</p>
-                        </div>)
-                      }
->>>>>>> master
                     </div>
                   )}
 
