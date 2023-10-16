@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+
 import axios from 'axios';
 
 import InputAllTextType from '../InputAllTextType/InputAllTextType';
@@ -7,14 +7,11 @@ import Button from '../Button/Button';
 import './WarehouseNewForm.scss';
 
 const WarehouseNewForm = () => {
-  const [error, setErr] = useState({});
-
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    setErr({});
     const newWarehouseObj = {
       warehouse_name: event.target.name.value,
       address: event.target.address.value,
@@ -105,7 +102,6 @@ const WarehouseNewForm = () => {
           alert('New Warehouse added successfully!');
           navigate('/warehouses');
         });
-      setErr({});
     }
   };
 

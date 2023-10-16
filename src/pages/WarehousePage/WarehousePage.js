@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import axios from 'axios';
 import PageHeader from '../../components/PageHeader/PageHeader';
 import WarehouseList from '../../components/WarehouseList/WarehouseList';
@@ -7,13 +9,13 @@ import WarehouseDeletePage from '../WarehouseDeletePage/WarehouseDeletePage';
 
 const WarehousePage = () => {
   const [allWarehouses, setAllWarehouses] = useState([]);
-  const [allInventories, setAllInventories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [warehouseName, setWarehouseName] = useState('');
   const [show, setShow] = useState(false);
   const [id, setId] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -70,6 +72,7 @@ const WarehousePage = () => {
         btnTxt="+ Add A New Warehouse"
         value={searchQuery}
         onChange={handleSearchChange}
+        onClick={() => navigate(`/warehouses/new`)}
       />
       <WarehouseList
         allWarehouses={filteredItems}

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import InventoryList from '../../components/InventoryList/InventoryList';
 import PageHeader from '../../components/PageHeader/PageHeader';
 import axios from 'axios';
@@ -11,6 +12,7 @@ const InventoryMainPage = () => {
   const [id, setId] = useState('');
   const [inventoryName, setInventoryName] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -30,7 +32,6 @@ const InventoryMainPage = () => {
     setSearchQuery(e.target.value);
   };
   const handleDeleteClick = (status, inventoryId, inventoryName) => {
-    console.log(inventoryId);
     setShow(status);
     setId(inventoryId);
     setInventoryName(inventoryName);
@@ -58,6 +59,7 @@ const InventoryMainPage = () => {
           btnTxt="+Add A New Inventory"
           value={searchQuery}
           onChange={handleSearchChange}
+          onClick={() => navigate(`/inventory/new`)}
         />
         <InventoryList
           allInvetories={filteredItems}

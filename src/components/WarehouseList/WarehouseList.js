@@ -1,4 +1,3 @@
-import { all } from 'axios';
 import WarehouseListHeader from '../WarehouseListHeader/WarehouseListHeader';
 import WarehouseMob from '../WarehouseMob/WarehouseMob';
 import WarehouseTabDesc from '../WarehouseTabDesc/WarehouseTabDesc';
