@@ -9,15 +9,15 @@ existing static site into a React app.<br/>
 Also we used and practiced with database for the first time.<br/>
 
 **Update1**: We have added functional Search bar to our app🥳<br/>
-**Update2**: I have added sorting functionality to the app<br/>
-which is running and filtering data fron client side😊<br/>
+**Update2**: We have added sorting functionality to the app<br/>
+which is running and filtering data from client side😊<br/>
 we hope we can implement this functionality from server side too<br/>
 **Update3**: We have added error handling functions<br/>
-for all form which was very challenging💥.
+for all forms which was very challenging💥.
 
 ## Version
 
-The React version: **v18.17.0**
+The React version: **v18.17.0**<br/>
 The Node version: **v18.17.0**
 
 ## Technologies
@@ -42,6 +42,8 @@ To run this ptoject please follow this path:
 <li>📝 npx knex seed:run</li>
 <li>📝 Create **.env** file in both Client and Server side</li>
 <li>📝 npm start on both side Server and Client</li></br></br>
+
+## Connect with us
 
 👉Please Help us with your valuable feedback about this project 🙂⭐</br>
 Let's connect via LinkedIn :<br/>
