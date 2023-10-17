@@ -45,4 +45,9 @@ To run this ptoject please follow this path:
 <li>📝 npm start on both side Server and Client</li>
 
 👉Please Help us with your valuable feedback about this project 🙂⭐</br>
-Let's connect via LinkedIn : [link]Fateme Bagherzad (https://www.linkedin.com/in/fatemeh-bagherzad/)
+Let's connect via LinkedIn :<br/>
+
+✒ Christine Hamid [link](https://www.linkedin.com/in/christinehamid/) </br>
+✒ Fateme Bagherzad [link](https://www.linkedin.com/in/fatemeh-bagherzad/) </br>
+✒ Dat Dinh [link](https://www.linkedin.com/in/dat-dinh-/) </br>
+✒ Aung Zaw Myo Naing [link](https://www.linkedin.com/in/aungzawmyonaing/) </br>
