@@ -180,7 +180,8 @@ button {
   display: flex;
   gap: 0.3rem;
 }
-.InventoryEditForm__btns {
+
+.InventoryEditFormbottom__btns {
   display: flex;
   flex-direction: row;
   gap: 1rem;

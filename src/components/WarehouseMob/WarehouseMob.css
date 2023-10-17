@@ -139,8 +139,10 @@ button {
 }
 
 .WarehouseMobDisplay {
+  display: flex;
+  flex-direction: column;
   border-top: 1px solid #bdc5d5;
-  padding: 1rem 0;
+  padding: 1rem 2rem 1rem 0;
 }
 @media (min-width: 768px) {
   .WarehouseMobDisplay {
@@ -184,8 +186,9 @@ button {
 }
 
 .WarehouseMobIcons {
+  width: 100%;
   display: flex;
-  justify-self: space-between;
+  justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
 }
