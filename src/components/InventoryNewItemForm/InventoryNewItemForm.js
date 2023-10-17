@@ -9,7 +9,7 @@ import "./InventoryNewItemForm.scss";
 const InventoryNewItemForm = () => {
   const [allWarehouses, setAllWarehouses] = useState();
   const [quantityShow, setQuantityShow] = useState(true);
-  const [statusChecked, setStatusChecked] = useState('In Stock');
+  const [statusChecked, setStatusChecked] = useState("In Stock");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -21,26 +21,19 @@ const InventoryNewItemForm = () => {
   function handleChange(event) {
     if (event.target.value === "In Stock") {
       setQuantityShow(true);
-      setStatusChecked('In Stock');
+      setStatusChecked("In Stock");
     }
     if (event.target.value === "Out of Stock") {
       setQuantityShow(false);
-      setStatusChecked('Out Of Stock');
+      setStatusChecked("Out Of Stock");
     }
   }
 
   const handleSubmit = (event) => {
     event.preventDefault();
-<<<<<<< HEAD
-    setErr({});
-    console.log(event.target.value);
-    if (event.target.warehouse.value === "Please select") {
-      alert("Please choose a warehouse from the list!!");
-=======
 
-    if (event.target.warehouse.value === 'Please select') {
-      alert('Pleate choose a warehouse from the list!!');
->>>>>>> master
+    if (event.target.warehouse.value === "Please select") {
+      alert("Pleate choose a warehouse from the list!!");
       return;
     }
     const warehousechosen = allWarehouses.find(
@@ -59,88 +52,62 @@ const InventoryNewItemForm = () => {
     const validate = () => {
       const errors = {};
 
-<<<<<<< HEAD
-    if (!newInventoryObj.warehouse_id) {
-      err["inventory"] = "one warehouse must be chosen!";
-      return;
-    }
-    if ((newInventoryObj.status = "Out of Stock")) {
-      newInventoryObj.quantity = 0;
-    }
-    if (
-      (newInventoryObj.status = "In Stock") &&
-      parseInt(newInventoryObj.quantity) < 0
-    ) {
-      err["quantity"] = "Status and quantity must match!";
-      alert(
-        "This Inventory is in stock. the Quantity must be bigger that zero!"
-      );
-      return;
-    }
-    if (
-      !newInventoryObj.item_name ||
-      !newInventoryObj.description ||
-      !newInventoryObj.category
-    ) {
-      err["nameORdescriptionORcategory"] = "All field should be filled!";
-=======
       if (!newInventoryObj.warehouse_id) {
-        errors.warehouse = 'Please choose a warehouse from the list';
+        errors.warehouse = "Please choose a warehouse from the list";
       }
       if (
-        newInventoryObj.status === 'Out of Stock' &&
+        newInventoryObj.status === "Out of Stock" &&
         newInventoryObj.quantity !== 0
       ) {
-        errors.quantity = 'Out of Stock items must have a quantity of 0';
+        errors.quantity = "Out of Stock items must have a quantity of 0";
       }
       if (
-        newInventoryObj.status === 'In Stock' &&
+        newInventoryObj.status === "In Stock" &&
         parseInt(newInventoryObj.quantity) <= 0
       ) {
-        errors.quantity2 = 'This item is in stock. Quantity must be > 0 !';
+        errors.quantity2 = "This item is in stock. Quantity must be > 0 !";
       }
       if (
-        newInventoryObj.status === 'Out of Stock' &&
+        newInventoryObj.status === "Out of Stock" &&
         parseInt(newInventoryObj.quantity) > 0
       ) {
-        errors.quantity3 = 'This item is out of stock. Quantity must be = 0 !';
+        errors.quantity3 = "This item is out of stock. Quantity must be = 0 !";
       }
       if (!newInventoryObj.item_name) {
-        errors.item_name = 'Item name is required';
+        errors.item_name = "Item name is required";
       }
       if (!newInventoryObj.description) {
-        errors.description = 'Description is required';
+        errors.description = "Description is required";
       }
       if (!newInventoryObj.category) {
-        errors.category = 'Category is required';
+        errors.category = "Category is required";
       }
       return errors;
     };
     const errors = validate();
     if (errors.warehouse) {
-      alert('please choose a warehouse from list!');
-      event.target.warehouse.style.border = '1px solid red';
+      alert("please choose a warehouse from list!");
+      event.target.warehouse.style.border = "1px solid red";
       return;
     }
     if (errors.item_name) {
-      alert('please correct the item name!');
-      event.target.name.style.border = '1px solid red';
+      alert("please correct the item name!");
+      event.target.name.style.border = "1px solid red";
       return;
     }
     if (errors.description) {
-      alert('please correct the description!');
-      event.target.description.style.border = '1px solid red';
->>>>>>> master
+      alert("please correct the description!");
+      event.target.description.style.border = "1px solid red";
       return;
     }
     if (errors.category) {
-      alert('please correct the category!');
-      event.target.category.style.border = '1px solid red';
+      alert("please correct the category!");
+      event.target.category.style.border = "1px solid red";
       return;
     }
     if (errors.quantity || errors.quantity2 || errors.quantity3) {
-      alert('please check the status and insert a proper quatity for it!');
-      event.target.quantity.style.border = '1px solid red';
+      alert("please check the status and insert a proper quatity for it!");
+      event.target.quantity.style.border = "1px solid red";
       return;
     }
 
@@ -152,24 +119,14 @@ const InventoryNewItemForm = () => {
     } else {
       console.log(newInventoryObj);
 
-<<<<<<< HEAD
-    axios
-      .post("http://localhost:8888/inventory", newInventoryObj)
-      .then((response) => {
-        event.target.reset();
-        alert("New Inventory added successfully!");
-        navigate("/inventory");
-      });
-=======
       axios
-        .post('http://localhost:8888/inventory', newInventoryObj)
+        .post("http://localhost:8888/inventory", newInventoryObj)
         .then((response) => {
           event.target.reset();
-          alert('New Inventory added successfully!');
-          navigate('/inventory');
+          alert("New Inventory added successfully!");
+          navigate("/inventory");
         });
     }
->>>>>>> master
   };
 
   return (
@@ -195,7 +152,7 @@ const InventoryNewItemForm = () => {
                 value="In Stock"
                 className=""
                 onChange={handleChange}
-                checked={statusChecked === 'In Stock'}
+                checked={statusChecked === "In Stock"}
               />
               <p className="">In Stock</p>
             </div>
@@ -207,7 +164,7 @@ const InventoryNewItemForm = () => {
                 value="Out of Stock"
                 className=""
                 onChange={handleChange}
-                checked={statusChecked === 'Out Of Stock'}
+                checked={statusChecked === "Out Of Stock"}
               />
               <p className="">Out of Stock</p>
             </div>

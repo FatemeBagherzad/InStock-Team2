@@ -1,10 +1,10 @@
-import { Link, useNavigate } from 'react-router-dom';
-import './InventoryItemTabDes.scss';
-import arrowIcon from '../../assets/Icons/chevron_right-24px.svg';
-import deleteIcon from '../../assets/Icons/delete_outline-24px.svg';
-import editIcon from '../../assets/Icons/edit-24px.svg';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { Link, useNavigate } from "react-router-dom";
+import "./InventoryItemTabDes.scss";
+import arrowIcon from "../../assets/Icons/chevron_right-24px.svg";
+import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
+import editIcon from "../../assets/Icons/edit-24px.svg";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const InventoryItemTabDes = ({ inventory, handleDeleteClick }) => {
   const [warehouse, setWarehouse] = useState(null);
@@ -34,38 +34,7 @@ const InventoryItemTabDes = ({ inventory, handleDeleteClick }) => {
               className="inventoryItemTabDes__li inventoryItemTabDes__li--withIcn"
               onClick={() => navigate(`/inventory/${inventory.id}`)}
             >
-<<<<<<< HEAD
-              {inventory.status}
-            </div>
-          </li>
-          <li className="inventoryItemTabDes__li">{inventory.quantity}</li>
-          <li className="inventoryItemTabDes__li">Washington</li>
-          <li className="inventoryItemTabDes__li">
-            <div className="inventoryItemTabDes__li--delAnEdIcn">
-              <Link to={""}>
-                <img
-                  className="inventoryItemTabDes__li--delAnEdIcn-icon"
-                  src={deleteIcon}
-                  alt="delete icon"
-                  onClick={() =>
-                    handleDeleteClick(true, inventory.id, inventory.item_name)
-                  }
-                />
-              </Link>
-              <Link to={`/inventory/edit/${inventory.id}`}>
-                <img
-                  className="inventoryItemTabDes__li--delAnEdIcn-icon"
-                  src={editIcon}
-                  alt="edit icon"
-                  // onClick={handleEditClick}
-                />
-              </Link>
-            </div>
-          </li>
-        </ul>
-      </div>
-=======
-              {inventory.item_name}{' '}
+              {inventory.item_name}{" "}
               <img
                 className="inventoryItemTabDes__li--arrowIcn "
                 src={arrowIcon}
@@ -77,8 +46,8 @@ const InventoryItemTabDes = ({ inventory, handleDeleteClick }) => {
               <div
                 className={`inventoryItemTabDes__li--status  ${
                   inventory.quantity > 0
-                    ? 'inventoryItemTabDes__li--status-inStock'
-                    : 'inventoryItemTabDes__li--status-outOfStock'
+                    ? "inventoryItemTabDes__li--status-inStock"
+                    : "inventoryItemTabDes__li--status-outOfStock"
                 }`}
               >
                 {inventory.status}
@@ -90,7 +59,7 @@ const InventoryItemTabDes = ({ inventory, handleDeleteClick }) => {
             </li>
             <li className="inventoryItemTabDes__li">
               <div className="inventoryItemTabDes__li--delAnEdIcn">
-                <Link to={''}>
+                <Link to={""}>
                   <img
                     className="inventoryItemTabDes__li--delAnEdIcn-icon"
                     src={deleteIcon}
@@ -112,7 +81,6 @@ const InventoryItemTabDes = ({ inventory, handleDeleteClick }) => {
           </ul>
         </div>
       )}
->>>>>>> master
     </>
   );
 };
