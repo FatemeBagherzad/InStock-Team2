@@ -151,17 +151,12 @@ button {
 
 .WarehouseTabDes {
   display: grid;
-  grid-template-columns: 0.8fr 1fr 1fr 0.5fr 1fr 0.4fr;
+  grid-template-columns: 1fr 1.2fr 1fr 1.5fr 0.7fr;
   grid-template-rows: 1fr;
   align-items: center;
   text-decoration: none;
   list-style: none;
   color: #5c667e;
-}
-@media (min-width: 1280px) {
-  .WarehouseTabDes {
-    grid-template-columns: 0.8fr 1fr 1fr 0.5fr 1fr 0.3fr;
-  }
 }
 .WarehouseTabDes__li--arrowIcn {
   transition: transform 0.3s ease;

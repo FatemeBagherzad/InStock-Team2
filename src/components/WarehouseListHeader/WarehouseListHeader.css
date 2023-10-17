@@ -146,24 +146,20 @@ button {
     display: block;
     border-bottom: 1px solid #bdc5d5;
     background-color: #f7f8f9;
-    padding: 1rem 0;
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 0;
   }
 }
 
-.WarehouseListHeader {
-  display: grid;
-  grid-template-columns: 0.8fr 1fr 1fr 0.5fr 1fr 0.4fr;
-  grid-template-rows: 1fr;
-  align-items: center;
-  text-decoration: none;
-  list-style: none;
-  font-size: 0.7rem;
-  color: #5c667e;
-}
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
   .WarehouseListHeader {
-    grid-template-columns: 0.8fr 1fr 1fr 0.5fr 1fr 0.3fr;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr 1.5fr 0.7fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    text-decoration: none;
+    list-style: none;
+    font-size: 0.7rem;
+    color: #5c667e;
   }
 }
 .WarehouseListHeader__titleAndIcn {
@@ -173,4 +169,8 @@ button {
 .WarehouseListHeader__titleAndIcn--icon {
   width: 1.5rem;
   cursor: pointer;
+}
+.WarehouseListHeader__titleAndIcn-action {
+  display: flex;
+  justify-self: center;
 }

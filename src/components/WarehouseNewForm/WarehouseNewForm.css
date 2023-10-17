@@ -142,17 +142,17 @@ button {
   display: flex;
   flex-direction: column;
 }
-.WarehouseNewForm__form {
+.WarehouseNewForm__formTxt {
   display: grid;
   grid-template-columns: 1fr;
 }
 @media (min-width: 768px) {
-  .WarehouseNewForm__form {
+  .WarehouseNewForm__formTxt {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
   }
 }
-.WarehouseNewForm__form-left {
+.WarehouseNewForm__formTxt-left {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -160,23 +160,23 @@ button {
   padding: 3rem 0;
 }
 @media (min-width: 768px) {
-  .WarehouseNewForm__form-left {
+  .WarehouseNewForm__formTxt-left {
     border-bottom: none;
     border-right: 1px solid #bdc5d5;
     padding-right: 2rem;
   }
 }
-.WarehouseNewForm__form-right {
+.WarehouseNewForm__formTxt-right {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 3rem 0;
 }
-.WarehouseNewForm__form-radioBtns {
+.WarehouseNewForm__formTxt-radioBtns {
   display: flex;
   gap: 2rem;
 }
-.WarehouseNewForm__form-radioBtns-group {
+.WarehouseNewForm__formTxt-radioBtns-group {
   display: flex;
   gap: 0.3rem;
 }
