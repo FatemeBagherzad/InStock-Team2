@@ -8,7 +8,7 @@ site into React components and converting an<br/>
 existing static site into a React app.<br/>
 Also we used and practiced with database for the first time.<br/>
 
-**Update1**: We have added functional Search bar to our app🥳<br/> -
+**Update1**: We have added functional Search bar to our app🥳<br/>
 **Update2**: I have added sorting functionality to the app<br/>
 which is running and filtering data fron client side😊<br/>
 we hope we can implement this functionality from server side too<br/>
@@ -42,7 +42,7 @@ To run this ptoject please follow this path:
 <li>📝 npx knex migrate:latest</li>
 <li>📝 npx knex seed:run</li>
 <li>📝 Create **.env** file in both Client and Server side</li>
-<li>📝 npm start on both side Server and Client</li>
+<li>📝 npm start on both side Server and Client</li></br></br>
 
 👉Please Help us with your valuable feedback about this project 🙂⭐</br>
 Let's connect via LinkedIn :<br/>
