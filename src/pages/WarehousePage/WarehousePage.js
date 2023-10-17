@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import axios from 'axios';
 import PageHeader from '../../components/PageHeader/PageHeader';
 import WarehouseList from '../../components/WarehouseList/WarehouseList';
@@ -7,15 +9,15 @@ import WarehouseDeletePage from '../WarehouseDeletePage/WarehouseDeletePage';
 
 const WarehousePage = () => {
   const [allWarehouses, setAllWarehouses] = useState([]);
-  const [allInventories, setAllInventories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [warehouseName, setWarehouseName] = useState('');
   const [show, setShow] = useState(false);
   const [id, setId] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Fetch warehouses
     axios
       .get('http://localhost:8888/warehouses')
       .then((response) => {
@@ -27,21 +29,14 @@ const WarehousePage = () => {
       .finally(() => {
         setLoading(false);
       });
-
-    // Fetch inventories
-    axios
-      .get('http://localhost:8888/inventory')
-      .then((response) => {
-        setAllInventories(response.data);
-      })
-      .catch((error) => {
-        setError(error);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
   }, []);
 
+  const filteredItems = allWarehouses.filter((item) =>
+    item.warehouse_name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
   if (loading) {
     return <p>Loading...</p>; // Show a loading message while data is being fetched
   }
@@ -75,9 +70,12 @@ const WarehousePage = () => {
         pageTitle="Warehouses"
         type="search"
         btnTxt="+ Add A New Warehouse"
+        value={searchQuery}
+        onChange={handleSearchChange}
+        onClick={() => navigate(`/warehouses/new`)}
       />
       <WarehouseList
-        allWarehouses={allWarehouses}
+        allWarehouses={filteredItems}
         handleDeleteClick={handleDeleteClick}
       />
       <WarehouseDeletePage

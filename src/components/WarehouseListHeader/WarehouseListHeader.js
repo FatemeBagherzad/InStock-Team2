@@ -1,7 +1,7 @@
 import sortIcon from '../../assets/Icons/sort-24px.svg';
 import './WarehouseListHeader.scss';
 
-const WarehouseListHeader = () => {
+const WarehouseListHeader = ({ handleSort }) => {
   return (
     <>
       <div className="container WarehouseListHeaderDisplay ">
@@ -12,6 +12,9 @@ const WarehouseListHeader = () => {
               className="WarehouseListHeader__titleAndIcn--icon"
               src={sortIcon}
               alt="sort icon"
+              onClick={() => {
+                handleSort('warehouse_name');
+              }}
             />
           </li>
           <li className="WarehouseListHeader__titleAndIcn">
@@ -20,6 +23,9 @@ const WarehouseListHeader = () => {
               className="WarehouseListHeader__titleAndIcn--icon"
               src={sortIcon}
               alt="sort icon"
+              onClick={() => {
+                handleSort('address');
+              }}
             />
           </li>
           <li className="WarehouseListHeader__titleAndIcn">
@@ -28,6 +34,9 @@ const WarehouseListHeader = () => {
               className="WarehouseListHeader__titleAndIcn--icon"
               src={sortIcon}
               alt="sort icon"
+              onClick={() => {
+                handleSort('contact_name');
+              }}
             />
           </li>
           <li className="WarehouseListHeader__titleAndIcn">
@@ -36,9 +45,14 @@ const WarehouseListHeader = () => {
               className="WarehouseListHeader__titleAndIcn--icon"
               src={sortIcon}
               alt="sort icon"
+              onClick={() => {
+                handleSort('contact_email');
+              }}
             />
           </li>
-          <li className="WarehouseListHeader__titleAndIcn WarehouseListHeader__titleAndIcn-action">ACTION </li>
+          <li className="WarehouseListHeader__titleAndIcn WarehouseListHeader__titleAndIcn-action">
+            ACTION{' '}
+          </li>
         </ul>
       </div>
     </>
