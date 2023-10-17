@@ -12,7 +12,6 @@ Also we used and practiced with database for the first time.<br/>
 **Update2**: I have added sorting functionality to the app<br/>
 which is running and filtering data fron client side😊<br/>
 we hope we can implement this functionality from server side too<br/>
-
 **Update3**: We have added error handling functions<br/>
 for all form which was very challenging💥.
 
