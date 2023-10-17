@@ -35,12 +35,12 @@ The Node version: **v18.17.0**
 
 To run this ptoject please follow this path:
 
-<li>📝 Download zip file from GitHub ####master branch</li>
+<li>📝 Download zip file from GitHub <strong>master</strong> branch</li>
 <li>📝 npm install on both Server and Client side</li>
-<li>📝 create a database on your local with name **instock**</li>
+<li>📝 create a database on your local with name <strong>instock</strong></li>
 <li>📝 npx knex migrate:latest</li>
 <li>📝 npx knex seed:run</li>
-<li>📝 Create **.env** file in both Client and Server side</li>
+<li>📝 Create <strong>.env</strong> file in both Client and Server side</li>
 <li>📝 npm start on both side Server and Client</li></br></br>
 
 ## Connect with us
