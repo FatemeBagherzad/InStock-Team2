@@ -68,3 +68,23 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Technologies
+<li>1-React</li>
+<li>2-Node.js</li>
+<li>3-Express</li>
+<li>4-MySQL and Knex</li>
+<li>5-Axios</li>
+<li>6-Nodemon</li>
+<li>7-Java Script</li>
+<li>8-HTML,CSS,SASS</li>
+
+## Setup
+To run this ptoject please follow this path:
+<li>:memo: download zip file from GitHub</li>
+<li>:memo: npm install on both Server and Client side</li>
+<li>:memo: create a database on your local with name "instock"</li>
+<li>:memo: npx knex migrate:latest</li>
+<li>:memo: npx knex seed:run</li>
+<li>:memo: Create .env file in both Client and Server</li>
+<li>:memo: npm start on both side Server and Client</li>
