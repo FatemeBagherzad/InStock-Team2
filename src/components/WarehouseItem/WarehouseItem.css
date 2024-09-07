@@ -144,10 +144,12 @@ button {
   }
 }
 
+.WarehouseTabDesDisplay {
+  border-bottom: 1px solid #bdc5d5;
+}
 @media (min-width: 768px) {
   .WarehouseTabDesDisplay {
     display: block;
-    border-bottom: 1px solid #bdc5d5;
     padding: 1rem 0;
   }
 }
@@ -155,9 +157,9 @@ button {
 .Warehouse {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  text-decoration: none;
-  list-style: none;
+  grid-template-rows: 1fr 1fr 0.5fr;
+  padding: 1rem 0;
+  gap: 0.5rem;
   color: #13182c;
 }
 @media (min-width: 768px) {
@@ -169,42 +171,44 @@ button {
 .Warehouse__li {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
-.Warehouse__li--arrowIcn {
+.Warehouse__li-arrowIcn {
   transition: transform 0.3s ease;
   width: 1.2rem;
 }
-.Warehouse__li--arrowIcn:hover {
+.Warehouse__li-arrowIcn:hover {
   cursor: pointer;
   transform: translateX(4px);
 }
-.Warehouse__li--withIcn {
+.Warehouse__li-withIcn {
   display: flex;
   align-items: center;
   cursor: pointer;
+  color: blue;
 }
-.Warehouse__li--edit {
+.Warehouse__li-edit {
   grid-row: 3;
   grid-column: 2;
+  justify-self: end;
 }
 @media (min-width: 768px) {
-  .Warehouse__li--edit {
+  .Warehouse__li-edit {
     grid-row: auto;
     grid-column: auto;
+    justify-self: flex-start;
   }
 }
-.Warehouse__li--delAnEdIcn {
+.Warehouse__li-delAnEdIcn {
   display: flex;
   justify-self: flex-end;
   align-items: center;
 }
-.Warehouse__li--delAnEdIcn-icon {
+.Warehouse__li-delAnEdIcn-icon {
   width: 1.5rem;
   cursor: pointer;
 }
 .Warehouse__mobile-title {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #5c667e;
 }
 @media (min-width: 768px) {

@@ -4,10 +4,9 @@
 @use '../../styles/partials/global' as *;
 
 .WarehouseTabDesDisplay {
-  // display: none;
+  border-bottom: 1px solid $secondary-color-Cloud;
   @include tablet {
     display: block;
-    border-bottom: 1px solid $secondary-color-Cloud;
     padding: 1rem 0;
   }
 }
@@ -15,12 +14,11 @@
 .Warehouse {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  text-decoration: none;
-  list-style: none;
+  grid-template-rows: 1fr 1fr 0.5fr;
+  padding: 1rem 0;
+  gap: 0.5rem;
   // color: $secondary-color-Slate;
   color: #13182c;
-
   @include tablet {
     grid-template-columns: 1fr 1.2fr 1fr 1.5fr 0.3fr 0.3fr;
     grid-template-rows: 1fr;
@@ -29,41 +27,45 @@
   &__li {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    &--arrowIcn {
-      transition: transform 0.3s ease;
-      width: 1.2rem;
-      &:hover {
-        cursor: pointer;
-        transform: translateX(4px);
-      }
-    }
-    &--withIcn {
-      display: flex;
-      align-items: center;
+    // justify-content: center;
+  }
+  &__li-arrowIcn {
+    transition: transform 0.3s ease;
+    width: 1.2rem;
+    &:hover {
       cursor: pointer;
-    }
-    &--edit {
-      grid-row: 3;
-      grid-column: 2;
-      @include tablet {
-        grid-row: auto;
-        grid-column: auto;
-      }
-    }
-    &--delAnEdIcn {
-      display: flex;
-      justify-self: flex-end;
-      align-items: center;
-
-      &-icon {
-        width: 1.5rem;
-        cursor: pointer;
-      }
+      transform: translateX(4px);
     }
   }
+  &__li-withIcn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: blue;
+  }
+  &__li-edit {
+    grid-row: 3;
+    grid-column: 2;
+    justify-self: end;
+    @include tablet {
+      grid-row: auto;
+      grid-column: auto;
+      justify-self: flex-start;
+    }
+  }
+  &__li-delAnEdIcn {
+    display: flex;
+    justify-self: flex-end;
+    align-items: center;
+
+    &-icon {
+      width: 1.5rem;
+      cursor: pointer;
+    }
+  }
+
   &__mobile-title {
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: $secondary-color-Slate;
     @include tablet {
       display: none;

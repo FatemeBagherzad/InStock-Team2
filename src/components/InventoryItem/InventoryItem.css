@@ -144,10 +144,12 @@ button {
   }
 }
 
+.inventoryItemDisplay {
+  border-bottom: 1px solid #bdc5d5;
+}
 @media (min-width: 768px) {
   .inventoryItemDisplay {
     display: block;
-    border-bottom: 1px solid #bdc5d5;
     padding: 1rem 0;
   }
   .inventoryItemDisplay:hover {

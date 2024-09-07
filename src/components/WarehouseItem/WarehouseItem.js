@@ -17,11 +17,11 @@ const WarehouseItem = ({ warehouse, handleDeleteClick }) => {
           >
             <span className="Warehouse__mobile-title">WAREHOUSE</span>
 
-            <div className="Warehouse__li--withIcn">
+            <div className="Warehouse__li-withIcn">
               {warehouse.warehouse_name}
               {''}
               <img
-                className="Warehouse__li--arrowIcn"
+                className="Warehouse__li-arrowIcn"
                 src={arrowIcon}
                 alt="Right arrow icon"
               />{' '}
@@ -45,7 +45,7 @@ const WarehouseItem = ({ warehouse, handleDeleteClick }) => {
 
           <Link to={''}>
             <img
-              className="Warehouse__li--delAnEdIcn "
+              className="Warehouse__li-delAnEdIcn "
               src={deleteIcon}
               alt="delete Icon"
               onClick={() =>
@@ -53,9 +53,12 @@ const WarehouseItem = ({ warehouse, handleDeleteClick }) => {
               }
             />{' '}
           </Link>
-          <Link to={`/warehouses/${warehouse.id}/edit`}>
+          <Link
+            to={`/warehouses/${warehouse.id}/edit`}
+            className="Warehouse__li-edit"
+          >
             <img
-              className="Warehouse__li--delAnEdIcn Warehouse__li--edit"
+              className="Warehouse__li-delAnEdIcn"
               src={editIcon}
               alt="edit Icon"
             />
