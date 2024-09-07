@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import InventoryItemMob from '../InventoryItemMob/InventoryItemMob';
-import InventoryItemTabDes from '../InventoryItemTabDes/InventoryItemTabDes';
+import InventoryItem from '../InventoryItem/InventoryItem';
 import InventoryListHeader from '../InventoryListHeader/InventoryListHeader';
 
 const InventoryList = ({ allInvetories, handleDeleteClick }) => {
@@ -33,21 +32,13 @@ const InventoryList = ({ allInvetories, handleDeleteClick }) => {
       return 0;
     });
   }
+
   return (
     <>
       <InventoryListHeader handleSort={handleSort} />
       <section>
         {sortedData.map((inventory) => (
-          <InventoryItemMob
-            inventory={inventory}
-            key={inventory.id}
-            handleDeleteClick={handleDeleteClick}
-          />
-        ))}
-      </section>
-      <section>
-        {sortedData.map((inventory) => (
-          <InventoryItemTabDes
+          <InventoryItem
             inventory={inventory}
             key={inventory.id}
             handleDeleteClick={handleDeleteClick}

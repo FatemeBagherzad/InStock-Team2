@@ -1,5 +1,5 @@
-import sortIcon from '../../assets/Icons/sort-24px.svg';
 import './InventoryListHeader.scss';
+import sortIcon from '../../assets/Icons/sort-24px.svg';
 
 const InventoryListHeader = ({ handleSort }) => {
   return (

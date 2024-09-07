@@ -23,25 +23,27 @@ const WarehouseDeletePage = ({ onClose, show, warehouseName, warehouseId }) => {
   };
 
   return (
-    <div className="warehouseDeleteContainer">
-      <div className="warehouseDelete">
-        <div className="warehouseDelete__closeIcn">
-          <img onClick={onClose} src={closeIcon} alt="close icon" />
+    <div id="tabletBack">
+      <div className="warehouseDeleteContainer">
+        <div className="warehouseDelete">
+          <div className="warehouseDelete__closeIcn">
+            <img onClick={onClose} src={closeIcon} alt="close icon" />
+          </div>
+          <div className="warehouseDelete__txt">
+            <h1 className="warehouseDelete__txt-header">
+              Delete {warehouseName} warehouse?
+            </h1>
+            <p className="warehouseDelete__txt-p">
+              Please confirm that you’d like to delete the {warehouseName} from
+              the list of warehouses. You won’t be able to undo this action.
+            </p>
+          </div>
+          <div className="warehouseDelete__bottomIcons">
+            <Button btnTxt="Cancel" onClick={onClose} />
+            <Button btnTxt="Delete" onClick={handleSubmit} />
+          </div>{' '}
         </div>
-        <div className="warehouseDelete__txt">
-          <h1 className="warehouseDelete__txt-header">
-            Delete {warehouseName} warehouse?
-          </h1>
-          <p className="warehouseDelete__txt-p">
-            Please confirm that you’d like to delete the {warehouseName} from
-            the list of warehouses. You won’t be able to undo this action.
-          </p>
-        </div>
-        <div className="warehouseDelete__bottomIcons">
-          <Button btnTxt="Cancel" onClick={onClose} />
-          <Button btnTxt="Delete" onClick={handleSubmit} />
-        </div>{' '}
-      </div>
+      </div>{' '}
     </div>
   );
 };

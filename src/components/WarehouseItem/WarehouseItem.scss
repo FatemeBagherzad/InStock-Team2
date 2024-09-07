@@ -4,7 +4,7 @@
 @use '../../styles/partials/global' as *;
 
 .WarehouseTabDesDisplay {
-  display: none;
+  // display: none;
   @include tablet {
     display: block;
     border-bottom: 1px solid $secondary-color-Cloud;
@@ -12,16 +12,24 @@
   }
 }
 
-.WarehouseTabDes {
+.Warehouse {
   display: grid;
-  grid-template-columns: 1fr 1.2fr 1fr 1.5fr 0.7fr;
-  grid-template-rows: 1fr;
-  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   text-decoration: none;
   list-style: none;
-  color: $secondary-color-Slate;
+  // color: $secondary-color-Slate;
+  color: #13182c;
+
+  @include tablet {
+    grid-template-columns: 1fr 1.2fr 1fr 1.5fr 0.3fr 0.3fr;
+    grid-template-rows: 1fr;
+  }
 
   &__li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     &--arrowIcn {
       transition: transform 0.3s ease;
       width: 1.2rem;
@@ -35,15 +43,39 @@
       align-items: center;
       cursor: pointer;
     }
-
+    &--edit {
+      grid-row: 3;
+      grid-column: 2;
+      @include tablet {
+        grid-row: auto;
+        grid-column: auto;
+      }
+    }
     &--delAnEdIcn {
       display: flex;
-      justify-content: space-around;
+      justify-self: flex-end;
       align-items: center;
+
       &-icon {
         width: 1.5rem;
         cursor: pointer;
       }
+    }
+  }
+  &__mobile-title {
+    font-size: 1rem;
+    color: $secondary-color-Slate;
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__li-add {
+    grid-row: 2;
+    grid-column: 1;
+    @include tablet {
+      grid-row: auto;
+      grid-column: auto;
     }
   }
 }

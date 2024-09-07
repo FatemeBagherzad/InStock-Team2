@@ -1,22 +1,23 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.scss';
-import InventoryMainPage from './pages/InventoryMainPage/InventoryMainPage';
-import InvetoryItemDetailPage from './pages/InvetoryItemDetailPage/InvetoryItemDetailPage';
-import InventoryAddNewPage from './pages/InventoryAddNewPage/InventoryAddNewPage';
-import WarehousePage from './pages/WarehousePage/WarehousePage';
-import WarehouseAddNewPage from './pages/WarehouseAddNewPage/WarehouseAddNewPage';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
-import InventoryEditItemPage from './pages/InventoryEditItemPage/InventoryEditItemPage';
-import WarehouseDeletePage from './pages/WarehouseDeletePage/WarehouseDeletePage';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import WarehousePage from './pages/WarehousePage/WarehousePage';
+import InventoryMainPage from './pages/InventoryMainPage/InventoryMainPage';
 import WarehouseEditPage from './pages/WarehouseEditPage/WarehouseEditPage';
+import InventoryAddNewPage from './pages/InventoryAddNewPage/InventoryAddNewPage';
+import WarehouseAddNewPage from './pages/WarehouseAddNewPage/WarehouseAddNewPage';
+import WarehouseDeletePage from './pages/WarehouseDeletePage/WarehouseDeletePage';
 import WarehouseDetailPage from './pages/WarehouseDetailPage/WarehouseDetailPage';
+import InventoryEditItemPage from './pages/InventoryEditItemPage/InventoryEditItemPage';
+import InvetoryItemDetailPage from './pages/InvetoryItemDetailPage/InvetoryItemDetailPage';
 
 function App() {
   return (
     <main>
       <BrowserRouter>
         <Header />
+
         <div className="mainPageBody">
           <Routes>
             <Route path="/warehouses" element={<WarehousePage />} />
@@ -46,6 +47,7 @@ function App() {
             <Route path="/inventory/new" element={<InventoryAddNewPage />} />
           </Routes>
         </div>
+
         <Footer />
       </BrowserRouter>
     </main>

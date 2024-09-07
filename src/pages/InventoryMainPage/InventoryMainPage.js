@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import InventoryList from '../../components/InventoryList/InventoryList';
-import PageHeader from '../../components/PageHeader/PageHeader';
 import axios from 'axios';
 import './InventoryMainPage.scss';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import PageHeader from '../../components/PageHeader/PageHeader';
+import InventoryList from '../../components/InventoryList/InventoryList';
 import InventoryDeletePage from '../InventoryDeletePage/InventoryDeletePage';
 
 const InventoryMainPage = () => {

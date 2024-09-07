@@ -24,6 +24,12 @@ a:active {
   text-decoration: none;
 }
 
+ul,
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
 h1 {
   font-size: 28px;
   line-height: 36px;
@@ -142,11 +148,11 @@ button {
   max-width: 100%;
   background-color: #232940;
   color: #bdc5d5;
-  margin-top: 2rem;
   position: fixed;
   bottom: 0;
   width: 100%;
   z-index: 99;
+  padding: 2rem;
 }
 
 .footer p {

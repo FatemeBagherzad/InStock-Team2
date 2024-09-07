@@ -24,6 +24,12 @@ a:active {
   text-decoration: none;
 }
 
+ul,
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
 h1 {
   font-size: 28px;
   line-height: 36px;
@@ -138,65 +144,81 @@ button {
   }
 }
 
-.WarehouseMobDisplay {
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid #bdc5d5;
-  padding: 1rem 2rem 1rem 0;
-}
 @media (min-width: 768px) {
-  .WarehouseMobDisplay {
-    display: none;
+  .WarehouseTabDesDisplay {
+    display: block;
+    border-bottom: 1px solid #bdc5d5;
+    padding: 1rem 0;
   }
 }
 
-.WarehouseMobTxt {
-  display: flex;
-  justify-content: space-between;
+.Warehouse {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  text-decoration: none;
+  list-style: none;
+  color: #13182c;
 }
-.WarehouseMobTxt__left {
+@media (min-width: 768px) {
+  .Warehouse {
+    grid-template-columns: 1fr 1.2fr 1fr 1.5fr 0.3fr 0.3fr;
+    grid-template-rows: 1fr;
+  }
+}
+.Warehouse__li {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  justify-content: center;
 }
-.WarehouseMobTxt__right {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.WarehouseMobTxt__arrowIcn {
+.Warehouse__li--arrowIcn {
   transition: transform 0.3s ease;
   width: 1.2rem;
 }
-.WarehouseMobTxt__arrowIcn:hover {
+.Warehouse__li--arrowIcn:hover {
   cursor: pointer;
   transform: translateX(4px);
 }
-.WarehouseMobTxt__titleAndItem--label {
-  color: #5c667e;
-  font-size: 1rem;
-}
-.WarehouseMobTxt__titleAndItem--item {
-  font-size: 1rem;
-}
-.WarehouseMobTxt__titleAndItem--item-withArrow {
+.Warehouse__li--withIcn {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
-
-.WarehouseMobIcons {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1rem;
+.Warehouse__li--edit {
+  grid-row: 3;
+  grid-column: 2;
 }
-.WarehouseMobIcons__icon {
+@media (min-width: 768px) {
+  .Warehouse__li--edit {
+    grid-row: auto;
+    grid-column: auto;
+  }
+}
+.Warehouse__li--delAnEdIcn {
+  display: flex;
+  justify-self: flex-end;
+  align-items: center;
+}
+.Warehouse__li--delAnEdIcn-icon {
   width: 1.5rem;
-  height: 1.5rem;
-  margin-right: 1rem;
-}
-.WarehouseMobIcons__icon:hover {
   cursor: pointer;
+}
+.Warehouse__mobile-title {
+  font-size: 1rem;
+  color: #5c667e;
+}
+@media (min-width: 768px) {
+  .Warehouse__mobile-title {
+    display: none;
+  }
+}
+.Warehouse__li-add {
+  grid-row: 2;
+  grid-column: 1;
+}
+@media (min-width: 768px) {
+  .Warehouse__li-add {
+    grid-row: auto;
+    grid-column: auto;
+  }
 }

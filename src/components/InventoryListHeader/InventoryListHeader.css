@@ -24,6 +24,12 @@ a:active {
   text-decoration: none;
 }
 
+ul,
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
 h1 {
   font-size: 28px;
   line-height: 36px;
@@ -161,9 +167,9 @@ button {
   font-size: 0.7rem;
   color: #5c667e;
 }
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
   .InventoryListHeader {
-    grid-template-columns: 0.8fr 1fr 1fr 0.5fr 1fr 0.3fr;
+    grid-template-columns: 0.8fr 1fr 1fr 0.5fr 1fr 0.4fr;
   }
 }
 .InventoryListHeader__titleAndIcn {

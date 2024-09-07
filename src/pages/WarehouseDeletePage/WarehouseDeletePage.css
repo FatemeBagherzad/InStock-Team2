@@ -24,6 +24,12 @@ a:active {
   text-decoration: none;
 }
 
+ul,
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
 h1 {
   font-size: 28px;
   line-height: 36px;
@@ -135,6 +141,18 @@ button {
   .container {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  #tabletBack {
+    background-color: hsla(228, 40%, 12%, 0.8);
+    width: 100vw;
+    height: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
   }
 }
 

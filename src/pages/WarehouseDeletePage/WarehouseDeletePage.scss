@@ -3,6 +3,18 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/global' as *;
 
+#tabletBack {
+  @include tablet {
+    background-color: hsl(228, 40%, 12%, 0.8);
+    width: 100vw;
+    height: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+}
+
 .warehouseDeleteContainer {
   z-index: 999;
   position: fixed;

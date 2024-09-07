@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import WarehouseListHeader from '../WarehouseListHeader/WarehouseListHeader';
-import WarehouseMob from '../WarehouseMob/WarehouseMob';
-import WarehouseTabDesc from '../WarehouseTabDesc/WarehouseTabDesc';
+import WarehouseItem from '../WarehouseItem/WarehouseItem';
 
 const WarehouseList = ({ allWarehouses, handleDeleteClick }) => {
   const [sortField, setSortField] = useState(null);
@@ -39,16 +38,7 @@ const WarehouseList = ({ allWarehouses, handleDeleteClick }) => {
       <WarehouseListHeader handleSort={handleSort} />
       <section>
         {sortedData.map((warehouse) => (
-          <WarehouseMob
-            key={warehouse.id}
-            warehouse={warehouse}
-            handleDeleteClick={handleDeleteClick}
-          />
-        ))}
-      </section>
-      <section>
-        {sortedData.map((warehouse) => (
-          <WarehouseTabDesc
+          <WarehouseItem
             key={warehouse.id}
             warehouse={warehouse}
             handleDeleteClick={handleDeleteClick}
