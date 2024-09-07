@@ -152,6 +152,7 @@ button {
   box-shadow: 0 0 10px #232940;
   margin: 5rem auto;
   padding-bottom: 2rem;
+  z-index: 10;
 }
 @media (min-width: 768px) {
   .inventoryAddNewPage {
