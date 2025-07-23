@@ -6,3 +6,14 @@
 .mainPageBody {
   margin-bottom: 15rem;
 }
+.custom-cursor {
+  cursor: url('assets/cursor/Stark-Trek.png') 16 16, auto;
+  // cursor: pointer;
+  // width: 200px;
+  // height: 200px;
+  // background-color: #f0f0f0;
+  // border: 1px solid #ccc;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+}

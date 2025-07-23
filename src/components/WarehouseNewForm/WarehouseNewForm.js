@@ -96,7 +96,10 @@ const WarehouseNewForm = () => {
       return;
     } else {
       axios
-        .post('http://localhost:8888/warehouses', newWarehouseObj)
+        .post(
+          `${process.env.REACT_APP_BACKEND_URL}/warehouses`,
+          newWarehouseObj
+        )
         .then((response) => {
           event.target.reset();
           alert('New Warehouse added successfully!');

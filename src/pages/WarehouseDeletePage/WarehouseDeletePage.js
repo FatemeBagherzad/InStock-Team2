@@ -9,12 +9,15 @@ const WarehouseDeletePage = ({ onClose, show, warehouseName, warehouseId }) => {
   }
   const handleSubmit = () => {
     axios
-      .delete(`http://localhost:8888/warehouses/${warehouseId}`, {
-        headers: {},
-        data: {
-          idToDelete: warehouseId,
-        },
-      })
+      .delete(
+        `${process.env.REACT_APP_BACKEND_URL}/warehouses/${warehouseId}`,
+        {
+          headers: {},
+          data: {
+            idToDelete: warehouseId,
+          },
+        }
+      )
       .then((res) => {
         console.log(res);
         onClose();

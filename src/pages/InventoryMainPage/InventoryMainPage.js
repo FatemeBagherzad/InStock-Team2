@@ -16,7 +16,7 @@ const InventoryMainPage = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:8888/inventory')
+      .get(`${process.env.REACT_APP_BACKEND_URL}/inventory`)
       .then((response) => {
         setAllInvetories(response.data);
       })
@@ -43,7 +43,7 @@ const InventoryMainPage = () => {
   //onClose
   const close = () => {
     axios
-      .get('http://localhost:8888/inventory')
+      .get(`${process.env.REACT_APP_BACKEND_URL}/inventory`)
       .then((response) => {
         setAllInvetories(response.data);
       })

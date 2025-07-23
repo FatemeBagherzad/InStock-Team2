@@ -14,7 +14,7 @@ const InvetoryItemMorePage = () => {
   useEffect(() => {
     if (inventoryid) {
       axios
-        .get(`http://localhost:8888/inventory/` + inventoryid)
+        .get(`${process.env.REACT_APP_BACKEND_URL}/inventory/${inventoryid}`)
         .then((response) => {
           setInvetory(response.data);
         })

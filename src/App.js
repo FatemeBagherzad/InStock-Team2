@@ -14,7 +14,7 @@ import InvetoryItemDetailPage from './pages/InvetoryItemDetailPage/InvetoryItemD
 
 function App() {
   return (
-    <main>
+    <main className="custom-cursor">
       <BrowserRouter>
         <Header />
 

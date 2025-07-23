@@ -13,7 +13,7 @@ const WarehouseEditPage = () => {
   useEffect(() => {
     if (warehouseid) {
       axios
-        .get(`http://localhost:8888/warehouses/` + warehouseid)
+        .get(`${process.env.REACT_APP_BACKEND_URL}/warehouses/${warehouseid}`)
         .then((response) => {
           setWarehouse(response.data);
         })

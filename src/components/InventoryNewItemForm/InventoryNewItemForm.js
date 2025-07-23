@@ -13,9 +13,11 @@ const InventoryNewItemForm = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:8888/warehouses').then((response) => {
-      setAllWarehouses(response.data);
-    });
+    axios
+      .get(`${process.env.REACT_APP_BACKEND_URL}/warehouses`)
+      .then((response) => {
+        setAllWarehouses(response.data);
+      });
   }, []);
 
   function handleChange(event) {
@@ -120,7 +122,7 @@ const InventoryNewItemForm = () => {
       console.log(newInventoryObj);
 
       axios
-        .post('http://localhost:8888/inventory', newInventoryObj)
+        .post(`${process.env.REACT_APP_BACKEND_URL}/inventory`, newInventoryObj)
         .then((response) => {
           event.target.reset();
           alert('New Inventory added successfully!');

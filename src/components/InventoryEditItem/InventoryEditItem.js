@@ -14,9 +14,11 @@ const EditInventoryItemPage = ({ inventoryid, inventory }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:8888/warehouses').then((response) => {
-      setAllWarehouses(response.data);
-    });
+    axios
+      .get(`${process.env.REACT_APP_BACKEND_URL}/warehouses`)
+      .then((response) => {
+        setAllWarehouses(response.data);
+      });
   }, []);
 
   function handleChange(event) {
@@ -96,7 +98,10 @@ const EditInventoryItemPage = ({ inventoryid, inventory }) => {
     console.log(editInventoryObj);
     setErr({});
     axios
-      .put(`http://localhost:8888/inventory/${inventoryid}`, editInventoryObj)
+      .put(
+        `${process.env.REACT_APP_BACKEND_URL}/inventory/${inventoryid}`,
+        editInventoryObj
+      )
       .then((res) => {
         console.log(res);
         event.target.reset();

@@ -11,9 +11,11 @@ const WarehouseEditForm = ({ warehouse, warehouseid }) => {
   const [allWarehouses, setAllWarehouses] = useState();
 
   useEffect(() => {
-    axios.get('http://localhost:8888/warehouses').then((response) => {
-      setAllWarehouses(response.data);
-    });
+    axios
+      .get(`${process.env.REACT_APP_BACKEND_URL}/warehouses`)
+      .then((response) => {
+        setAllWarehouses(response.data);
+      });
   }, []);
 
   const handleSubmit = (event) => {
@@ -32,7 +34,10 @@ const WarehouseEditForm = ({ warehouse, warehouseid }) => {
 
     console.log(editWarehouseObj);
     axios
-      .put(`http://localhost:8888/warehouses/${warehouseid}`, editWarehouseObj)
+      .put(
+        `${process.env.REACT_APP_BACKEND_URL}/warehouses/${warehouseid}`,
+        editWarehouseObj
+      )
       .then((res) => {
         console.log(res.data);
 

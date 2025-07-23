@@ -19,7 +19,7 @@ const WarehousePage = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:8888/warehouses')
+      .get(`${process.env.REACT_APP_BACKEND_URL}/warehouses`)
       .then((response) => {
         setAllWarehouses(response.data);
       })
@@ -53,7 +53,7 @@ const WarehousePage = () => {
 
   const close = () => {
     axios
-      .get('http://localhost:8888/warehouses')
+      .get(`${process.env.REACT_APP_BACKEND_URL}/warehouses`)
       .then((response) => {
         setAllWarehouses(response.data);
       })

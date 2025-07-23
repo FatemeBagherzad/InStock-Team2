@@ -11,7 +11,7 @@ function WarehouseDetailsHeader() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8888/warehouses/${warehouseid}`)
+      .get(`${process.env.REACT_APP_BACKEND_URL}/warehouses/${warehouseid}`)
       .then((response) => {
         if (response.status === 200) {
           const warehouseData = response.data[0];

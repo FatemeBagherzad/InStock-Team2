@@ -147,3 +147,7 @@ button {
 .mainPageBody {
   margin-bottom: 15rem;
 }
+
+.custom-cursor {
+  cursor: url("assets/cursor/Stark-Trek.png") 16 16, auto;
+}

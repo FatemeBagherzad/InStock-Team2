@@ -9,7 +9,7 @@ const InventoryDeletePage = ({ onClose, show, inventoryName, inventoryId }) => {
   }
   const handleSubmit = () => {
     axios
-      .delete(`http://localhost:8888/inventory/${inventoryId}`, {
+      .delete(`${process.env.REACT_APP_BACKEND_URL}/inventory/${inventoryId}`, {
         headers: {},
         data: {
           idToDelete: inventoryId,

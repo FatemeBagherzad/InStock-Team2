@@ -19,7 +19,7 @@ function WarehouseDetailPage() {
   useEffect(() => {
     if (warehouseid) {
       axios
-        .get(`http://localhost:8888/warehouses/${warehouseid}`)
+        .get(`${process.env.REACT_APP_BACKEND_URL}/warehouses/${warehouseid}`)
         .then((res) => {
           setWarehouseName(res.data[0].warehouse_name);
         })
@@ -30,7 +30,7 @@ function WarehouseDetailPage() {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:8888/warehouses/getInventoriesByWarehouseId/${warehouseid}`
+        `${process.env.REACT_APP_BACKEND_URL}/warehouses/getInventoriesByWarehouseId/${warehouseid}`
       )
       .then((response) => {
         setAllInventories(response.data);
