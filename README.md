@@ -1,19 +1,16 @@
-# InStock Project
+# InStock
 
-We have experienced team work in InStock project.<br/>
-It was a great experience for us and it will drive us for further works.
+We gained valuable experience working as a team on the InStock project 🚀. This project was both challenging and rewarding, and it has strengthened our approach for future projects.
 
-In this project we practiced chunking an existing<br/>
-site into React components and converting an<br/>
-existing static site into a React app.<br/>
-Also we used and practiced with database for the first time.<br/>
+In this project, we refactored an existing static site into a React application by breaking the UI into reusable components. We also integrated a database for the first time, giving us practical experience with data management 💾.
 
-**Update1**: We have added functional Search bar to our app🥳<br/>
-**Update2**: We have added sorting functionality to the app<br/>
-which is running and filtering data from client side😊<br/>
-we hope we can implement this functionality from server side too<br/>
-**Update3**: We have added error handling functions<br/>
-for all forms which was very challenging💥.
+**Updates & Highlights**
+
+**Update 1:** Added a fully functional search bar to the app 🥳
+
+**Update 2:** Implemented client-side sorting and filtering of data 😊 (planning to move this functionality to the server side next)
+
+**Update 3:** Added error handling for all forms, which was a challenging but valuable experience 💥
 
 ## Version
 
@@ -22,14 +19,23 @@ The Node version: **v18.17.0**
 
 ## Technologies
 
-<li>1-React</li>
-<li>2-Node.js</li>
-<li>3-Express</li>
-<li>4-MySQL and Knex</li>
-<li>5-Axios</li>
-<li>6-Nodemon</li>
-<li>7-Java Script</li>
-<li>8-HTML,CSS,SASS</li>
+<li>React</li>
+<li>Java Script</li>
+<li>HTML,CSS,SASS</li>
+<li>React Router</li>
+<li>Axios</li>
+<li>Sass Loader</li>
+<li>dotenv</li>
+<li>Git, GitHub</li>
+<li>Jira</li>
+<li>Node.js</li>
+<li>Express</li>
+<li>MySQL</li>
+<li>Knex</li>
+<li>CORS</li>
+<li>dotenv</li>
+<li>Nodemon</li>
+<li>uniqid</li>
 
 ## Setup
 
