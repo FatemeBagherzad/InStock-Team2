@@ -17,26 +17,6 @@ In this project, we refactored an existing static site into a React application 
 The React version: **v18.17.0**<br/>
 The Node version: **v18.17.0**
 
-## Technologies
-
-<li>React</li>
-<li>Java Script</li>
-<li>HTML,CSS,SASS</li>
-<li>React Router</li>
-<li>Axios</li>
-<li>Sass Loader</li>
-<li>dotenv</li>
-<li>Git, GitHub</li>
-<li>Jira</li>
-<li>Node.js</li>
-<li>Express</li>
-<li>MySQL</li>
-<li>Knex</li>
-<li>CORS</li>
-<li>dotenv</li>
-<li>Nodemon</li>
-<li>uniqid</li>
-
 ## Tech Stack 🛠️
 
 ### Front-end
