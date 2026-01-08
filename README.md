@@ -37,6 +37,37 @@ The Node version: **v18.17.0**
 <li>Nodemon</li>
 <li>uniqid</li>
 
+## Tech Stack 🛠️
+
+### Front-end
+
+- React
+- JavaScript (ES6+)
+- SCSS (Sass) & Sass Loader
+- React Router
+- Axios
+- dotenv
+- Git
+- Jira
+
+### Back-end
+
+- Node.js & Express
+- MySQL / MySQL2
+- Knex (SQL query builder)
+- Axios
+- CORS
+- dotenv
+- Nodemon
+- uniqid
+- Git
+- Jira
+
+### Other Tools
+
+- Jira for task management & collaboration
+- GitHub for version control
+
 ## Setup
 
 To run this ptoject please follow this path:
